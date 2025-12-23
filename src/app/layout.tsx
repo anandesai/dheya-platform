@@ -1,22 +1,31 @@
 import type { Metadata } from "next"
-import localFont from "next/font/local"
+import { Inter, Lora } from "next/font/google"
 import { SessionProvider } from "@/components/providers/session-provider"
 import { Toaster } from "@/components/ui/sonner"
 import "./globals.css"
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+// Display font - Bold condensed for ALL-CAPS headlines (Uplift style)
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-display",
+  display: "swap",
 })
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+// Body font - Serif for editorial feel (Uplift style)
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-body",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
-  title: "Dheya Career Mentors | Transform Your Career Journey",
+  title: {
+    default: "Dheya Career Mentors | Transform Your Career Journey",
+    template: "%s | Dheya Career Mentors",
+  },
   description:
     "India's premier career mentoring platform. 18+ years of expertise, 100,000+ professionals mentored. Discover your path to career clarity and fulfillment.",
   keywords: [
@@ -26,15 +35,44 @@ export const metadata: Metadata = {
     "career guidance",
     "mid-career transition",
     "career counseling",
+    "career assessment",
+    "CLIQI",
+    "BBD syndrome",
+    "work values",
     "Dheya",
   ],
   authors: [{ name: "Dheya Career Mentors" }],
+  creator: "Dheya Career Mentors",
+  publisher: "Dheya Career Mentors",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://dheya.com"),
   openGraph: {
     title: "Dheya Career Mentors | Transform Your Career Journey",
     description:
       "India's premier career mentoring platform helping professionals discover career clarity and fulfillment.",
     type: "website",
     locale: "en_IN",
+    siteName: "Dheya Career Mentors",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dheya Career Mentors",
+    description:
+      "Transform your career journey with India's premier career mentoring platform.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    // Add these when available
+    // google: "google-site-verification-code",
   },
 }
 
@@ -46,7 +84,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${lora.variable} font-sans antialiased`}
       >
         <SessionProvider>
           {children}

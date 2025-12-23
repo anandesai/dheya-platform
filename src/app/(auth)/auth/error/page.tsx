@@ -39,17 +39,17 @@ function ErrorContent() {
   const errorMessage = errorMessages[error] || errorMessages.Default
 
   return (
-    <Card className="bg-white/80 backdrop-blur-sm shadow-xl border-cream-300">
+    <Card variant="light" className="bg-white/80 backdrop-blur-sm shadow-xl border-cream-300">
       <CardHeader className="text-center">
         <div className="mx-auto mb-4">
           <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center">
             <AlertCircle className="h-8 w-8 text-destructive" />
           </div>
         </div>
-        <CardTitle className="text-2xl font-bold text-forest-800">
+        <CardTitle className="text-2xl font-bold text-charcoal-800 font-display">
           Authentication Error
         </CardTitle>
-        <CardDescription className="text-muted-foreground">
+        <CardDescription className="text-charcoal-600 font-body">
           We couldn&apos;t complete your request
         </CardDescription>
       </CardHeader>
@@ -61,11 +61,12 @@ function ErrorContent() {
       <CardFooter className="flex flex-col space-y-2">
         <Button
           asChild
-          className="w-full bg-forest-800 hover:bg-forest-900 text-cream-100"
+          variant="uplift"
+          className="w-full"
         >
           <Link href="/auth/login">Try Again</Link>
         </Button>
-        <Button asChild variant="outline" className="w-full">
+        <Button asChild variant="upliftOutline" className="w-full">
           <Link href="/">Go Home</Link>
         </Button>
       </CardFooter>
@@ -75,7 +76,7 @@ function ErrorContent() {
 
 function ErrorFallback() {
   return (
-    <Card className="bg-white/80 backdrop-blur-sm shadow-xl border-cream-300">
+    <Card variant="light" className="bg-white/80 backdrop-blur-sm shadow-xl border-cream-300">
       <CardHeader className="text-center">
         <div className="mx-auto mb-4">
           <Skeleton className="w-16 h-16 rounded-full" />

@@ -48,14 +48,14 @@ export function MarketingHeader() {
   const pathname = usePathname()
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-cream-300 bg-cream-100/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
+    <header className="sticky top-0 z-50 w-full bg-cream-50/95 backdrop-blur-md border-b border-cream-200/50">
+      <nav className="container-uplift flex items-center justify-between py-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-forest-800 rounded-full flex items-center justify-center">
-            <span className="text-cream-100 font-bold text-lg">D</span>
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 bg-charcoal-800 rounded-full flex items-center justify-center group-hover:bg-purple-500 transition-colors">
+            <span className="text-cream-50 font-display font-bold text-lg">D</span>
           </div>
-          <span className="font-bold text-xl text-forest-800 hidden sm:block">
+          <span className="font-display font-bold text-xl text-charcoal-800 hidden sm:block">
             Dheya
           </span>
         </Link>
@@ -68,27 +68,27 @@ export function MarketingHeader() {
               <Button
                 variant="ghost"
                 className={cn(
-                  "flex items-center gap-1 text-sm font-medium",
+                  "flex items-center gap-1 font-display text-sm font-medium",
                   pathname.startsWith("/programs")
-                    ? "text-forest-800"
-                    : "text-muted-foreground hover:text-forest-800"
+                    ? "text-charcoal-900"
+                    : "text-charcoal-600 hover:text-charcoal-900"
                 )}
               >
                 Programs
                 <ChevronDown className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-64">
+            <DropdownMenuContent align="start" className="w-64 bg-white border-cream-200">
               {programs.map((program) => (
                 <DropdownMenuItem key={program.href} asChild>
                   <Link
                     href={program.href}
-                    className="flex flex-col items-start gap-1 p-3"
+                    className="flex flex-col items-start gap-1 p-3 hover:bg-cream-50"
                   >
-                    <span className="font-medium text-forest-800">
+                    <span className="font-display font-semibold text-charcoal-800">
                       {program.name}
                     </span>
-                    <span className="text-xs text-muted-foreground">
+                    <span className="font-body text-xs text-charcoal-500">
                       {program.description}
                     </span>
                   </Link>
@@ -103,10 +103,10 @@ export function MarketingHeader() {
               key={item.name}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors",
+                "font-display text-sm font-medium transition-colors",
                 pathname === item.href
-                  ? "text-forest-800"
-                  : "text-muted-foreground hover:text-forest-800"
+                  ? "text-charcoal-900"
+                  : "text-charcoal-600 hover:text-charcoal-900"
               )}
             >
               {item.name}
@@ -116,13 +116,10 @@ export function MarketingHeader() {
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex lg:items-center lg:gap-4">
-          <Button asChild variant="ghost">
+          <Button asChild variant="ghost" className="font-display text-charcoal-700 hover:text-charcoal-900">
             <Link href="/auth/login">Sign In</Link>
           </Button>
-          <Button
-            asChild
-            className="bg-purple-600 hover:bg-purple-700 text-white"
-          >
+          <Button asChild variant="uplift" size="default">
             <Link href="/auth/register">Get Started</Link>
           </Button>
         </div>
@@ -130,7 +127,7 @@ export function MarketingHeader() {
         {/* Mobile Menu Button */}
         <button
           type="button"
-          className="lg:hidden -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-forest-800"
+          className="lg:hidden -m-2.5 inline-flex items-center justify-center rounded-full p-2.5 text-charcoal-800 hover:bg-cream-100 transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           <span className="sr-only">Toggle menu</span>
@@ -144,18 +141,18 @@ export function MarketingHeader() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-cream-300 bg-cream-100">
-          <div className="space-y-1 px-4 py-4">
+        <div className="lg:hidden border-t border-cream-200 bg-cream-50">
+          <div className="space-y-1 px-4 py-6">
             {/* Programs Section */}
             <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground px-3">
+              <p className="text-micro text-charcoal-500 px-3">
                 Programs
               </p>
               {programs.map((program) => (
                 <Link
                   key={program.href}
                   href={program.href}
-                  className="block rounded-lg px-3 py-2 text-sm font-medium text-forest-800 hover:bg-cream-200"
+                  className="block rounded-lg px-3 py-2.5 font-display text-sm font-medium text-charcoal-800 hover:bg-cream-100 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {program.name}
@@ -163,31 +160,28 @@ export function MarketingHeader() {
               ))}
             </div>
 
-            <div className="my-4 border-t border-cream-300" />
+            <div className="my-4 border-t border-cream-200" />
 
             {/* Other Links */}
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block rounded-lg px-3 py-2 text-sm font-medium text-forest-800 hover:bg-cream-200"
+                className="block rounded-lg px-3 py-2.5 font-display text-sm font-medium text-charcoal-800 hover:bg-cream-100 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
 
-            <div className="my-4 border-t border-cream-300" />
+            <div className="my-4 border-t border-cream-200" />
 
             {/* Mobile CTA */}
-            <div className="space-y-2 px-3">
-              <Button asChild variant="outline" className="w-full">
+            <div className="space-y-3 px-3 pt-2">
+              <Button asChild variant="upliftOutline" className="w-full">
                 <Link href="/auth/login">Sign In</Link>
               </Button>
-              <Button
-                asChild
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white"
-              >
+              <Button asChild variant="uplift" className="w-full">
                 <Link href="/auth/register">Get Started</Link>
               </Button>
             </div>

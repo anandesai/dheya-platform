@@ -342,22 +342,21 @@ export default function MidCareerPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-forest-50 via-cream-50 to-forest-100 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(26,71,42,0.08),transparent_50%)]" />
-        <div className="container px-4 md:px-6 relative">
+      <section className="section-cream section-padding">
+        <div className="container-uplift">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1 space-y-6">
               <div className="flex items-center gap-2">
-                <Badge className="bg-forest-100 text-forest-700 hover:bg-forest-100">
+                <Badge className="font-display bg-charcoal-100 text-charcoal-700 hover:bg-charcoal-100">
                   <Target className="h-3 w-3 mr-1" />
-                  Mid-Career (30-45)
+                  MID-CAREER (30-45)
                 </Badge>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-forest-900">
-                Destination{" "}
-                <span className="text-forest-600">Mastery</span>
+              <h1 className="text-display text-charcoal-900">
+                DESTINATION{" "}
+                <span className="text-purple-600">MASTERY</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
+              <p className="font-body text-charcoal-600 text-lg md:text-xl max-w-xl">
                 Break through career plateaus and rediscover your passion.
                 Overcome the Bored-Burned-Dissatisfied syndrome and design your
                 ideal career destination.
@@ -365,7 +364,7 @@ export default function MidCareerPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-forest-700 hover:bg-forest-800 text-cream-100"
+                  variant="uplift"
                   asChild
                 >
                   <Link href="#packages">
@@ -373,36 +372,36 @@ export default function MidCareerPage() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild>
+                <Button size="lg" variant="upliftOutline" asChild>
                   <Link href="/contact">Book Free Consultation</Link>
                 </Button>
               </div>
-              <div className="flex flex-wrap gap-6 pt-4 text-sm text-muted-foreground">
+              <div className="flex flex-wrap gap-6 pt-4 text-micro text-charcoal-500">
                 <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-forest-600" />
+                  <Clock className="h-4 w-4 text-purple-600" />
                   <span>8 weeks to 9 months</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Users className="h-4 w-4 text-forest-600" />
+                  <Users className="h-4 w-4 text-purple-600" />
                   <span>Expert 1-on-1 Mentoring</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Award className="h-4 w-4 text-forest-600" />
+                  <Award className="h-4 w-4 text-purple-600" />
                   <span>91% Career Clarity Rate</span>
                 </div>
               </div>
             </div>
             <div className="flex-1 relative">
               <div className="relative w-full aspect-square max-w-md mx-auto">
-                <div className="absolute inset-0 bg-forest-200 rounded-full opacity-20 animate-pulse" />
-                <div className="absolute inset-4 bg-forest-300 rounded-full opacity-20" />
+                <div className="absolute inset-0 bg-purple-200 rounded-full opacity-20 animate-pulse" />
+                <div className="absolute inset-4 bg-purple-300 rounded-full opacity-20" />
                 <div className="absolute inset-8 bg-white rounded-full shadow-xl flex items-center justify-center">
                   <div className="text-center p-8">
-                    <Target className="h-16 w-16 text-forest-700 mx-auto mb-4" />
-                    <p className="text-2xl font-bold text-forest-900">
+                    <Target className="h-16 w-16 text-purple-700 mx-auto mb-4" />
+                    <p className="text-2xl font-bold text-charcoal-900">
                       50,000+
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-micro text-charcoal-500">
                       Careers transformed
                     </p>
                   </div>
@@ -414,17 +413,17 @@ export default function MidCareerPage() {
       </section>
 
       {/* BBD Syndrome Section */}
-      <section className="py-16 md:py-24 bg-forest-800 text-cream-100">
-        <div className="container px-4 md:px-6">
+      <section className="section-charcoal section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-cream-100 text-forest-800 hover:bg-cream-100">
+            <Badge className="font-display mb-4 bg-cream-100 text-charcoal-800 hover:bg-cream-100">
               <AlertTriangle className="h-3 w-3 mr-1" />
-              The BBD Syndrome
+              THE BBD SYNDROME
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-section text-white">
               Are You Bored, Burned Out, or Dissatisfied?
             </h2>
-            <p className="text-cream-200">
+            <p className="font-body text-charcoal-200 mt-4">
               These three career pain points affect 73% of mid-career
               professionals. Identify your pattern to find the right solution.
             </p>
@@ -436,28 +435,28 @@ export default function MidCareerPage() {
               return (
                 <Card
                   key={index}
-                  className="bg-forest-700/50 border-forest-600 text-cream-100"
+                  variant="dark"
                 >
                   <CardHeader>
                     <div className="w-14 h-14 rounded-full bg-cream-100 flex items-center justify-center mb-4">
-                      <Icon className="h-7 w-7 text-forest-800" />
+                      <Icon className="h-7 w-7 text-charcoal-800" />
                     </div>
-                    <CardTitle className="text-xl text-cream-100">
+                    <CardTitle className="heading-card text-white">
                       {symptom.name}
                     </CardTitle>
-                    <CardDescription className="text-cream-300">
+                    <CardDescription className="text-charcoal-300">
                       {symptom.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-xs font-semibold text-cream-400 uppercase tracking-wider mb-2">
+                    <p className="text-micro text-charcoal-400 uppercase tracking-wider mb-2">
                       Common Signs
                     </p>
                     <ul className="space-y-2">
                       {symptom.signs.map((sign, signIndex) => (
                         <li
                           key={signIndex}
-                          className="flex items-start gap-2 text-sm text-cream-200"
+                          className="flex items-start gap-2 font-body text-sm text-charcoal-200"
                         >
                           <Check className="h-4 w-4 text-purple-400 flex-shrink-0 mt-0.5" />
                           <span>{sign}</span>
@@ -471,12 +470,11 @@ export default function MidCareerPage() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-cream-200 mb-4">
+            <p className="font-body text-charcoal-200 mb-4">
               Not sure which one applies to you? Take our free BBD quiz.
             </p>
             <Button
-              variant="outline"
-              className="border-cream-200 text-cream-100 hover:bg-cream-100/10"
+              variant="dark"
               asChild
             >
               <Link href="/auth/register?quiz=bbd">
@@ -489,17 +487,17 @@ export default function MidCareerPage() {
       </section>
 
       {/* Assessment Tools Section */}
-      <section className="py-16 md:py-24 bg-cream-50">
-        <div className="container px-4 md:px-6">
+      <section className="bg-white section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-forest-100 text-forest-700">
+            <Badge className="font-display mb-4 bg-charcoal-100 text-charcoal-700">
               <Sparkles className="h-3 w-3 mr-1" />
-              Proprietary Tools
+              PROPRIETARY TOOLS
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-forest-900 mb-4">
+            <h2 className="heading-section text-charcoal-900">
               Assessment Tools Built for Mid-Career Professionals
             </h2>
-            <p className="text-muted-foreground">
+            <p className="font-body text-charcoal-600 mt-4">
               Our tools are specifically designed to address the unique
               challenges of mid-career transitions, validated across 50,000+
               professionals.
@@ -512,21 +510,22 @@ export default function MidCareerPage() {
               return (
                 <Card
                   key={index}
-                  className="group hover:shadow-lg transition-shadow"
+                  variant="light"
+                  hover="lift"
                 >
                   <CardHeader>
                     <div className="flex items-start justify-between">
-                      <div className="p-2 rounded-lg bg-forest-100 group-hover:bg-forest-200 transition-colors">
-                        <Icon className="h-5 w-5 text-forest-700" />
+                      <div className="p-2 rounded-lg bg-charcoal-100 group-hover:bg-charcoal-200 transition-colors">
+                        <Icon className="h-5 w-5 text-charcoal-700" />
                       </div>
-                      <Badge variant="outline" className="text-xs">
-                        Phase {tool.phase}
+                      <Badge variant="outline" className="font-display text-xs">
+                        PHASE {tool.phase}
                       </Badge>
                     </div>
-                    <CardTitle className="text-lg mt-3">{tool.name}</CardTitle>
+                    <CardTitle className="heading-card mt-3">{tool.name}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="font-body text-sm text-charcoal-600">
                       {tool.description}
                     </p>
                   </CardContent>
@@ -538,16 +537,16 @@ export default function MidCareerPage() {
       </section>
 
       {/* 6-Phase Journey Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container px-4 md:px-6">
+      <section className="section-sage section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-purple-100 text-purple-700">
-              The Journey
+            <Badge className="font-display mb-4 bg-purple-100 text-purple-700">
+              THE JOURNEY
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-forest-900 mb-4">
+            <h2 className="heading-section text-charcoal-900">
               Your 6-Phase Career Transformation
             </h2>
-            <p className="text-muted-foreground">
+            <p className="font-body text-charcoal-600 mt-4">
               A systematic approach to redesigning your career, with each phase
               building on the insights from the previous one.
             </p>
@@ -561,17 +560,17 @@ export default function MidCareerPage() {
                   phase.tier === "guidance"
                     ? "bg-cream-50 border-cream-200"
                     : phase.tier === "planning"
-                      ? "bg-forest-50 border-forest-200"
+                      ? "bg-charcoal-50 border-charcoal-200"
                       : "bg-purple-50 border-purple-200"
                 }`}
               >
                 <div className="flex-shrink-0">
                   <div
-                    className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg ${
+                    className={`w-12 h-12 rounded-full flex items-center justify-center font-display font-bold text-lg ${
                       phase.tier === "guidance"
-                        ? "bg-cream-200 text-forest-800"
+                        ? "bg-cream-200 text-charcoal-800"
                         : phase.tier === "planning"
-                          ? "bg-forest-700 text-cream-100"
+                          ? "bg-charcoal-700 text-cream-100"
                           : "bg-purple-600 text-white"
                     }`}
                   >
@@ -580,36 +579,36 @@ export default function MidCareerPage() {
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <h3 className="text-lg font-bold text-forest-900">
+                    <h3 className="heading-card text-charcoal-900">
                       {phase.title}
                     </h3>
                     <Badge
-                      className={
+                      className={`font-display ${
                         phase.tier === "guidance"
-                          ? "bg-cream-200 text-forest-800"
+                          ? "bg-cream-200 text-charcoal-800"
                           : phase.tier === "planning"
-                            ? "bg-forest-700 text-cream-100"
+                            ? "bg-charcoal-700 text-cream-100"
                             : "bg-purple-600 text-white"
-                      }
+                      }`}
                     >
                       {phase.tier === "guidance"
-                        ? "Guidance+"
+                        ? "GUIDANCE+"
                         : phase.tier === "planning"
-                          ? "Planning+"
-                          : "Mentorship"}
+                          ? "PLANNING+"
+                          : "MENTORSHIP"}
                     </Badge>
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-micro text-charcoal-500">
                       {phase.duration}
                     </span>
                   </div>
-                  <p className="text-muted-foreground text-sm mb-3">
+                  <p className="font-body text-charcoal-600 text-sm mb-3">
                     {phase.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {phase.tools.map((tool, toolIndex) => (
                       <span
                         key={toolIndex}
-                        className="text-xs bg-white px-2 py-1 rounded border"
+                        className="font-body text-xs bg-white px-2 py-1 rounded border"
                       >
                         {tool}
                       </span>
@@ -617,7 +616,7 @@ export default function MidCareerPage() {
                   </div>
                 </div>
                 {index < phases.length - 1 && (
-                  <ChevronRight className="hidden md:block h-6 w-6 text-muted-foreground self-center" />
+                  <ChevronRight className="hidden md:block h-6 w-6 text-charcoal-600 self-center" />
                 )}
               </div>
             ))}
@@ -626,16 +625,16 @@ export default function MidCareerPage() {
       </section>
 
       {/* Packages Section */}
-      <section id="packages" className="py-16 md:py-24 bg-cream-50">
-        <div className="container px-4 md:px-6">
+      <section id="packages" className="bg-white section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-forest-100 text-forest-700">
-              Choose Your Path
+            <Badge className="font-display mb-4 bg-charcoal-100 text-charcoal-700">
+              CHOOSE YOUR PATH
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-forest-900 mb-4">
+            <h2 className="heading-section text-charcoal-900">
               Investment in Your Transformation
             </h2>
-            <p className="text-muted-foreground">
+            <p className="font-body text-charcoal-600 mt-4">
               Select the depth of support that matches your transformation
               goals. All packages include our satisfaction guarantee.
             </p>
@@ -645,42 +644,44 @@ export default function MidCareerPage() {
             {packages.map((pkg) => (
               <Card
                 key={pkg.tier}
+                variant="light"
+                hover="lift"
                 className={`relative ${
                   pkg.popular
-                    ? "border-2 border-forest-600 shadow-lg"
+                    ? "border-2 border-purple-600 shadow-lg"
                     : "border-2"
                 }`}
               >
                 {pkg.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-forest-700 text-cream-100">
-                      Most Popular
+                    <Badge className="font-display bg-purple-700 text-white">
+                      MOST POPULAR
                     </Badge>
                   </div>
                 )}
                 <CardHeader className="text-center pb-4">
                   <Badge
                     variant="outline"
-                    className={`w-fit mx-auto mb-2 ${
-                      pkg.popular ? "border-forest-300 text-forest-700" : ""
+                    className={`font-display w-fit mx-auto mb-2 ${
+                      pkg.popular ? "border-purple-300 text-purple-700" : ""
                     }`}
                   >
-                    {pkg.tagline}
+                    {pkg.tagline.toUpperCase()}
                   </Badge>
-                  <CardTitle className="text-2xl">{pkg.name}</CardTitle>
+                  <CardTitle className="heading-card text-2xl">{pkg.name}</CardTitle>
                   <div className="mt-2">
-                    <span className="text-sm text-muted-foreground line-through">
+                    <span className="font-body text-sm text-charcoal-600 line-through">
                       {formatPrice(pkg.originalPrice)}
                     </span>
                     <span
                       className={`text-4xl font-bold block ${
-                        pkg.popular ? "text-forest-700" : "text-forest-900"
+                        pkg.popular ? "text-purple-700" : "text-charcoal-900"
                       }`}
                     >
                       {formatPrice(pkg.price)}
                     </span>
                   </div>
-                  <CardDescription className="mt-2">
+                  <CardDescription className="font-body mt-2">
                     {pkg.sessions} sessions • {pkg.duration}
                     <br />
                     Phases {pkg.phases} • {pkg.mentorLevel}
@@ -688,14 +689,14 @@ export default function MidCareerPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                    <p className="text-micro text-charcoal-500 uppercase tracking-wider mb-2">
                       What&apos;s Included
                     </p>
                     <ul className="space-y-2">
                       {pkg.features.map((feature, index) => (
                         <li
                           key={index}
-                          className="flex items-start gap-2 text-sm"
+                          className="flex items-start gap-2 font-body text-sm"
                         >
                           <Check className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
                           <span>{feature}</span>
@@ -705,14 +706,14 @@ export default function MidCareerPage() {
                   </div>
                   {pkg.notIncluded.length > 0 && (
                     <div className="pt-4 border-t">
-                      <p className="text-xs text-muted-foreground mb-2">
+                      <p className="font-body text-xs text-charcoal-600 mb-2">
                         Not included:
                       </p>
                       <ul className="space-y-1">
                         {pkg.notIncluded.map((item, index) => (
                           <li
                             key={index}
-                            className="text-xs text-muted-foreground line-through"
+                            className="font-body text-xs text-charcoal-600 line-through"
                           >
                             {item}
                           </li>
@@ -723,17 +724,11 @@ export default function MidCareerPage() {
                 </CardContent>
                 <CardFooter>
                   <Button
-                    className={`w-full ${
-                      pkg.popular
-                        ? "bg-forest-700 hover:bg-forest-800 text-cream-100"
-                        : pkg.tier === "mentorship"
-                          ? "bg-purple-600 hover:bg-purple-700 text-white"
-                          : ""
-                    }`}
+                    className="w-full"
                     variant={
                       pkg.popular || pkg.tier === "mentorship"
-                        ? "default"
-                        : "outline"
+                        ? "uplift"
+                        : "upliftOutline"
                     }
                     asChild
                   >
@@ -747,7 +742,7 @@ export default function MidCareerPage() {
             ))}
           </div>
 
-          <p className="text-center text-sm text-muted-foreground mt-8">
+          <p className="font-body text-center text-sm text-charcoal-600 mt-8">
             All prices are inclusive of GST. EMI options available.
             <br />
             100% satisfaction guarantee or full refund after first 2 sessions.
@@ -756,13 +751,13 @@ export default function MidCareerPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 md:py-24 bg-forest-700 text-cream-100">
-        <div className="container px-4 md:px-6">
+      <section className="section-charcoal section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-section text-white">
               Success Stories from Mid-Career Professionals
             </h2>
-            <p className="text-cream-200">
+            <p className="font-body text-charcoal-200 mt-4">
               Join thousands who&apos;ve overcome their BBD syndrome and found
               career fulfillment
             </p>
@@ -772,7 +767,7 @@ export default function MidCareerPage() {
             {testimonials.map((testimonial, index) => (
               <Card
                 key={index}
-                className="bg-white/10 backdrop-blur-sm border-white/20"
+                variant="dark"
               >
                 <CardHeader>
                   <div className="flex items-center gap-1 mb-2">
@@ -783,23 +778,23 @@ export default function MidCareerPage() {
                       />
                     ))}
                   </div>
-                  <Badge className="w-fit bg-cream-100/20 text-cream-100 text-xs">
-                    {testimonial.previousRole}
+                  <Badge className="font-display w-fit bg-cream-100/20 text-cream-100 text-xs">
+                    {testimonial.previousRole.toUpperCase()}
                   </Badge>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-cream-100 italic mb-4">
+                  <p className="font-body text-sm text-cream-100 italic mb-4">
                     &ldquo;{testimonial.quote}&rdquo;
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-forest-500 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full bg-charcoal-500 flex items-center justify-center">
                       <span className="text-sm font-bold">
                         {testimonial.name.charAt(0)}
                       </span>
                     </div>
                     <div>
                       <p className="font-semibold text-sm">{testimonial.name}</p>
-                      <p className="text-xs text-cream-300">
+                      <p className="font-body text-xs text-cream-300">
                         {testimonial.role}
                       </p>
                     </div>
@@ -812,12 +807,12 @@ export default function MidCareerPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container px-4 md:px-6">
+      <section className="bg-white section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
-              <Badge className="mb-4 bg-cream-200 text-forest-800">FAQ</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-forest-900 mb-4">
+              <Badge className="font-display mb-4 bg-cream-200 text-charcoal-800">FAQ</Badge>
+              <h2 className="heading-section text-charcoal-900">
                 Common Questions
               </h2>
             </div>
@@ -825,10 +820,10 @@ export default function MidCareerPage() {
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left text-forest-900 hover:text-forest-600">
+                  <AccordionTrigger className="font-body text-left text-charcoal-900 hover:text-purple-600">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
+                  <AccordionContent className="font-body text-charcoal-600">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -839,20 +834,20 @@ export default function MidCareerPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-forest-800 to-forest-900 text-cream-100">
-        <div className="container px-4 md:px-6">
+      <section className="section-purple section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-section text-white">
               Ready to Master Your Destination?
             </h2>
-            <p className="text-cream-200 text-lg mb-8">
+            <p className="font-body text-purple-100 text-lg mt-4 mb-8">
               Don&apos;t let BBD syndrome hold you back. Take the first step
               toward a fulfilling career today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-cream-100 text-forest-800 hover:bg-cream-200"
+                variant="dark"
                 asChild
               >
                 <Link href="/auth/register?program=mid-career">
@@ -862,8 +857,7 @@ export default function MidCareerPage() {
               </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="border-cream-200 text-cream-100 hover:bg-cream-100/10"
+                variant="dark"
                 asChild
               >
                 <Link href="/contact">Talk to an Advisor</Link>

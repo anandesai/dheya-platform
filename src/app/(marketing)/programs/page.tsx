@@ -18,7 +18,6 @@ import {
   Heart,
   Check,
   ArrowRight,
-  Sparkles,
   Users,
   Clock,
   Award,
@@ -72,7 +71,7 @@ const segments = [
     description:
       "Break through career plateaus and rediscover your passion. Overcome the Bored-Burned-Dissatisfied syndrome and design your ideal career destination.",
     icon: Target,
-    color: "forest",
+    color: "sage",
     href: "/programs/mid-career",
     features: [
       "BBD Syndrome Assessment",
@@ -264,61 +263,62 @@ function formatPrice(price: number): string {
 export default function ProgramsPage() {
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-cream-50 via-cream-100 to-purple-50">
-        <div className="container px-4 md:px-6">
+      {/* Hero Section - Cream Background */}
+      <section className="section-cream section-padding">
+        <div className="container-uplift">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-purple-100 text-purple-700 hover:bg-purple-100">
-              <Sparkles className="h-3 w-3 mr-1" />
-              Personalized Programs
-            </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-forest-900 mb-6">
-              Find Your Perfect{" "}
-              <span className="text-purple-600">Career Program</span>
+            <p className="text-micro text-purple-600 mb-4">
+              Personalized Career Programs
+            </p>
+            <h1 className="text-display text-charcoal-900 mb-6">
+              FIND YOUR PERFECT<br />
+              <span className="text-purple-500">CAREER PROGRAM</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+            <p className="text-body-lg text-charcoal-600 max-w-2xl mx-auto mb-10">
               Choose from our specialized programs designed for different career
               stages. Each program combines assessments, mentoring, and
               actionable strategies for your unique journey.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 text-sm">
+            <div className="flex flex-wrap justify-center gap-8 text-sm">
               <div className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-purple-600" />
-                <span>100,000+ Professionals Mentored</span>
+                <Users className="h-5 w-5 text-purple-500" />
+                <span className="font-body text-charcoal-700">100,000+ Professionals Mentored</span>
               </div>
               <div className="flex items-center gap-2">
-                <Award className="h-4 w-4 text-purple-600" />
-                <span>91% Achieve Clarity</span>
+                <Award className="h-5 w-5 text-purple-500" />
+                <span className="font-body text-charcoal-700">91% Achieve Clarity</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-purple-600" />
-                <span>18+ Years Experience</span>
+                <Clock className="h-5 w-5 text-purple-500" />
+                <span className="font-body text-charcoal-700">18+ Years Experience</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Program Cards */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container px-4 md:px-6">
+      {/* Program Cards - White Background */}
+      <section className="bg-white section-padding">
+        <div className="container-uplift">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-forest-900 mb-4">
+            <h2 className="heading-section text-charcoal-900 mb-4">
               Programs Tailored for Every Stage
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-body text-charcoal-600 max-w-2xl mx-auto">
               Select a program that matches your current career stage and goals.
               Each is designed with specific assessments and strategies.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {segments.map((segment) => {
               const Icon = segment.icon
               return (
                 <Card
                   key={segment.id}
-                  className="group relative overflow-hidden border-2 hover:border-purple-300 transition-all duration-300 hover:shadow-lg"
+                  variant="light"
+                  hover="lift"
+                  className="group"
                 >
                   <CardHeader>
                     <div className="flex items-start justify-between">
@@ -326,8 +326,8 @@ export default function ProgramsPage() {
                         className={`p-3 rounded-xl ${
                           segment.color === "purple"
                             ? "bg-purple-100"
-                            : segment.color === "forest"
-                              ? "bg-forest-100"
+                            : segment.color === "sage"
+                              ? "bg-sage-100"
                               : segment.color === "gold"
                                 ? "bg-amber-100"
                                 : "bg-rose-100"
@@ -337,47 +337,47 @@ export default function ProgramsPage() {
                           className={`h-6 w-6 ${
                             segment.color === "purple"
                               ? "text-purple-600"
-                              : segment.color === "forest"
-                                ? "text-forest-700"
+                              : segment.color === "sage"
+                                ? "text-sage-600"
                                 : segment.color === "gold"
                                   ? "text-amber-600"
                                   : "text-rose-600"
                           }`}
                         />
                       </div>
-                      <Badge variant="outline" className="text-xs">
+                      <Badge variant="outline" className="text-micro border-charcoal-300">
                         {segment.subtitle}
                       </Badge>
                     </div>
-                    <CardTitle className="text-2xl mt-4 text-forest-900">
+                    <CardTitle className="heading-card text-charcoal-900 mt-4">
                       {segment.name}
                     </CardTitle>
-                    <CardDescription className="text-sm leading-relaxed">
+                    <CardDescription className="font-body text-sm leading-relaxed">
                       {segment.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div>
-                      <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                      <p className="text-micro text-charcoal-500 mb-3">
                         Key Focus Areas
                       </p>
-                      <ul className="space-y-1">
+                      <ul className="space-y-2">
                         {segment.features.slice(0, 3).map((feature, index) => (
                           <li
                             key={index}
-                            className="flex items-center gap-2 text-sm"
+                            className="flex items-center gap-2 font-body text-sm"
                           >
-                            <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
-                            <span>{feature}</span>
+                            <Check className="h-4 w-4 text-purple-500 flex-shrink-0" />
+                            <span className="text-charcoal-700">{feature}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
-                    <div className="pt-2 border-t">
-                      <p className="text-xs text-muted-foreground mb-1">
+                    <div className="pt-4 border-t border-cream-200">
+                      <p className="text-micro text-charcoal-500 mb-1">
                         Starting from
                       </p>
-                      <p className="text-2xl font-bold text-forest-900">
+                      <p className="font-display text-2xl font-bold text-charcoal-900">
                         {formatPrice(segment.pricing.guidance.price)}
                       </p>
                     </div>
@@ -385,7 +385,8 @@ export default function ProgramsPage() {
                   <CardFooter>
                     <Button
                       asChild
-                      className="w-full bg-forest-800 hover:bg-forest-900 text-cream-100 group-hover:bg-purple-600"
+                      variant="uplift"
+                      className="w-full"
                     >
                       <Link href={segment.href}>
                         Explore Program
@@ -400,120 +401,120 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      {/* 6-Phase Journey */}
-      <section className="py-16 md:py-24 bg-forest-800 text-cream-100">
-        <div className="container px-4 md:px-6">
+      {/* 6-Phase Journey - Charcoal Section */}
+      <section className="section-charcoal section-padding">
+        <div className="container-uplift">
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-purple-600 text-white hover:bg-purple-600">
+            <p className="text-micro text-purple-400 mb-4">
               The 7D Methodology
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Your 6-Phase Journey to Career Clarity
+            </p>
+            <h2 className="text-display-sm text-cream-50 mb-4">
+              YOUR 6-PHASE JOURNEY<br />TO CAREER CLARITY
             </h2>
-            <p className="text-cream-200 max-w-2xl mx-auto">
+            <p className="font-body text-cream-300 max-w-2xl mx-auto">
               Every program follows our proven methodology, with the number of
               phases covered depending on your chosen tier.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
             {phases.map((phase) => (
               <div key={phase.number} className="text-center">
-                <div className="w-14 h-14 mx-auto rounded-full bg-purple-600 flex items-center justify-center mb-3">
-                  <span className="text-xl font-bold">{phase.number}</span>
+                <div className="w-16 h-16 mx-auto rounded-full bg-purple-500 flex items-center justify-center mb-4">
+                  <span className="font-display text-2xl font-bold text-white">{phase.number}</span>
                 </div>
-                <h3 className="font-semibold mb-1">{phase.name}</h3>
-                <p className="text-xs text-cream-300">{phase.description}</p>
+                <h3 className="font-display font-semibold text-cream-50 mb-2">{phase.name}</h3>
+                <p className="font-body text-xs text-cream-400">{phase.description}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-12 text-center">
-            <div className="inline-flex flex-col sm:flex-row gap-4 bg-forest-700/50 rounded-lg p-4 text-sm">
-              <div className="flex items-center gap-2">
-                <Badge className="bg-cream-100 text-forest-800">Guidance</Badge>
-                <span>Phases 1-2</span>
+            <div className="inline-flex flex-col sm:flex-row gap-4 bg-charcoal-700/50 rounded-xl p-6">
+              <div className="flex items-center gap-3">
+                <Badge className="bg-cream-100 text-charcoal-800 font-display">Guidance</Badge>
+                <span className="font-body text-cream-200">Phases 1-2</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Badge className="bg-purple-500 text-white">Planning</Badge>
-                <span>Phases 1-5</span>
+              <div className="flex items-center gap-3">
+                <Badge className="bg-purple-500 text-white font-display">Planning</Badge>
+                <span className="font-body text-cream-200">Phases 1-5</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Badge className="bg-gold-400 text-forest-900">Mentorship</Badge>
-                <span>All 6 Phases</span>
+              <div className="flex items-center gap-3">
+                <Badge className="bg-gold-400 text-charcoal-900 font-display">Mentorship</Badge>
+                <span className="font-body text-cream-200">All 6 Phases</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing Comparison */}
-      <section className="py-16 md:py-24 bg-cream-50">
-        <div className="container px-4 md:px-6">
+      {/* Pricing Comparison - Sage Section */}
+      <section className="section-sage section-padding">
+        <div className="container-uplift">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-forest-900 mb-4">
+            <h2 className="heading-section text-charcoal-900 mb-4">
               Compare Package Tiers
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-body text-charcoal-600 max-w-2xl mx-auto">
               All programs offer three tiers to match your commitment level and
               goals. Choose the depth of support that&apos;s right for you.
             </p>
           </div>
 
           <Tabs defaultValue="mid-career" className="max-w-4xl mx-auto">
-            <TabsList className="grid grid-cols-2 md:grid-cols-4 w-full mb-8">
-              <TabsTrigger value="early-career">Early Career</TabsTrigger>
-              <TabsTrigger value="mid-career">Mid-Career</TabsTrigger>
-              <TabsTrigger value="senior">Senior</TabsTrigger>
-              <TabsTrigger value="returning-women">Returning Women</TabsTrigger>
+            <TabsList className="grid grid-cols-2 md:grid-cols-4 w-full mb-8 bg-sage-200">
+              <TabsTrigger value="early-career" className="font-display text-sm">Early Career</TabsTrigger>
+              <TabsTrigger value="mid-career" className="font-display text-sm">Mid-Career</TabsTrigger>
+              <TabsTrigger value="senior" className="font-display text-sm">Senior</TabsTrigger>
+              <TabsTrigger value="returning-women" className="font-display text-sm">Returning Women</TabsTrigger>
             </TabsList>
 
             {segments.map((segment) => (
               <TabsContent key={segment.id} value={segment.id}>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {/* Guidance Tier */}
-                  <Card className="border-2">
+                  <Card variant="light" className="border-2">
                     <CardHeader className="text-center pb-4">
-                      <Badge variant="outline" className="w-fit mx-auto mb-2">
+                      <Badge variant="outline" className="w-fit mx-auto mb-2 text-micro">
                         Starter
                       </Badge>
-                      <CardTitle className="text-xl">Guidance</CardTitle>
-                      <div className="mt-2">
-                        <span className="text-3xl font-bold text-forest-900">
+                      <CardTitle className="heading-card">Guidance</CardTitle>
+                      <div className="mt-4">
+                        <span className="font-display text-3xl font-bold text-charcoal-900">
                           {formatPrice(segment.pricing.guidance.price)}
                         </span>
                       </div>
-                      <CardDescription>
+                      <CardDescription className="font-body mt-2">
                         {segment.pricing.guidance.sessions} sessions •{" "}
                         {segment.pricing.guidance.duration}
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <ul className="space-y-2 text-sm">
+                      <ul className="space-y-3 font-body text-sm">
                         <li className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-green-500" />
-                          Phases 1-2 Coverage
+                          <Check className="h-4 w-4 text-purple-500" />
+                          <span className="text-charcoal-700">Phases 1-2 Coverage</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-green-500" />
-                          Basic Assessment Tools
+                          <Check className="h-4 w-4 text-purple-500" />
+                          <span className="text-charcoal-700">Basic Assessment Tools</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-green-500" />2 Core
-                          Workbooks
+                          <Check className="h-4 w-4 text-purple-500" />
+                          <span className="text-charcoal-700">2 Core Workbooks</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-green-500" />
-                          Certified Mentor (L1)
+                          <Check className="h-4 w-4 text-purple-500" />
+                          <span className="text-charcoal-700">Certified Mentor (L1)</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-green-500" />
-                          Email Support
+                          <Check className="h-4 w-4 text-purple-500" />
+                          <span className="text-charcoal-700">Email Support</span>
                         </li>
                       </ul>
                     </CardContent>
                     <CardFooter>
-                      <Button variant="outline" className="w-full" asChild>
+                      <Button variant="upliftOutline" className="w-full" asChild>
                         <Link href={`${segment.href}?tier=guidance`}>
                           Get Started
                         </Link>
@@ -522,59 +523,56 @@ export default function ProgramsPage() {
                   </Card>
 
                   {/* Planning Tier - Popular */}
-                  <Card className="border-2 border-purple-500 relative">
+                  <Card variant="light" className="border-2 border-purple-500 relative shadow-lg">
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <Badge className="bg-purple-600 text-white">
+                      <Badge className="bg-purple-500 text-white font-display">
                         Most Popular
                       </Badge>
                     </div>
                     <CardHeader className="text-center pb-4">
                       <Badge
                         variant="outline"
-                        className="w-fit mx-auto mb-2 border-purple-300 text-purple-700"
+                        className="w-fit mx-auto mb-2 text-micro border-purple-300 text-purple-700"
                       >
                         Advanced
                       </Badge>
-                      <CardTitle className="text-xl">Planning</CardTitle>
-                      <div className="mt-2">
-                        <span className="text-3xl font-bold text-purple-600">
+                      <CardTitle className="heading-card">Planning</CardTitle>
+                      <div className="mt-4">
+                        <span className="font-display text-3xl font-bold text-purple-600">
                           {formatPrice(segment.pricing.planning.price)}
                         </span>
                       </div>
-                      <CardDescription>
+                      <CardDescription className="font-body mt-2">
                         {segment.pricing.planning.sessions} sessions •{" "}
                         {segment.pricing.planning.duration}
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <ul className="space-y-2 text-sm">
+                      <ul className="space-y-3 font-body text-sm">
                         <li className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-green-500" />
-                          Phases 1-5 Coverage
+                          <Check className="h-4 w-4 text-purple-500" />
+                          <span className="text-charcoal-700">Phases 1-5 Coverage</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-green-500" />
-                          Full Assessment Suite
+                          <Check className="h-4 w-4 text-purple-500" />
+                          <span className="text-charcoal-700">Full Assessment Suite</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-green-500" />
-                          All Career Workbooks
+                          <Check className="h-4 w-4 text-purple-500" />
+                          <span className="text-charcoal-700">All Career Workbooks</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-green-500" />
-                          Expert Mentor (L2)
+                          <Check className="h-4 w-4 text-purple-500" />
+                          <span className="text-charcoal-700">Expert Mentor (L2)</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-green-500" />
-                          Priority Support
+                          <Check className="h-4 w-4 text-purple-500" />
+                          <span className="text-charcoal-700">Priority Support</span>
                         </li>
                       </ul>
                     </CardContent>
                     <CardFooter>
-                      <Button
-                        className="w-full bg-purple-600 hover:bg-purple-700"
-                        asChild
-                      >
+                      <Button variant="uplift" className="w-full" asChild>
                         <Link href={`${segment.href}?tier=planning`}>
                           Get Started
                         </Link>
@@ -583,51 +581,48 @@ export default function ProgramsPage() {
                   </Card>
 
                   {/* Mentorship Tier */}
-                  <Card className="border-2 border-gold-400">
+                  <Card variant="light" className="border-2 border-gold-400">
                     <CardHeader className="text-center pb-4">
-                      <Badge className="w-fit mx-auto mb-2 bg-gold-400 text-forest-900 hover:bg-gold-400">
+                      <Badge className="w-fit mx-auto mb-2 bg-gold-400 text-charcoal-900 font-display hover:bg-gold-400">
                         Premium
                       </Badge>
-                      <CardTitle className="text-xl">Mentorship</CardTitle>
-                      <div className="mt-2">
-                        <span className="text-3xl font-bold text-forest-900">
+                      <CardTitle className="heading-card">Mentorship</CardTitle>
+                      <div className="mt-4">
+                        <span className="font-display text-3xl font-bold text-charcoal-900">
                           {formatPrice(segment.pricing.mentorship.price)}
                         </span>
                       </div>
-                      <CardDescription>
+                      <CardDescription className="font-body mt-2">
                         {segment.pricing.mentorship.sessions} sessions •{" "}
                         {segment.pricing.mentorship.duration}
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <ul className="space-y-2 text-sm">
+                      <ul className="space-y-3 font-body text-sm">
                         <li className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-green-500" />
-                          All 6 Phases
+                          <Check className="h-4 w-4 text-purple-500" />
+                          <span className="text-charcoal-700">All 6 Phases</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-green-500" />
-                          Full Suite + AI Insights
+                          <Check className="h-4 w-4 text-purple-500" />
+                          <span className="text-charcoal-700">Full Suite + AI Insights</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-green-500" />
-                          All + Premium Content
+                          <Check className="h-4 w-4 text-purple-500" />
+                          <span className="text-charcoal-700">All + Premium Content</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-green-500" />
-                          Master Mentor (L3)
+                          <Check className="h-4 w-4 text-purple-500" />
+                          <span className="text-charcoal-700">Master Mentor (L3)</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-green-500" />
-                          24/7 Priority Support
+                          <Check className="h-4 w-4 text-purple-500" />
+                          <span className="text-charcoal-700">24/7 Priority Support</span>
                         </li>
                       </ul>
                     </CardContent>
                     <CardFooter>
-                      <Button
-                        className="w-full bg-forest-800 hover:bg-forest-900 text-cream-100"
-                        asChild
-                      >
+                      <Button variant="dark" className="w-full" asChild>
                         <Link href={`${segment.href}?tier=mentorship`}>
                           Get Started
                         </Link>
@@ -641,23 +636,23 @@ export default function ProgramsPage() {
 
           {/* Feature Comparison Table */}
           <div className="mt-16 max-w-4xl mx-auto">
-            <h3 className="text-xl font-bold text-forest-900 mb-6 text-center">
+            <h3 className="heading-card text-charcoal-900 mb-6 text-center">
               Detailed Feature Comparison
             </h3>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto bg-white rounded-xl shadow-sm">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="border-b-2 border-forest-200">
-                    <th className="py-3 px-4 text-left font-semibold text-forest-900">
+                  <tr className="border-b-2 border-cream-200">
+                    <th className="py-4 px-6 text-left font-display font-semibold text-charcoal-900">
                       Feature
                     </th>
-                    <th className="py-3 px-4 text-center font-semibold text-forest-900">
+                    <th className="py-4 px-6 text-center font-display font-semibold text-charcoal-700">
                       Guidance
                     </th>
-                    <th className="py-3 px-4 text-center font-semibold text-purple-600">
+                    <th className="py-4 px-6 text-center font-display font-semibold text-purple-600">
                       Planning
                     </th>
-                    <th className="py-3 px-4 text-center font-semibold text-forest-900">
+                    <th className="py-4 px-6 text-center font-display font-semibold text-charcoal-700">
                       Mentorship
                     </th>
                   </tr>
@@ -668,16 +663,16 @@ export default function ProgramsPage() {
                       key={index}
                       className={index % 2 === 0 ? "bg-white" : "bg-cream-50"}
                     >
-                      <td className="py-3 px-4 text-sm font-medium">
+                      <td className="py-4 px-6 font-body text-sm font-medium text-charcoal-800">
                         {row.feature}
                       </td>
-                      <td className="py-3 px-4 text-sm text-center text-muted-foreground">
+                      <td className="py-4 px-6 font-body text-sm text-center text-charcoal-600">
                         {row.guidance}
                       </td>
-                      <td className="py-3 px-4 text-sm text-center text-purple-600 font-medium">
+                      <td className="py-4 px-6 font-body text-sm text-center text-purple-600 font-medium">
                         {row.planning}
                       </td>
-                      <td className="py-3 px-4 text-sm text-center text-muted-foreground">
+                      <td className="py-4 px-6 font-body text-sm text-center text-charcoal-600">
                         {row.mentorship}
                       </td>
                     </tr>
@@ -689,33 +684,33 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-purple-600 to-purple-800 text-white">
-        <div className="container px-4 md:px-6">
+      {/* CTA Section - Purple */}
+      <section className="section-purple section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Not Sure Which Program Is Right for You?
+            <h2 className="text-display-sm text-white mb-6">
+              NOT SURE WHICH<br />PROGRAM IS RIGHT?
             </h2>
-            <p className="text-purple-100 text-lg mb-8">
+            <p className="font-body text-lg text-purple-100 mb-10">
               Book a free 30-minute consultation with our career advisors.
               We&apos;ll help you identify your needs and recommend the perfect
               program.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                size="lg"
-                className="bg-white text-purple-700 hover:bg-cream-100"
+                size="xl"
+                className="bg-white text-purple-700 hover:bg-cream-100 font-display font-semibold"
                 asChild
               >
                 <Link href="/contact">
                   Schedule Free Consultation
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button
-                size="lg"
+                size="xl"
                 variant="outline"
-                className="border-white text-white hover:bg-white/10"
+                className="border-2 border-white text-white hover:bg-white/10 font-display font-semibold"
                 asChild
               >
                 <Link href="/auth/register">Create Free Account</Link>

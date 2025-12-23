@@ -296,22 +296,21 @@ export default function EarlyCareerPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-purple-50 via-cream-50 to-purple-100 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(139,92,246,0.1),transparent_50%)]" />
-        <div className="container px-4 md:px-6 relative">
+      <section className="section-cream section-padding">
+        <div className="container-uplift">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1 space-y-6">
               <div className="flex items-center gap-2">
-                <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-100">
+                <Badge className="font-display bg-purple-100 text-purple-700 hover:bg-purple-100">
                   <Rocket className="h-3 w-3 mr-1" />
-                  Early Career (22-30)
+                  EARLY CAREER (22-30)
                 </Badge>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-forest-900">
-                Develop{" "}
-                <span className="text-purple-600">Advantage</span>
+              <h1 className="text-display text-charcoal-900">
+                DEVELOP{" "}
+                <span className="text-purple-600">ADVANTAGE</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
+              <p className="font-body text-charcoal-600 text-lg md:text-xl max-w-xl">
                 Launch your career with clarity and confidence. Discover your
                 unique strengths, explore endless possibilities, and create a
                 roadmap for lasting success.
@@ -319,7 +318,7 @@ export default function EarlyCareerPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-purple-600 hover:bg-purple-700 text-white"
+                  variant="uplift"
                   asChild
                 >
                   <Link href="#packages">
@@ -327,11 +326,11 @@ export default function EarlyCareerPage() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild>
+                <Button size="lg" variant="upliftOutline" asChild>
                   <Link href="/contact">Book Free Consultation</Link>
                 </Button>
               </div>
-              <div className="flex flex-wrap gap-6 pt-4 text-sm text-muted-foreground">
+              <div className="flex flex-wrap gap-6 pt-4 text-micro text-charcoal-500">
                 <div className="flex items-center gap-2">
                   <Clock className="h-4 w-4 text-purple-600" />
                   <span>6 weeks to 6 months</span>
@@ -353,10 +352,10 @@ export default function EarlyCareerPage() {
                 <div className="absolute inset-8 bg-white rounded-full shadow-xl flex items-center justify-center">
                   <div className="text-center p-8">
                     <Rocket className="h-16 w-16 text-purple-600 mx-auto mb-4" />
-                    <p className="text-2xl font-bold text-forest-900">
+                    <p className="text-2xl font-bold text-charcoal-900">
                       25,000+
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-micro text-charcoal-500">
                       Early careers launched
                     </p>
                   </div>
@@ -368,13 +367,13 @@ export default function EarlyCareerPage() {
       </section>
 
       {/* Who It's For Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container px-4 md:px-6">
+      <section className="bg-white section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-forest-100 text-forest-700">
-              Is This You?
+            <Badge className="font-display mb-4 bg-charcoal-100 text-charcoal-700">
+              IS THIS YOU?
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-forest-900 mb-4">
+            <h2 className="heading-section text-charcoal-900 mb-4">
               This Program Is Perfect If You&apos;re...
             </h2>
           </div>
@@ -408,15 +407,15 @@ export default function EarlyCareerPage() {
             ].map((item, index) => {
               const Icon = item.icon
               return (
-                <Card key={index} className="text-center border-2 hover:border-purple-200 transition-colors">
+                <Card key={index} variant="light" hover="lift" className="text-center">
                   <CardHeader>
                     <div className="w-12 h-12 mx-auto rounded-full bg-purple-100 flex items-center justify-center mb-2">
                       <Icon className="h-6 w-6 text-purple-600" />
                     </div>
-                    <CardTitle className="text-lg">{item.title}</CardTitle>
+                    <CardTitle className="heading-card">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="font-body text-charcoal-600 text-sm">
                       {item.description}
                     </p>
                   </CardContent>
@@ -428,17 +427,17 @@ export default function EarlyCareerPage() {
       </section>
 
       {/* Assessment Tools Section */}
-      <section className="py-16 md:py-24 bg-cream-50">
-        <div className="container px-4 md:px-6">
+      <section className="section-sage section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-purple-100 text-purple-700">
+            <Badge className="font-display mb-4 bg-purple-100 text-purple-700">
               <Sparkles className="h-3 w-3 mr-1" />
-              Proprietary Tools
+              PROPRIETARY TOOLS
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-forest-900 mb-4">
+            <h2 className="heading-section text-charcoal-900 mb-4">
               Assessment Tools Designed for Early Career Success
             </h2>
-            <p className="text-muted-foreground">
+            <p className="font-body text-charcoal-600">
               Our scientifically-validated assessments have helped over 25,000
               young professionals find their ideal career paths.
             </p>
@@ -450,21 +449,22 @@ export default function EarlyCareerPage() {
               return (
                 <Card
                   key={index}
-                  className="group hover:shadow-lg transition-shadow"
+                  variant="light"
+                  hover="lift"
                 >
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div className="p-2 rounded-lg bg-purple-100 group-hover:bg-purple-200 transition-colors">
                         <Icon className="h-5 w-5 text-purple-600" />
                       </div>
-                      <Badge variant="outline" className="text-xs">
-                        Phase {tool.phase}
+                      <Badge variant="outline" className="font-display text-xs">
+                        PHASE {tool.phase}
                       </Badge>
                     </div>
-                    <CardTitle className="text-lg mt-3">{tool.name}</CardTitle>
+                    <CardTitle className="heading-card mt-3">{tool.name}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="font-body text-charcoal-600 text-sm">
                       {tool.description}
                     </p>
                   </CardContent>
@@ -476,16 +476,16 @@ export default function EarlyCareerPage() {
       </section>
 
       {/* 6-Phase Journey Section */}
-      <section className="py-16 md:py-24 bg-forest-800 text-cream-100">
-        <div className="container px-4 md:px-6">
+      <section className="section-charcoal section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-purple-600 text-white hover:bg-purple-600">
-              The Journey
+            <Badge className="font-display mb-4 bg-purple-600 text-white hover:bg-purple-600">
+              THE JOURNEY
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-section text-white mb-4">
               Your 6-Phase Transformation
             </h2>
-            <p className="text-cream-200">
+            <p className="font-body text-charcoal-200">
               Each phase builds on the previous one, creating a comprehensive
               foundation for career success.
             </p>
@@ -497,47 +497,47 @@ export default function EarlyCareerPage() {
                 key={phase.number}
                 className={`flex gap-4 p-6 rounded-lg ${
                   phase.tier === "guidance"
-                    ? "bg-forest-700/50"
+                    ? "bg-charcoal-700/50"
                     : phase.tier === "planning"
                       ? "bg-purple-600/20 border border-purple-500/30"
                       : "bg-gold-400/10 border border-gold-400/30"
                 }`}
               >
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center font-bold text-lg text-white">
                     {phase.number}
                   </div>
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <h3 className="text-lg font-bold">{phase.title}</h3>
+                    <h3 className="heading-card text-white">{phase.title}</h3>
                     <Badge
-                      className={
+                      className={`font-display ${
                         phase.tier === "guidance"
-                          ? "bg-cream-100 text-forest-800"
+                          ? "bg-cream-100 text-charcoal-800"
                           : phase.tier === "planning"
                             ? "bg-purple-500 text-white"
-                            : "bg-gold-400 text-forest-900"
-                      }
+                            : "bg-gold-400 text-charcoal-900"
+                      }`}
                     >
                       {phase.tier === "guidance"
-                        ? "Guidance+"
+                        ? "GUIDANCE+"
                         : phase.tier === "planning"
-                          ? "Planning+"
-                          : "Mentorship"}
+                          ? "PLANNING+"
+                          : "MENTORSHIP"}
                     </Badge>
-                    <span className="text-sm text-cream-300">
+                    <span className="text-micro text-charcoal-300">
                       {phase.duration}
                     </span>
                   </div>
-                  <p className="text-cream-200 text-sm mb-3">
+                  <p className="font-body text-charcoal-200 text-sm mb-3">
                     {phase.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {phase.tools.map((tool, toolIndex) => (
                       <span
                         key={toolIndex}
-                        className="text-xs bg-forest-900/50 px-2 py-1 rounded"
+                        className="text-micro bg-charcoal-900/50 px-2 py-1 rounded text-charcoal-200"
                       >
                         {tool}
                       </span>
@@ -545,7 +545,7 @@ export default function EarlyCareerPage() {
                   </div>
                 </div>
                 {index < phases.length - 1 && (
-                  <ChevronRight className="hidden md:block h-6 w-6 text-cream-400 self-center" />
+                  <ChevronRight className="hidden md:block h-6 w-6 text-charcoal-400 self-center" />
                 )}
               </div>
             ))}
@@ -554,16 +554,16 @@ export default function EarlyCareerPage() {
       </section>
 
       {/* Packages Section */}
-      <section id="packages" className="py-16 md:py-24 bg-cream-50">
-        <div className="container px-4 md:px-6">
+      <section id="packages" className="section-sage section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-purple-100 text-purple-700">
-              Choose Your Path
+            <Badge className="font-display mb-4 bg-purple-100 text-purple-700">
+              CHOOSE YOUR PATH
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-forest-900 mb-4">
+            <h2 className="heading-section text-charcoal-900 mb-4">
               Investment in Your Future
             </h2>
-            <p className="text-muted-foreground">
+            <p className="font-body text-charcoal-600">
               Select the level of support that matches your goals and
               commitment. All packages come with our satisfaction guarantee.
             </p>
@@ -573,6 +573,8 @@ export default function EarlyCareerPage() {
             {packages.map((pkg) => (
               <Card
                 key={pkg.tier}
+                variant="light"
+                hover="lift"
                 className={`relative ${
                   pkg.popular
                     ? "border-2 border-purple-500 shadow-lg"
@@ -581,15 +583,15 @@ export default function EarlyCareerPage() {
               >
                 {pkg.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-purple-600 text-white">
-                      Most Popular
+                    <Badge className="font-display bg-purple-600 text-white">
+                      MOST POPULAR
                     </Badge>
                   </div>
                 )}
                 <CardHeader className="text-center pb-4">
                   <Badge
                     variant="outline"
-                    className={`w-fit mx-auto mb-2 ${
+                    className={`font-display w-fit mx-auto mb-2 ${
                       pkg.popular
                         ? "border-purple-300 text-purple-700"
                         : ""
@@ -597,20 +599,20 @@ export default function EarlyCareerPage() {
                   >
                     {pkg.tagline}
                   </Badge>
-                  <CardTitle className="text-2xl">{pkg.name}</CardTitle>
+                  <CardTitle className="heading-card">{pkg.name}</CardTitle>
                   <div className="mt-2">
-                    <span className="text-sm text-muted-foreground line-through">
+                    <span className="text-micro text-charcoal-500 line-through">
                       {formatPrice(pkg.originalPrice)}
                     </span>
                     <span
                       className={`text-4xl font-bold block ${
-                        pkg.popular ? "text-purple-600" : "text-forest-900"
+                        pkg.popular ? "text-purple-600" : "text-charcoal-900"
                       }`}
                     >
                       {formatPrice(pkg.price)}
                     </span>
                   </div>
-                  <CardDescription className="mt-2">
+                  <CardDescription className="font-body mt-2">
                     {pkg.sessions} sessions • {pkg.duration}
                     <br />
                     Phases {pkg.phases} • {pkg.mentorLevel}
@@ -618,14 +620,14 @@ export default function EarlyCareerPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                    <p className="text-micro font-semibold text-charcoal-500 uppercase tracking-wider mb-2">
                       What&apos;s Included
                     </p>
                     <ul className="space-y-2">
                       {pkg.features.map((feature, index) => (
                         <li
                           key={index}
-                          className="flex items-start gap-2 text-sm"
+                          className="flex items-start gap-2 font-body text-charcoal-600 text-sm"
                         >
                           <Check className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
                           <span>{feature}</span>
@@ -635,14 +637,14 @@ export default function EarlyCareerPage() {
                   </div>
                   {pkg.notIncluded.length > 0 && (
                     <div className="pt-4 border-t">
-                      <p className="text-xs text-muted-foreground mb-2">
+                      <p className="text-micro text-charcoal-500 mb-2">
                         Not included:
                       </p>
                       <ul className="space-y-1">
                         {pkg.notIncluded.map((item, index) => (
                           <li
                             key={index}
-                            className="text-xs text-muted-foreground line-through"
+                            className="text-micro text-charcoal-500 line-through"
                           >
                             {item}
                           </li>
@@ -653,17 +655,13 @@ export default function EarlyCareerPage() {
                 </CardContent>
                 <CardFooter>
                   <Button
-                    className={`w-full ${
-                      pkg.popular
-                        ? "bg-purple-600 hover:bg-purple-700"
-                        : pkg.tier === "mentorship"
-                          ? "bg-forest-800 hover:bg-forest-900 text-cream-100"
-                          : ""
-                    }`}
+                    className="w-full"
                     variant={
-                      pkg.popular || pkg.tier === "mentorship"
-                        ? "default"
-                        : "outline"
+                      pkg.popular
+                        ? "uplift"
+                        : pkg.tier === "mentorship"
+                          ? "dark"
+                          : "upliftOutline"
                     }
                     asChild
                   >
@@ -677,7 +675,7 @@ export default function EarlyCareerPage() {
             ))}
           </div>
 
-          <p className="text-center text-sm text-muted-foreground mt-8">
+          <p className="text-center font-body text-charcoal-600 text-sm mt-8">
             All prices are inclusive of GST. EMI options available.
             <br />
             100% satisfaction guarantee or full refund after first 2 sessions.
@@ -686,13 +684,13 @@ export default function EarlyCareerPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 md:py-24 bg-purple-600 text-white">
-        <div className="container px-4 md:px-6">
+      <section className="section-purple section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-section text-white mb-4">
               Success Stories from Early Career Professionals
             </h2>
-            <p className="text-purple-100">
+            <p className="font-body text-purple-100">
               Join thousands who&apos;ve transformed their careers with Develop
               Advantage
             </p>
@@ -702,6 +700,7 @@ export default function EarlyCareerPage() {
             {testimonials.map((testimonial, index) => (
               <Card
                 key={index}
+                variant="dark"
                 className="bg-white/10 backdrop-blur-sm border-white/20"
               >
                 <CardHeader>
@@ -715,7 +714,7 @@ export default function EarlyCareerPage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-purple-50 italic mb-4">
+                  <p className="font-body text-sm text-purple-50 italic mb-4">
                     &ldquo;{testimonial.quote}&rdquo;
                   </p>
                   <div className="flex items-center gap-3">
@@ -725,8 +724,8 @@ export default function EarlyCareerPage() {
                       </span>
                     </div>
                     <div>
-                      <p className="font-semibold text-sm">{testimonial.name}</p>
-                      <p className="text-xs text-purple-200">
+                      <p className="font-semibold text-sm text-white">{testimonial.name}</p>
+                      <p className="text-micro text-purple-200">
                         {testimonial.role}
                       </p>
                     </div>
@@ -739,12 +738,12 @@ export default function EarlyCareerPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container px-4 md:px-6">
+      <section className="bg-white section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
-              <Badge className="mb-4 bg-cream-200 text-forest-800">FAQ</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-forest-900 mb-4">
+              <Badge className="font-display mb-4 bg-cream-200 text-charcoal-800">FAQ</Badge>
+              <h2 className="heading-section text-charcoal-900 mb-4">
                 Common Questions
               </h2>
             </div>
@@ -752,10 +751,10 @@ export default function EarlyCareerPage() {
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left text-forest-900 hover:text-purple-600">
+                  <AccordionTrigger className="text-left font-body text-charcoal-900 hover:text-purple-600">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
+                  <AccordionContent className="font-body text-charcoal-600">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -766,20 +765,20 @@ export default function EarlyCareerPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-forest-800 to-forest-900 text-cream-100">
-        <div className="container px-4 md:px-6">
+      <section className="section-charcoal section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-section text-white mb-4">
               Ready to Launch Your Career?
             </h2>
-            <p className="text-cream-200 text-lg mb-8">
+            <p className="font-body text-charcoal-200 text-lg mb-8">
               Take the first step towards a fulfilling career. Book a free
               consultation or start your journey today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-purple-600 hover:bg-purple-700 text-white"
+                variant="uplift"
                 asChild
               >
                 <Link href="/auth/register?program=early-career">
@@ -790,7 +789,7 @@ export default function EarlyCareerPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-cream-200 text-cream-100 hover:bg-cream-100/10"
+                className="border-white bg-white text-charcoal-900 hover:bg-white/90"
                 asChild
               >
                 <Link href="/contact">Talk to an Advisor</Link>

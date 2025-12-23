@@ -86,17 +86,17 @@ function LoginForm() {
   }
 
   return (
-    <Card className="bg-white/80 backdrop-blur-sm shadow-xl border-cream-300">
+    <Card variant="light" className="bg-white/80 backdrop-blur-sm shadow-xl border-cream-300">
       <CardHeader className="text-center">
         <div className="mx-auto mb-4">
-          <div className="w-16 h-16 bg-forest-800 rounded-full flex items-center justify-center">
-            <span className="text-cream-100 font-bold text-2xl">D</span>
+          <div className="w-16 h-16 bg-charcoal-800 rounded-full flex items-center justify-center">
+            <span className="text-cream-50 font-bold text-2xl">D</span>
           </div>
         </div>
-        <CardTitle className="text-2xl font-bold text-forest-800">
+        <CardTitle className="text-2xl font-bold text-charcoal-800 font-display">
           Welcome Back
         </CardTitle>
-        <CardDescription className="text-muted-foreground">
+        <CardDescription className="text-charcoal-600 font-body">
           Sign in to continue your career journey
         </CardDescription>
       </CardHeader>
@@ -157,7 +157,7 @@ function LoginForm() {
             <span className="w-full border-t border-cream-300" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-white px-2 text-muted-foreground">
+            <span className="bg-white px-2 text-charcoal-500">
               Or continue with email
             </span>
           </div>
@@ -170,7 +170,7 @@ function LoginForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel className="font-display text-sm text-charcoal-700">Email</FormLabel>
                   <FormControl>
                     <Input
                       type="email"
@@ -188,7 +188,7 @@ function LoginForm() {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel className="font-display text-sm text-charcoal-700">Password</FormLabel>
                   <FormControl>
                     <Input
                       type="password"
@@ -203,7 +203,8 @@ function LoginForm() {
             />
             <Button
               type="submit"
-              className="w-full bg-forest-800 hover:bg-forest-900 text-cream-100"
+              variant="uplift"
+              className="w-full"
               disabled={isLoading}
             >
               {isLoading ? (
@@ -234,7 +235,7 @@ function LoginForm() {
         </Form>
       </CardContent>
       <CardFooter className="flex flex-col space-y-2">
-        <p className="text-sm text-center text-muted-foreground">
+        <p className="text-sm text-center text-charcoal-600 font-body">
           Don&apos;t have an account?{" "}
           <Link
             href="/auth/register"

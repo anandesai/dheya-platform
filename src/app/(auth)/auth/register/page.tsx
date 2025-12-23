@@ -121,17 +121,17 @@ export default function RegisterPage() {
   }
 
   return (
-    <Card className="bg-white/80 backdrop-blur-sm shadow-xl border-cream-300">
+    <Card variant="light" className="bg-white/80 backdrop-blur-sm shadow-xl border-cream-300">
       <CardHeader className="text-center">
         <div className="mx-auto mb-4">
-          <div className="w-16 h-16 bg-forest-800 rounded-full flex items-center justify-center">
-            <span className="text-cream-100 font-bold text-2xl">D</span>
+          <div className="w-16 h-16 bg-charcoal-800 rounded-full flex items-center justify-center">
+            <span className="text-cream-50 font-bold text-2xl">D</span>
           </div>
         </div>
-        <CardTitle className="text-2xl font-bold text-forest-800">
+        <CardTitle className="text-2xl font-bold text-charcoal-800 font-display">
           Begin Your Journey
         </CardTitle>
-        <CardDescription className="text-muted-foreground">
+        <CardDescription className="text-charcoal-600 font-body">
           Create your account to discover career clarity
         </CardDescription>
       </CardHeader>
@@ -192,7 +192,7 @@ export default function RegisterPage() {
             <span className="w-full border-t border-cream-300" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-white px-2 text-muted-foreground">
+            <span className="bg-white px-2 text-charcoal-500">
               Or create with email
             </span>
           </div>
@@ -206,7 +206,7 @@ export default function RegisterPage() {
                 name="firstName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>First Name</FormLabel>
+                    <FormLabel className="font-display text-sm text-charcoal-700">First Name</FormLabel>
                     <FormControl>
                       <Input
                         placeholder="John"
@@ -223,7 +223,7 @@ export default function RegisterPage() {
                 name="lastName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Last Name</FormLabel>
+                    <FormLabel className="font-display text-sm text-charcoal-700">Last Name</FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Doe"
@@ -241,7 +241,7 @@ export default function RegisterPage() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel className="font-display text-sm text-charcoal-700">Email</FormLabel>
                   <FormControl>
                     <Input
                       type="email"
@@ -259,7 +259,7 @@ export default function RegisterPage() {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel className="font-display text-sm text-charcoal-700">Password</FormLabel>
                   <FormControl>
                     <Input
                       type="password"
@@ -277,7 +277,7 @@ export default function RegisterPage() {
               name="confirmPassword"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Confirm Password</FormLabel>
+                  <FormLabel className="font-display text-sm text-charcoal-700">Confirm Password</FormLabel>
                   <FormControl>
                     <Input
                       type="password"
@@ -292,7 +292,8 @@ export default function RegisterPage() {
             />
             <Button
               type="submit"
-              className="w-full bg-forest-800 hover:bg-forest-900 text-cream-100"
+              variant="uplift"
+              className="w-full"
               disabled={isLoading}
             >
               {isLoading ? (
@@ -323,7 +324,7 @@ export default function RegisterPage() {
         </Form>
       </CardContent>
       <CardFooter className="flex flex-col space-y-2">
-        <p className="text-sm text-center text-muted-foreground">
+        <p className="text-sm text-center text-charcoal-600 font-body">
           Already have an account?{" "}
           <Link
             href="/auth/login"
@@ -332,7 +333,7 @@ export default function RegisterPage() {
             Sign in
           </Link>
         </p>
-        <p className="text-xs text-center text-muted-foreground">
+        <p className="text-xs text-center text-charcoal-600 font-body">
           By creating an account, you agree to our Terms of Service and Privacy
           Policy.
         </p>

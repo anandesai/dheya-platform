@@ -366,22 +366,22 @@ export default function ReturningWomenPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-rose-50 via-cream-50 to-rose-100 overflow-hidden">
+      <section className="section-cream section-padding overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(244,63,94,0.08),transparent_50%)]" />
-        <div className="container px-4 md:px-6 relative">
+        <div className="container-uplift relative">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1 space-y-6">
               <div className="flex items-center gap-2">
-                <Badge className="bg-rose-100 text-rose-700 hover:bg-rose-100">
+                <Badge className="font-display bg-rose-100 text-rose-700 hover:bg-rose-100">
                   <Heart className="h-3 w-3 mr-1" />
                   Returning Women Professionals
                 </Badge>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-forest-900">
-                Restart &{" "}
-                <span className="text-rose-600">Rise</span>
+              <h1 className="text-display text-charcoal-900">
+                RESTART &{" "}
+                <span className="text-rose-600">RISE</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
+              <p className="text-lg md:text-xl font-body text-charcoal-600 max-w-xl">
                 Your career break was a chapter, not the end of your story.
                 Confidently re-enter the workforce, rebuild your skills, and find
                 opportunities that fit your life.
@@ -389,7 +389,7 @@ export default function ReturningWomenPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-rose-600 hover:bg-rose-700 text-white"
+                  variant="uplift"
                   asChild
                 >
                   <Link href="#packages">
@@ -397,11 +397,11 @@ export default function ReturningWomenPage() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild>
+                <Button size="lg" variant="upliftOutline" asChild>
                   <Link href="/contact">Book Free Consultation</Link>
                 </Button>
               </div>
-              <div className="flex flex-wrap gap-6 pt-4 text-sm text-muted-foreground">
+              <div className="flex flex-wrap gap-6 pt-4 text-micro text-charcoal-500">
                 <div className="flex items-center gap-2">
                   <Clock className="h-4 w-4 text-rose-600" />
                   <span>8 weeks to 6 months</span>
@@ -423,10 +423,10 @@ export default function ReturningWomenPage() {
                 <div className="absolute inset-8 bg-white rounded-full shadow-xl flex items-center justify-center">
                   <div className="text-center p-8">
                     <Flower2 className="h-16 w-16 text-rose-600 mx-auto mb-4" />
-                    <p className="text-2xl font-bold text-forest-900">
+                    <p className="text-2xl font-bold text-charcoal-900">
                       10,000+
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-micro text-charcoal-500">
                       Women restarted careers
                     </p>
                   </div>
@@ -438,17 +438,17 @@ export default function ReturningWomenPage() {
       </section>
 
       {/* Common Concerns Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container px-4 md:px-6">
+      <section className="bg-white section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-rose-100 text-rose-700">
+            <Badge className="font-display mb-4 bg-rose-100 text-rose-700">
               <HandHeart className="h-3 w-3 mr-1" />
               We Understand
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-forest-900 mb-4">
+            <h2 className="heading-section text-charcoal-900 mb-4">
               Your Concerns Are Valid. We Have Solutions.
             </h2>
-            <p className="text-muted-foreground">
+            <p className="font-body text-charcoal-600">
               After years away from work, it&apos;s natural to have doubts. Our
               program addresses each concern systematically.
             </p>
@@ -460,7 +460,9 @@ export default function ReturningWomenPage() {
               return (
                 <Card
                   key={index}
-                  className="group hover:shadow-lg transition-shadow border-2 hover:border-rose-200"
+                  variant="light"
+                  hover="lift"
+                  className="group border-2 hover:border-rose-200"
                 >
                   <CardHeader>
                     <div className="flex items-start gap-4">
@@ -468,7 +470,7 @@ export default function ReturningWomenPage() {
                         <Icon className="h-6 w-6 text-rose-600" />
                       </div>
                       <div>
-                        <CardTitle className="text-lg">{concern.name}</CardTitle>
+                        <CardTitle className="heading-card">{concern.name}</CardTitle>
                         <CardDescription className="mt-1">
                           {concern.description}
                         </CardDescription>
@@ -478,7 +480,7 @@ export default function ReturningWomenPage() {
                   <CardContent>
                     <div className="flex items-start gap-2 bg-rose-50 p-3 rounded-lg">
                       <Check className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <p className="text-sm text-forest-700">
+                      <p className="text-sm font-body text-charcoal-700">
                         <span className="font-medium">Our solution: </span>
                         {concern.solution}
                       </p>
@@ -492,17 +494,17 @@ export default function ReturningWomenPage() {
       </section>
 
       {/* Success Pathways Section */}
-      <section className="py-16 md:py-24 bg-rose-600 text-white">
-        <div className="container px-4 md:px-6">
+      <section className="section-charcoal section-padding text-white">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-white text-rose-600 hover:bg-white">
+            <Badge className="font-display mb-4 bg-white text-rose-600 hover:bg-white">
               <TrendingUp className="h-3 w-3 mr-1" />
               Multiple Pathways
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-section mb-4">
               Choose Your Re-entry Path
             </h2>
-            <p className="text-rose-100">
+            <p className="font-body text-charcoal-100">
               There&apos;s no single way back. We help you explore options and
               find what fits your life best.
             </p>
@@ -512,18 +514,19 @@ export default function ReturningWomenPage() {
             {successPathways.map((pathway, index) => (
               <Card
                 key={index}
+                variant="dark"
                 className="bg-white/10 backdrop-blur-sm border-white/20 text-white"
               >
                 <CardHeader>
-                  <CardTitle className="text-lg text-white">
+                  <CardTitle className="heading-card text-white">
                     {pathway.name}
                   </CardTitle>
-                  <CardDescription className="text-rose-100">
+                  <CardDescription className="text-charcoal-100">
                     {pathway.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-xs font-semibold text-rose-200 uppercase tracking-wider mb-2">
+                  <p className="text-micro text-charcoal-200 uppercase tracking-wider mb-2">
                     Examples
                   </p>
                   <div className="flex flex-wrap gap-1">
@@ -544,17 +547,17 @@ export default function ReturningWomenPage() {
       </section>
 
       {/* Assessment Tools Section */}
-      <section className="py-16 md:py-24 bg-cream-50">
-        <div className="container px-4 md:px-6">
+      <section className="section-cream section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-rose-100 text-rose-700">
+            <Badge className="font-display mb-4 bg-rose-100 text-rose-700">
               <Sparkles className="h-3 w-3 mr-1" />
               Designed for You
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-forest-900 mb-4">
+            <h2 className="heading-section text-charcoal-900 mb-4">
               Tools Created Specifically for Returning Women
             </h2>
-            <p className="text-muted-foreground">
+            <p className="font-body text-charcoal-600">
               Our assessment tools address the unique challenges of re-entering
               the workforce after a career break.
             </p>
@@ -566,21 +569,22 @@ export default function ReturningWomenPage() {
               return (
                 <Card
                   key={index}
-                  className="group hover:shadow-lg transition-shadow"
+                  variant="light"
+                  hover="lift"
                 >
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div className="p-2 rounded-lg bg-rose-100 group-hover:bg-rose-200 transition-colors">
                         <Icon className="h-5 w-5 text-rose-600" />
                       </div>
-                      <Badge variant="outline" className="text-xs">
+                      <Badge variant="outline" className="font-display text-xs">
                         Phase {tool.phase}
                       </Badge>
                     </div>
-                    <CardTitle className="text-lg mt-3">{tool.name}</CardTitle>
+                    <CardTitle className="heading-card mt-3">{tool.name}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm font-body text-charcoal-600">
                       {tool.description}
                     </p>
                   </CardContent>
@@ -592,16 +596,16 @@ export default function ReturningWomenPage() {
       </section>
 
       {/* 6-Phase Journey Section */}
-      <section className="py-16 md:py-24 bg-forest-800 text-cream-100">
-        <div className="container px-4 md:px-6">
+      <section className="section-charcoal section-padding text-white">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-rose-500 text-white hover:bg-rose-500">
+            <Badge className="font-display mb-4 bg-rose-500 text-white hover:bg-rose-500">
               Your Journey
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-section mb-4">
               Your 6-Phase Comeback Story
             </h2>
-            <p className="text-cream-200">
+            <p className="font-body text-charcoal-100">
               A supportive, step-by-step process designed to rebuild your
               confidence and launch your return.
             </p>
@@ -613,7 +617,7 @@ export default function ReturningWomenPage() {
                 key={phase.number}
                 className={`flex gap-4 p-6 rounded-lg ${
                   phase.tier === "guidance"
-                    ? "bg-forest-700/50"
+                    ? "bg-charcoal-700/50"
                     : phase.tier === "planning"
                       ? "bg-rose-600/20 border border-rose-500/30"
                       : "bg-purple-600/20 border border-purple-500/30"
@@ -626,15 +630,15 @@ export default function ReturningWomenPage() {
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <h3 className="text-lg font-bold">{phase.title}</h3>
+                    <h3 className="heading-card">{phase.title}</h3>
                     <Badge
-                      className={
+                      className={`font-display ${
                         phase.tier === "guidance"
-                          ? "bg-cream-100 text-forest-800"
+                          ? "bg-white text-charcoal-800"
                           : phase.tier === "planning"
                             ? "bg-rose-500 text-white"
                             : "bg-purple-500 text-white"
-                      }
+                      }`}
                     >
                       {phase.tier === "guidance"
                         ? "Guidance+"
@@ -642,18 +646,18 @@ export default function ReturningWomenPage() {
                           ? "Planning+"
                           : "Mentorship"}
                     </Badge>
-                    <span className="text-sm text-cream-300">
+                    <span className="text-micro text-charcoal-300">
                       {phase.duration}
                     </span>
                   </div>
-                  <p className="text-cream-200 text-sm mb-3">
+                  <p className="font-body text-charcoal-200 text-sm mb-3">
                     {phase.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {phase.tools.map((tool, toolIndex) => (
                       <span
                         key={toolIndex}
-                        className="text-xs bg-forest-900/50 px-2 py-1 rounded"
+                        className="text-xs bg-charcoal-900/50 px-2 py-1 rounded"
                       >
                         {tool}
                       </span>
@@ -661,7 +665,7 @@ export default function ReturningWomenPage() {
                   </div>
                 </div>
                 {index < phases.length - 1 && (
-                  <ChevronRight className="hidden md:block h-6 w-6 text-cream-400 self-center" />
+                  <ChevronRight className="hidden md:block h-6 w-6 text-charcoal-400 self-center" />
                 )}
               </div>
             ))}
@@ -670,16 +674,16 @@ export default function ReturningWomenPage() {
       </section>
 
       {/* Packages Section */}
-      <section id="packages" className="py-16 md:py-24 bg-cream-50">
-        <div className="container px-4 md:px-6">
+      <section id="packages" className="section-cream section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-rose-100 text-rose-700">
+            <Badge className="font-display mb-4 bg-rose-100 text-rose-700">
               Choose Your Path
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-forest-900 mb-4">
+            <h2 className="heading-section text-charcoal-900 mb-4">
               Investment in Your Comeback
             </h2>
-            <p className="text-muted-foreground">
+            <p className="font-body text-charcoal-600">
               Select the level of support that matches your needs. All packages
               include access to our supportive women&apos;s community.
             </p>
@@ -689,6 +693,8 @@ export default function ReturningWomenPage() {
             {packages.map((pkg) => (
               <Card
                 key={pkg.tier}
+                variant="light"
+                hover="lift"
                 className={`relative ${
                   pkg.popular
                     ? "border-2 border-rose-500 shadow-lg"
@@ -697,7 +703,7 @@ export default function ReturningWomenPage() {
               >
                 {pkg.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-rose-600 text-white">
+                    <Badge className="font-display bg-rose-600 text-white">
                       Most Popular
                     </Badge>
                   </div>
@@ -705,20 +711,20 @@ export default function ReturningWomenPage() {
                 <CardHeader className="text-center pb-4">
                   <Badge
                     variant="outline"
-                    className={`w-fit mx-auto mb-2 ${
+                    className={`font-display w-fit mx-auto mb-2 ${
                       pkg.popular ? "border-rose-300 text-rose-700" : ""
                     }`}
                   >
                     {pkg.tagline}
                   </Badge>
-                  <CardTitle className="text-2xl">{pkg.name}</CardTitle>
+                  <CardTitle className="heading-card">{pkg.name}</CardTitle>
                   <div className="mt-2">
-                    <span className="text-sm text-muted-foreground line-through">
+                    <span className="text-micro text-charcoal-600 line-through">
                       {formatPrice(pkg.originalPrice)}
                     </span>
                     <span
                       className={`text-4xl font-bold block ${
-                        pkg.popular ? "text-rose-600" : "text-forest-900"
+                        pkg.popular ? "text-rose-600" : "text-charcoal-900"
                       }`}
                     >
                       {formatPrice(pkg.price)}
@@ -732,14 +738,14 @@ export default function ReturningWomenPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                    <p className="text-micro text-charcoal-500 uppercase tracking-wider mb-2">
                       What&apos;s Included
                     </p>
                     <ul className="space-y-2">
                       {pkg.features.map((feature, index) => (
                         <li
                           key={index}
-                          className="flex items-start gap-2 text-sm"
+                          className="flex items-start gap-2 text-sm font-body"
                         >
                           <Check className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
                           <span>{feature}</span>
@@ -749,14 +755,14 @@ export default function ReturningWomenPage() {
                   </div>
                   {pkg.notIncluded.length > 0 && (
                     <div className="pt-4 border-t">
-                      <p className="text-xs text-muted-foreground mb-2">
+                      <p className="text-micro text-charcoal-500 mb-2">
                         Not included:
                       </p>
                       <ul className="space-y-1">
                         {pkg.notIncluded.map((item, index) => (
                           <li
                             key={index}
-                            className="text-xs text-muted-foreground line-through"
+                            className="text-micro text-charcoal-500 line-through"
                           >
                             {item}
                           </li>
@@ -767,17 +773,13 @@ export default function ReturningWomenPage() {
                 </CardContent>
                 <CardFooter>
                   <Button
-                    className={`w-full ${
-                      pkg.popular
-                        ? "bg-rose-600 hover:bg-rose-700"
-                        : pkg.tier === "mentorship"
-                          ? "bg-forest-800 hover:bg-forest-900 text-cream-100"
-                          : ""
-                    }`}
+                    className="w-full"
                     variant={
-                      pkg.popular || pkg.tier === "mentorship"
-                        ? "default"
-                        : "outline"
+                      pkg.popular
+                        ? "uplift"
+                        : pkg.tier === "mentorship"
+                          ? "dark"
+                          : "upliftOutline"
                     }
                     asChild
                   >
@@ -791,7 +793,7 @@ export default function ReturningWomenPage() {
             ))}
           </div>
 
-          <p className="text-center text-sm text-muted-foreground mt-8">
+          <p className="text-center text-micro text-charcoal-500 mt-8">
             All prices are inclusive of GST. EMI options available.
             <br />
             100% satisfaction guarantee or full refund after first 2 sessions.
@@ -800,13 +802,13 @@ export default function ReturningWomenPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 md:py-24 bg-rose-500 text-white">
-        <div className="container px-4 md:px-6">
+      <section className="section-charcoal section-padding text-white">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-section mb-4">
               Comeback Success Stories
             </h2>
-            <p className="text-rose-100">
+            <p className="font-body text-charcoal-100">
               Real stories from real women who restarted their careers with
               confidence
             </p>
@@ -816,6 +818,7 @@ export default function ReturningWomenPage() {
             {testimonials.map((testimonial, index) => (
               <Card
                 key={index}
+                variant="dark"
                 className="bg-white/10 backdrop-blur-sm border-white/20"
               >
                 <CardHeader>
@@ -827,12 +830,12 @@ export default function ReturningWomenPage() {
                       />
                     ))}
                   </div>
-                  <Badge className="w-fit bg-white/20 text-white text-xs">
+                  <Badge className="font-display w-fit bg-white/20 text-white text-xs">
                     {testimonial.previousRole}
                   </Badge>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-rose-50 italic mb-4">
+                  <p className="text-sm font-body text-charcoal-50 italic mb-4">
                     &ldquo;{testimonial.quote}&rdquo;
                   </p>
                   <div className="flex items-center gap-3">
@@ -843,7 +846,7 @@ export default function ReturningWomenPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-sm">{testimonial.name}</p>
-                      <p className="text-xs text-rose-200">
+                      <p className="text-micro text-charcoal-200">
                         {testimonial.role}
                       </p>
                     </div>
@@ -856,12 +859,12 @@ export default function ReturningWomenPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container px-4 md:px-6">
+      <section className="bg-white section-padding">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
-              <Badge className="mb-4 bg-cream-200 text-forest-800">FAQ</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-forest-900 mb-4">
+              <Badge className="font-display mb-4 bg-charcoal-200 text-charcoal-800">FAQ</Badge>
+              <h2 className="heading-section text-charcoal-900 mb-4">
                 Common Questions
               </h2>
             </div>
@@ -869,10 +872,10 @@ export default function ReturningWomenPage() {
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left text-forest-900 hover:text-rose-600">
+                  <AccordionTrigger className="text-left text-charcoal-900 hover:text-rose-600">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
+                  <AccordionContent className="font-body text-charcoal-600">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -883,20 +886,20 @@ export default function ReturningWomenPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-forest-800 to-forest-900 text-cream-100">
-        <div className="container px-4 md:px-6">
+      <section className="section-purple section-padding text-white">
+        <div className="container-uplift">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-section mb-4">
               Ready to Write Your Comeback Story?
             </h2>
-            <p className="text-cream-200 text-lg mb-8">
+            <p className="font-body text-purple-100 text-lg mb-8">
               Your career break doesn&apos;t define you - your comeback will.
               Join thousands of women who&apos;ve successfully restarted.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-rose-600 hover:bg-rose-700 text-white"
+                variant="dark"
                 asChild
               >
                 <Link href="/auth/register?program=returning-women">
@@ -906,8 +909,8 @@ export default function ReturningWomenPage() {
               </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="border-cream-200 text-cream-100 hover:bg-cream-100/10"
+                variant="upliftOutline"
+                className="border-white text-white hover:bg-white/10"
                 asChild
               >
                 <Link href="/contact">Talk to an Advisor</Link>
