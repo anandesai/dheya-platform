@@ -1,0 +1,482 @@
+// Dheya Career Mentors Platform - Database Schema
+// https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ==========================================
+// ENUMS
+// ==========================================
+
+enum UserSegment {
+  EARLY_CAREER      // 22-30 years, Develop Advantage
+  MID_CAREER        // 30-45 years, Destination Mastery
+  SENIOR            // 45+ years, Design Legacy
+  RETURNING_WOMEN   // Any age, Specialized Track
+}
+
+enum PackageTier {
+  GUIDANCE          // Basic tier, Phases 1-2
+  PLANNING          // Advanced tier, Phases 1-5
+  MENTORSHIP        // Professional tier, Phases 1-6
+}
+
+enum ToolCategory {
+  ASSESSMENT        // BBD, Values, Interest inventories
+  WORKBOOK          // Identity design, Legacy visioning
+  FRAMEWORK         // K-P Matrix, Possibility Matrix
+  REPORT            // Generated reports
+  EXERCISE          // Guided exercises
+}
+
+enum ToolStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum AccessLevel {
+  FULL              // Complete access
+  VIEW_ONLY         // Can see results but not retake
+  TEASER            // Can preview first few questions
+  LOCKED            // No access, shows upgrade prompt
+}
+
+enum ProgressStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+  SKIPPED
+}
+
+enum BookingStatus {
+  SCHEDULED
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+}
+
+enum MentorLevel {
+  L1    // Certified Mentor
+  L2    // Expert Mentor
+  L3    // Master Mentor
+  L4    // Accredited Trainer
+}
+
+enum UserRole {
+  USER
+  MENTOR
+  ADMIN
+  SUPER_ADMIN
+}
+
+// ==========================================
+// AUTH & USER MODELS
+// ==========================================
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model User {
+  id                  String       @id @default(cuid())
+  email               String       @unique
+  emailVerified       DateTime?
+  hashedPassword      String?
+  phone               String?
+  firstName           String?
+  lastName            String?
+  image               String?
+  dateOfBirth         DateTime?
+  segment             UserSegment?
+  role                UserRole     @default(USER)
+  onboardingComplete  Boolean      @default(false)
+  onboardingData      Json?
+  createdAt           DateTime     @default(now())
+  updatedAt           DateTime     @updatedAt
+
+  accounts            Account[]
+  sessions            Session[]
+  userPackages        UserPackage[]
+  toolProgress        UserToolProgress[]
+  toolResults         ToolResult[]
+  bookings            Booking[]
+  mentor              Mentor?
+
+  @@index([segment])
+  @@index([email])
+}
+
+// ==========================================
+// TOOL & ASSESSMENT MODELS
+// ==========================================
+
+model Tool {
+  id                  String        @id @default(cuid())
+  code                String        @unique
+  name                String
+  shortDescription    String
+  longDescription     String        @db.Text
+  category            ToolCategory
+  estimatedMinutes    Int           @default(30)
+  totalQuestions      Int?
+  totalSteps          Int?
+  contentSchema       Json          // Structure definition
+  contentData         Json          // Actual questions/content
+  scoringLogic        Json?         // Scoring dimensions and thresholds
+  resultTemplate      Json?         // How to display results
+  status              ToolStatus    @default(DRAFT)
+  version             String        @default("1.0")
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  segmentTools        SegmentTool[]
+  packageAccess       PackageToolAccess[]
+  userProgress        UserToolProgress[]
+  toolResults         ToolResult[]
+
+  @@index([category])
+  @@index([status])
+}
+
+model SegmentTool {
+  id                  String        @id @default(cuid())
+  segment             UserSegment
+  toolId              String
+  tool                Tool          @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  phaseNumber         Int           // 1-6
+  orderInPhase        Int
+  customName          String?       // Override tool name for segment
+  customDescription   String?       // Override description for segment
+  customConfig        Json?         // Segment-specific configuration
+  isMandatory         Boolean       @default(true)
+  isVisible           Boolean       @default(true)
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@unique([segment, toolId])
+  @@index([segment, phaseNumber])
+}
+
+model ToolResult {
+  id                  String        @id @default(cuid())
+  userId              String
+  user                User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  toolId              String
+  tool                Tool          @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  responses           Json          // User's answers
+  scores              Json?         // Calculated scores
+  analysis            Json?         // AI analysis/interpretation
+  recommendations     Json?         // Generated recommendations
+  reportGenerated     Boolean       @default(false)
+  reportUrl           String?
+  attemptNumber       Int           @default(1)
+  completedAt         DateTime?
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@index([userId, toolId])
+  @@index([userId])
+}
+
+model UserToolProgress {
+  id                  String          @id @default(cuid())
+  userId              String
+  user                User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  toolId              String
+  tool                Tool            @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  status              ProgressStatus  @default(NOT_STARTED)
+  progressPercent     Int             @default(0)
+  currentSection      Int             @default(0)
+  savedResponses      Json?           // Auto-saved partial responses
+  startedAt           DateTime?
+  lastAccessedAt      DateTime?
+  completedAt         DateTime?
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
+
+  @@unique([userId, toolId])
+  @@index([userId])
+}
+
+// ==========================================
+// PACKAGE & ACCESS MODELS
+// ==========================================
+
+model Package {
+  id                  String        @id @default(cuid())
+  code                String        @unique
+  segment             UserSegment
+  tier                PackageTier
+  productName         String        // e.g., "Destination Mastery"
+  packageName         String        // e.g., "Guidance"
+  fullName            String        // e.g., "Destination Mastery - Guidance"
+  tagline             String?
+  description         String        @db.Text
+  priceINR            Int
+  discountPercent     Int           @default(0)
+  durationValue       Int           // Number
+  durationType        String        // weeks, months, years
+  totalSessions       Int
+  sessionDurationMins Int           @default(60)
+  sessionFrequency    String        // e.g., "bi-weekly"
+  mentorLevel         MentorLevel
+  features            Json?         // Array of feature strings
+  isActive            Boolean       @default(true)
+  isPublished         Boolean       @default(false)
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  packagePhases       PackagePhase[]
+  packageToolAccess   PackageToolAccess[]
+  userPackages        UserPackage[]
+  bookings            Booking[]
+
+  @@unique([segment, tier])
+  @@index([segment])
+  @@index([isActive, isPublished])
+}
+
+model PackagePhase {
+  id                  String        @id @default(cuid())
+  packageId           String
+  package             Package       @relation(fields: [packageId], references: [id], onDelete: Cascade)
+  phaseNumber         Int           // 1-6
+  phaseName           String        // e.g., "Diagnosis", "Clarity"
+  description         String?
+  isIncluded          Boolean       @default(true)
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@unique([packageId, phaseNumber])
+}
+
+model PackageToolAccess {
+  id                  String        @id @default(cuid())
+  packageId           String
+  package             Package       @relation(fields: [packageId], references: [id], onDelete: Cascade)
+  toolId              String
+  tool                Tool          @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  accessLevel         AccessLevel   @default(FULL)
+  teaserConfig        Json?         // What to show in teaser mode
+  lockedMessage       String?       // Custom message when locked
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@unique([packageId, toolId])
+}
+
+model UserPackage {
+  id                  String        @id @default(cuid())
+  userId              String
+  user                User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  packageId           String
+  package             Package       @relation(fields: [packageId], references: [id], onDelete: Cascade)
+  status              String        @default("active") // active, expired, cancelled
+  purchasedAt         DateTime      @default(now())
+  expiresAt           DateTime?
+  currentPhase        Int           @default(1)
+  sessionsUsed        Int           @default(0)
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@index([userId])
+  @@index([status])
+}
+
+// ==========================================
+// MENTOR & BOOKING MODELS
+// ==========================================
+
+model Mentor {
+  id                  String        @id @default(cuid())
+  userId              String        @unique
+  user                User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  level               MentorLevel   @default(L1)
+  specializations     UserSegment[]
+  certifications      String[]
+  bio                 String?       @db.Text
+  yearsExperience     Int?
+  totalMentees        Int           @default(0)
+  rating              Float?
+  linkedinUrl         String?
+  isActive            Boolean       @default(true)
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  availability        MentorAvailability[]
+  bookings            Booking[]
+
+  @@index([level])
+  @@index([isActive])
+}
+
+model MentorAvailability {
+  id                  String        @id @default(cuid())
+  mentorId            String
+  mentor              Mentor        @relation(fields: [mentorId], references: [id], onDelete: Cascade)
+  dayOfWeek           Int           // 0-6 (Sunday-Saturday)
+  startTime           String        // HH:MM format
+  endTime             String        // HH:MM format
+  isRecurring         Boolean       @default(true)
+  specificDate        DateTime?     // For non-recurring slots
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@index([mentorId, dayOfWeek])
+}
+
+model Booking {
+  id                  String        @id @default(cuid())
+  userId              String
+  user                User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  mentorId            String
+  mentor              Mentor        @relation(fields: [mentorId], references: [id], onDelete: Cascade)
+  packageId           String
+  package             Package       @relation(fields: [packageId], references: [id])
+  sessionNumber       Int
+  scheduledAt         DateTime
+  duration            Int           @default(60) // minutes
+  status              BookingStatus @default(SCHEDULED)
+  meetingUrl          String?
+  notes               String?       @db.Text
+  feedback            Json?         // Post-session feedback
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@index([userId, status])
+  @@index([mentorId, status])
+  @@index([scheduledAt])
+}
+
+// ==========================================
+// PROGRESS & ANALYTICS MODELS
+// ==========================================
+
+model UserPhaseProgress {
+  id                  String          @id @default(cuid())
+  userId              String
+  segment             UserSegment
+  phaseNumber         Int
+  status              ProgressStatus  @default(NOT_STARTED)
+  progressPercent     Int             @default(0)
+  startedAt           DateTime?
+  completedAt         DateTime?
+  notes               String?         @db.Text
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
+
+  @@unique([userId, segment, phaseNumber])
+  @@index([userId])
+}
+
+model CLIQIScore {
+  id                  String        @id @default(cuid())
+  userId              String
+  assessmentType      String        // "pre" or "post" or "interim"
+  selfAwareness       Int           // 0-100
+  opportunityAwareness Int          // 0-100
+  goalClarity         Int           // 0-100
+  planningCapability  Int           // 0-100
+  decisionConfidence  Int           // 0-100
+  totalScore          Int           // 0-100
+  assessedAt          DateTime      @default(now())
+  createdAt           DateTime      @default(now())
+
+  @@index([userId])
+  @@index([assessedAt])
+}
+
+// ==========================================
+// CONTENT & CONFIGURATION MODELS
+// ==========================================
+
+model FAQ {
+  id                  String        @id @default(cuid())
+  question            String
+  answer              String        @db.Text
+  category            String?       // general, pricing, program, etc.
+  segment             UserSegment?  // Segment-specific FAQ
+  orderIndex          Int           @default(0)
+  isPublished         Boolean       @default(true)
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@index([category])
+  @@index([segment])
+}
+
+model Testimonial {
+  id                  String        @id @default(cuid())
+  name                String
+  role                String?
+  company             String?
+  segment             UserSegment?
+  quote               String        @db.Text
+  imageUrl            String?
+  rating              Int?          // 1-5
+  isPublished         Boolean       @default(true)
+  orderIndex          Int           @default(0)
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@index([segment])
+  @@index([isPublished])
+}
+
+model ContactSubmission {
+  id                  String        @id @default(cuid())
+  name                String
+  email               String
+  phone               String?
+  segment             UserSegment?
+  message             String        @db.Text
+  source              String?       // Where the form was submitted from
+  status              String        @default("new") // new, contacted, converted
+  notes               String?       @db.Text
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
