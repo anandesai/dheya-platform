@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from "lucide-react"
+import { Linkedin, Twitter, Instagram } from "lucide-react"
 
 const footerNavigation = {
   programs: [
@@ -10,6 +10,7 @@ const footerNavigation = {
   ],
   company: [
     { name: "About Us", href: "/about" },
+    { name: "Philosophy", href: "/philosophy" },
     { name: "Our Mentors", href: "/mentors" },
     { name: "Success Stories", href: "/success-stories" },
     { name: "Blog", href: "/blog" },
@@ -29,48 +30,35 @@ const footerNavigation = {
 
 export function MarketingFooter() {
   return (
-    <footer className="bg-cream-100 border-t border-cream-200">
-      {/* Main Footer Content */}
-      <div className="container-uplift py-16">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
+    <footer className="bg-[#FDF8F0] border-t border-charcoal-900/10 text-charcoal-900 pt-20 pb-12">
+      <div className="container-uplift">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-24 mb-20">
           {/* Brand Section */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 bg-charcoal-800 rounded-full flex items-center justify-center group-hover:bg-purple-500 transition-colors">
-                <span className="text-cream-50 font-display font-bold text-lg">D</span>
-              </div>
-              <span className="font-display font-bold text-xl text-charcoal-800">
-                Dheya Career Mentors
+          <div className="lg:col-span-4 space-y-8">
+            <Link href="/" className="block">
+              <span className="font-display font-bold text-6xl text-charcoal-900 tracking-tighter uppercase leading-none">
+                UPLIFT <br /> FOUNDERS
               </span>
             </Link>
-            <p className="mt-4 font-body text-charcoal-600 max-w-md leading-relaxed">
-              India&apos;s premier career mentoring platform. Helping
-              professionals discover clarity, purpose, and fulfillment in their
-              careers for over 18 years.
+            <p className="font-body text-lg text-charcoal-600 max-w-sm leading-relaxed">
+              Helping founders to GROW through uncertainty & MAXIMIZE their impact.
             </p>
-            <div className="mt-6 space-y-3">
-              <div className="flex items-center gap-3 text-sm text-charcoal-600">
-                <Mail className="h-4 w-4 text-purple-500" />
-                <a href="mailto:hello@dheya.com" className="font-body hover:text-purple-600 transition-colors">
-                  hello@dheya.com
-                </a>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-charcoal-600">
-                <Phone className="h-4 w-4 text-purple-500" />
-                <a href="tel:+919876543210" className="font-body hover:text-purple-600 transition-colors">
-                  +91 98765 43210
-                </a>
-              </div>
-              <div className="flex items-start gap-3 text-sm text-charcoal-600">
-                <MapPin className="h-4 w-4 text-purple-500 mt-0.5" />
-                <span className="font-body">Pune, Maharashtra, India</span>
-              </div>
+            <div className="flex gap-4">
+              <a href="#" className="w-10 h-10 rounded-full border border-charcoal-900 flex items-center justify-center hover:bg-charcoal-900 hover:text-white transition-colors">
+                <Linkedin className="h-4 w-4" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full border border-charcoal-900 flex items-center justify-center hover:bg-charcoal-900 hover:text-white transition-colors">
+                <Twitter className="h-4 w-4" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full border border-charcoal-900 flex items-center justify-center hover:bg-charcoal-900 hover:text-white transition-colors">
+                <Instagram className="h-4 w-4" />
+              </a>
             </div>
           </div>
 
           {/* Programs */}
-          <div>
-            <h3 className="text-micro text-charcoal-800 mb-4">
+          <div className="lg:col-span-2">
+            <h3 className="text-xs font-display font-bold text-charcoal-400 uppercase tracking-widest mb-6">
               Programs
             </h3>
             <ul className="space-y-3">
@@ -78,7 +66,7 @@ export function MarketingFooter() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="font-body text-sm text-charcoal-600 hover:text-purple-600 transition-colors"
+                    className="font-display text-sm font-bold text-charcoal-900 hover:text-purple-600 transition-colors uppercase tracking-wide block py-1"
                   >
                     {item.name}
                   </Link>
@@ -88,8 +76,8 @@ export function MarketingFooter() {
           </div>
 
           {/* Company */}
-          <div>
-            <h3 className="text-micro text-charcoal-800 mb-4">
+          <div className="lg:col-span-2">
+            <h3 className="text-xs font-display font-bold text-charcoal-400 uppercase tracking-widest mb-6">
               Company
             </h3>
             <ul className="space-y-3">
@@ -97,7 +85,7 @@ export function MarketingFooter() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="font-body text-sm text-charcoal-600 hover:text-purple-600 transition-colors"
+                    className="font-display text-sm font-bold text-charcoal-900 hover:text-purple-600 transition-colors uppercase tracking-wide block py-1"
                   >
                     {item.name}
                   </Link>
@@ -107,8 +95,8 @@ export function MarketingFooter() {
           </div>
 
           {/* Support */}
-          <div>
-            <h3 className="text-micro text-charcoal-800 mb-4">
+          <div className="lg:col-span-2">
+            <h3 className="text-xs font-display font-bold text-charcoal-400 uppercase tracking-widest mb-6">
               Support
             </h3>
             <ul className="space-y-3">
@@ -116,7 +104,7 @@ export function MarketingFooter() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="font-body text-sm text-charcoal-600 hover:text-purple-600 transition-colors"
+                    className="font-display text-sm font-bold text-charcoal-900 hover:text-purple-600 transition-colors uppercase tracking-wide block py-1"
                   >
                     {item.name}
                   </Link>
@@ -126,52 +114,15 @@ export function MarketingFooter() {
           </div>
         </div>
 
-        {/* Trust Badges */}
-        <div className="mt-12 pt-10 border-t border-cream-200">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="font-display text-3xl font-bold text-purple-500">18+</div>
-              <div className="text-micro text-charcoal-500 mt-1">Years of Excellence</div>
-            </div>
-            <div>
-              <div className="font-display text-3xl font-bold text-purple-500">100K+</div>
-              <div className="text-micro text-charcoal-500 mt-1">Professionals Mentored</div>
-            </div>
-            <div>
-              <div className="font-display text-3xl font-bold text-purple-500">91%</div>
-              <div className="text-micro text-charcoal-500 mt-1">Clarity Achievement</div>
-            </div>
-            <div>
-              <div className="font-display text-3xl font-bold text-purple-500">4.9/5</div>
-              <div className="text-micro text-charcoal-500 mt-1">Client Satisfaction</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="bg-charcoal-800">
-        <div className="container-uplift py-6">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <p className="font-body text-sm text-cream-200">
+        {/* Bottom Bar */}
+        <div className="border-t border-charcoal-900/10 pt-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <p className="font-display text-xs font-bold text-charcoal-400 uppercase tracking-widest">
               &copy; {new Date().getFullYear()} Dheya Career Mentors. All rights reserved.
             </p>
-            <div className="flex items-center gap-4">
-              {footerNavigation.social.map((item) => {
-                const Icon = item.icon
-                return (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-full bg-charcoal-700 flex items-center justify-center text-cream-200 hover:bg-purple-500 hover:text-white transition-colors"
-                  >
-                    <span className="sr-only">{item.name}</span>
-                    <Icon className="h-4 w-4" />
-                  </a>
-                )
-              })}
+            <div className="flex items-center gap-6">
+              <span className="font-display text-xs font-bold text-charcoal-400 uppercase tracking-widest">Privacy Policy</span>
+              <span className="font-display text-xs font-bold text-charcoal-400 uppercase tracking-widest">Terms of Use</span>
             </div>
           </div>
         </div>

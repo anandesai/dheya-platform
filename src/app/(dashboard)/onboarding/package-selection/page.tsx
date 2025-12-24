@@ -28,7 +28,7 @@ interface PackageTier {
   description: string
   price: number
   originalPrice?: number
-  sessions: number
+  sessions: number | string
   mentorLevel: string
   features: string[]
   highlighted?: boolean
@@ -41,8 +41,8 @@ const packagesBySegment: Record<SegmentId, PackageTier[]> = {
       id: "guidance",
       name: "Career Guidance",
       description: "Foundation package for career clarity",
-      price: 25000,
-      sessions: 3,
+      price: 13999,
+      sessions: 2,
       mentorLevel: "Associate",
       features: [
         "Identity Discovery Assessment",
@@ -56,8 +56,8 @@ const packagesBySegment: Record<SegmentId, PackageTier[]> = {
       id: "planning",
       name: "Career Planning",
       description: "Comprehensive career planning with action roadmap",
-      price: 45000,
-      sessions: 6,
+      price: 26999,
+      sessions: "4-5",
       mentorLevel: "Senior",
       highlighted: true,
       badge: "Most Popular",
@@ -75,8 +75,8 @@ const packagesBySegment: Record<SegmentId, PackageTier[]> = {
       id: "mentorship",
       name: "Career Mentorship",
       description: "Full mentorship program for career transformation",
-      price: 75000,
-      sessions: 12,
+      price: 64999,
+      sessions: "12-18",
       mentorLevel: "Principal",
       features: [
         "All Planning Features",
@@ -95,8 +95,8 @@ const packagesBySegment: Record<SegmentId, PackageTier[]> = {
       id: "guidance",
       name: "Career Guidance",
       description: "Break through career stagnation",
-      price: 35000,
-      sessions: 3,
+      price: 16999,
+      sessions: 2,
       mentorLevel: "Senior",
       features: [
         "BBD Syndrome Assessment",
@@ -110,8 +110,8 @@ const packagesBySegment: Record<SegmentId, PackageTier[]> = {
       id: "planning",
       name: "Career Planning",
       description: "Strategic career pivot planning",
-      price: 65000,
-      sessions: 8,
+      price: 32999,
+      sessions: "4-5",
       mentorLevel: "Principal",
       highlighted: true,
       badge: "Best Value",
@@ -130,8 +130,8 @@ const packagesBySegment: Record<SegmentId, PackageTier[]> = {
       id: "mentorship",
       name: "Career Mentorship",
       description: "Executive-level career transformation",
-      price: 110000,
-      sessions: 15,
+      price: 79999,
+      sessions: "12-18",
       mentorLevel: "Executive",
       features: [
         "All Planning Features",
@@ -150,8 +150,8 @@ const packagesBySegment: Record<SegmentId, PackageTier[]> = {
       id: "guidance",
       name: "Legacy Guidance",
       description: "Define your second innings vision",
-      price: 45000,
-      sessions: 4,
+      price: 11999,
+      sessions: 2,
       mentorLevel: "Principal",
       features: [
         "Wisdom Assets Portfolio",
@@ -165,8 +165,8 @@ const packagesBySegment: Record<SegmentId, PackageTier[]> = {
       id: "planning",
       name: "Legacy Planning",
       description: "Comprehensive legacy planning",
-      price: 85000,
-      sessions: 10,
+      price: 27999,
+      sessions: "4-5",
       mentorLevel: "Executive",
       highlighted: true,
       badge: "Recommended",
@@ -185,8 +185,8 @@ const packagesBySegment: Record<SegmentId, PackageTier[]> = {
       id: "mentorship",
       name: "Legacy Mentorship",
       description: "Complete legacy transformation",
-      price: 150000,
-      sessions: 18,
+      price: 64999,
+      sessions: "12-18",
       mentorLevel: "C-Suite",
       features: [
         "All Planning Features",
@@ -205,8 +205,8 @@ const packagesBySegment: Record<SegmentId, PackageTier[]> = {
       id: "guidance",
       name: "Restart Guidance",
       description: "Rebuild confidence and clarity",
-      price: 25000,
-      sessions: 4,
+      price: 13999,
+      sessions: 2,
       mentorLevel: "Senior",
       features: [
         "Confidence Assessment",
@@ -221,8 +221,8 @@ const packagesBySegment: Record<SegmentId, PackageTier[]> = {
       id: "planning",
       name: "Restart Planning",
       description: "Strategic career re-entry planning",
-      price: 45000,
-      sessions: 8,
+      price: 26999,
+      sessions: "4-5",
       mentorLevel: "Principal",
       highlighted: true,
       badge: "Most Chosen",
@@ -241,8 +241,8 @@ const packagesBySegment: Record<SegmentId, PackageTier[]> = {
       id: "mentorship",
       name: "Restart Mentorship",
       description: "Complete restart transformation",
-      price: 75000,
-      sessions: 12,
+      price: 64999,
+      sessions: "12-18",
       mentorLevel: "Executive",
       features: [
         "All Planning Features",
@@ -335,13 +335,12 @@ export default function PackageSelectionPage() {
           <Card
             key={pkg.id}
             variant="light"
-            className={`relative cursor-pointer transition-all ${
-              selectedPackage === pkg.id
-                ? "border-purple-500 border-2 shadow-lg"
-                : pkg.highlighted
+            className={`relative cursor-pointer transition-all ${selectedPackage === pkg.id
+              ? "border-purple-500 border-2 shadow-lg"
+              : pkg.highlighted
                 ? "border-purple-200 border-2 shadow-md"
                 : "hover:border-purple-300 hover:shadow-md"
-            }`}
+              }`}
             onClick={() => handleSelectPackage(pkg.id)}
           >
             {pkg.badge && (
@@ -385,13 +384,12 @@ export default function PackageSelectionPage() {
 
               {/* Select button */}
               <Button
-                className={`w-full ${
-                  selectedPackage === pkg.id
-                    ? "bg-purple-500 hover:bg-purple-600"
-                    : pkg.highlighted
+                className={`w-full ${selectedPackage === pkg.id
+                  ? "bg-purple-500 hover:bg-purple-600"
+                  : pkg.highlighted
                     ? "bg-purple-500 hover:bg-purple-600"
                     : "bg-charcoal-800 hover:bg-charcoal-900"
-                }`}
+                  }`}
                 variant={selectedPackage === pkg.id ? "default" : "default"}
               >
                 {selectedPackage === pkg.id ? "Selected" : "Select Package"}

@@ -5,12 +5,10 @@ import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import {
   Crown,
   Check,
@@ -19,16 +17,14 @@ import {
   Gem,
   Briefcase,
   Building2,
-  Users,
-  Clock,
-  Award,
   Star,
-  ChevronRight,
   Lightbulb,
   TreePine,
   GraduationCap,
   HandHeart,
   Coins,
+  Heart,
+  Compass,
 } from "lucide-react"
 import {
   Accordion,
@@ -201,24 +197,25 @@ const packages = [
     tier: "guidance",
     name: "Guidance",
     tagline: "Reflect & clarify",
-    price: 45000,
-    originalPrice: 55000,
-    sessions: 6,
-    duration: "8 weeks",
-    mentorLevel: "Senior Expert (L2)",
+    price: 11999,
+    originalPrice: 15999,
+    sessions: 2,
+    duration: "2-3 weeks",
+    mentorLevel: "Principal Career Mentor",
     phases: "1-2",
     features: [
       "6 one-on-one mentor sessions",
-      "Wisdom Assets Portfolio",
+      "Life Realignment Assessment",
+      "Expertise inventory",
+      "Second innings options exploration",
       "Legacy Vision Canvas",
       "Financial Freedom Calculator",
-      "2 Core Legacy Workbooks",
       "Email support",
       "Bi-weekly progress check-ins",
-      "Senior network introductions",
     ],
     notIncluded: [
-      "Board positioning support",
+      "Consulting practice setup",
+      "Board positioning",
       "Platform building",
       "Ongoing mentorship",
     ],
@@ -227,25 +224,24 @@ const packages = [
     tier: "planning",
     name: "Planning",
     tagline: "Complete transformation",
-    price: 85000,
-    originalPrice: 100000,
-    sessions: 12,
-    duration: "16 weeks",
-    mentorLevel: "Master Mentor (L3)",
+    price: 27999,
+    originalPrice: 35999,
+    sessions: "4-5",
+    duration: "6 weeks",
+    mentorLevel: "Executive Career Mentor",
     phases: "1-5",
     popular: true,
     features: [
       "12 one-on-one mentor sessions",
+      "Second Innings Plan",
+      "Consulting practice setup",
+      "Board positioning",
+      "Knowledge documentation",
       "Full Assessment Suite",
-      "All Legacy Workbooks",
-      "Second Innings Strategy Map",
-      "Board Positioning Toolkit",
       "Executive Profile Enhancement",
       "Strategic Network Building",
-      "Speaking/Writing Support",
       "Weekly progress reports",
       "Priority support",
-      "VIP network access",
     ],
     notIncluded: ["Extended executive partnership"],
   },
@@ -253,26 +249,23 @@ const packages = [
     tier: "mentorship",
     name: "Mentorship",
     tagline: "Legacy partnership",
-    price: 150000,
-    originalPrice: 180000,
-    sessions: 24,
+    price: 64999,
+    originalPrice: 84999,
+    sessions: "12-18",
     duration: "12 months",
-    mentorLevel: "C-Suite Mentor (L4)",
+    mentorLevel: "C-Suite Career Mentor",
     phases: "1-6",
     features: [
       "24 one-on-one mentor sessions",
+      "Legacy project development",
+      "Book/memoir facilitation",
+      "Mentorship practice establishment",
       "Full Assessment Suite + AI Insights",
-      "All Workbooks + Premium Content",
-      "C-Suite Mentor Partnership",
       "Board Search Support",
-      "Book/Thought Leadership Development",
-      "Institution Building Guidance",
       "Family Wealth Transition Planning",
       "Bi-weekly executive sessions",
       "24/7 priority support",
       "Exclusive CXO network access",
-      "24-month post-program support",
-      "Annual legacy review sessions",
     ],
     notIncluded: [],
   },
@@ -352,69 +345,93 @@ function formatPrice(price: number): string {
 export default function SeniorPage() {
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="section-cream section-padding">
-        <div className="container-uplift">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-1 space-y-6">
-              <div className="flex items-center gap-2">
-                <Badge className="font-display bg-gold-100 text-gold-800 hover:bg-gold-100">
-                  <Crown className="h-3 w-3 mr-1" />
-                  SENIOR PROFESSIONALS (45+)
-                </Badge>
+      {/* Hero Section - Legacy & Wisdom (Gold/Charcoal) */}
+      <section className="relative overflow-hidden bg-charcoal-950 pt-20 pb-32">
+        <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-[0.03]"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-sun-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-900/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div className="container-uplift relative z-10">
+          <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+            <div className="flex-1 space-y-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sun-500/10 border border-sun-500/20 text-sun-400 text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
+                <Gem className="h-3 w-3" />
+                Senior Professionals (45+)
               </div>
-              <h1 className="text-display text-charcoal-900">
-                DESIGN{" "}
-                <span className="text-gold-600">LEGACY</span>
+              <h1 className="text-display text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1]">
+                Design Your <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-sun-400 to-amber-200">Living Legacy</span>
               </h1>
-              <p className="text-lg md:text-xl font-body text-charcoal-600 max-w-xl">
-                Transform your wealth of experience into lasting impact. Design
-                your second innings with purpose - whether in corporate advisory,
-                consulting, entrepreneurship, or giving back.
+              <p className="text-xl text-charcoal-300 max-w-xl leading-relaxed">
+                Your experience is your greatest asset. Transition from success to significance, and architect a &quot;Second Innings&quot; that defines your impact.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <Button
-                  size="lg"
-                  variant="uplift"
+                  size="xl"
+                  className="bg-sun-500 text-charcoal-950 hover:bg-sun-400 font-bold shadow-xl shadow-sun-500/20"
                   asChild
                 >
                   <Link href="#packages">
-                    View Packages
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    View Programs
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="upliftOutline" asChild>
-                  <Link href="/contact">Book Free Consultation</Link>
+                <Button size="xl" variant="outline" asChild className="border-white/20 text-white hover:bg-white/10 bg-transparent">
+                  <Link href="/contact">Book Advisor Call</Link>
                 </Button>
               </div>
-              <div className="flex flex-wrap gap-6 pt-4 text-micro text-charcoal-500">
-                <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-gold-600" />
-                  <span>8 weeks to 12 months</span>
+
+              <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
+                <div>
+                  <div className="text-3xl font-display font-bold text-white">100+</div>
+                  <div className="text-xs font-bold text-charcoal-400 uppercase tracking-wider mt-1">CXOs Mentored</div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Users className="h-4 w-4 text-gold-600" />
-                  <span>C-Suite Mentoring</span>
+                <div>
+                  <div className="text-3xl font-display font-bold text-white">20y+</div>
+                  <div className="text-xs font-bold text-charcoal-400 uppercase tracking-wider mt-1">Avg Experience</div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Award className="h-4 w-4 text-gold-600" />
-                  <span>18+ Years Experience</span>
+                <div>
+                  <div className="text-3xl font-display font-bold text-white">4.9/5</div>
+                  <div className="text-xs font-bold text-charcoal-400 uppercase tracking-wider mt-1">Satisfaction</div>
                 </div>
               </div>
             </div>
-            <div className="flex-1 relative">
-              <div className="relative w-full aspect-square max-w-md mx-auto">
-                <div className="absolute inset-0 bg-gold-200 rounded-full opacity-20 animate-pulse" />
-                <div className="absolute inset-4 bg-gold-300 rounded-full opacity-20" />
-                <div className="absolute inset-8 bg-white rounded-full shadow-xl flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <Crown className="h-16 w-16 text-gold-600 mx-auto mb-4" />
-                    <p className="text-2xl font-bold text-charcoal-900">
-                      15,000+
-                    </p>
-                    <p className="text-micro text-charcoal-600">
-                      Legacies designed
-                    </p>
+
+            <div className="flex-1 relative w-full max-w-lg">
+              <div className="relative aspect-square">
+                <div className="absolute inset-0 bg-gradient-to-br from-sun-800/20 to-charcoal-800 rounded-[2.5rem] transform rotate-6 scale-95 opacity-80 border border-white/5"></div>
+                <div className="absolute inset-0 bg-charcoal-900/80 rounded-[2rem] shadow-2xl overflow-hidden border border-white/10 backdrop-blur-sm">
+                  <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-10"></div>
+                  <div className="h-full w-full flex flex-col items-center justify-center p-8 text-center">
+                    <Gem className="h-24 w-24 text-sun-500 mb-6 drop-shadow-[0_0_25px_rgba(250,204,21,0.2)]" />
+                    <h3 className="text-2xl font-display font-bold text-white mb-4">Legacy Architect</h3>
+                    <p className="text-charcoal-400 font-medium">For leaders ready to define their next chapter.</p>
+                  </div>
+                </div>
+
+                {/* Floating Cards */}
+                <div className="absolute -left-6 top-1/4 bg-charcoal-900/90 backdrop-blur-md border border-white/20 p-4 rounded-xl shadow-xl animate-float-slow max-w-[200px]">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-sun-500/20 flex-shrink-0 flex items-center justify-center mt-1">
+                      <Briefcase className="w-4 h-4 text-sun-500" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-white">Portfolio Career</div>
+                      <div className="text-xs text-charcoal-400 mt-1">Board roles, consulting, & more.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="absolute -right-4 bottom-1/4 bg-charcoal-900/90 backdrop-blur-md border border-white/20 p-4 rounded-xl shadow-xl animate-float-delayed max-w-[200px]">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-purple-500/20 flex-shrink-0 flex items-center justify-center mt-1">
+                      <Heart className="w-4 h-4 text-purple-400" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-white">Social Impact</div>
+                      <div className="text-xs text-charcoal-400 mt-1">Give back with purpose.</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -423,58 +440,43 @@ export default function SeniorPage() {
         </div>
       </section>
 
-      {/* Legacy Paths Section */}
-      <section className="section-charcoal section-padding text-cream-100">
+      {/* Second Innings Section - Sophisticated */}
+      <section className="section-padding bg-cream-50">
         <div className="container-uplift">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="font-display mb-4 bg-gold-400 text-charcoal-900 hover:bg-gold-400">
-              <Sparkles className="h-3 w-3 mr-1" />
-              SECOND INNINGS
-            </Badge>
-            <h2 className="heading-section text-cream-100 mb-4">
-              Your Experience Opens Many Doors
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-charcoal-100 text-charcoal-700 text-xs font-bold uppercase tracking-widest mb-6">
+              <Compass className="h-3 w-3" />
+              The Next Chapter
+            </div>
+            <h2 className="text-display sm:text-5xl text-charcoal-900 mb-6">
+              Your <span className="text-sun-600">Second Innings</span> Options
             </h2>
-            <p className="font-body text-cream-200">
-              After decades of building expertise, you have multiple paths for
-              a fulfilling second innings. Explore what resonates with you.
+            <p className="text-body-lg text-charcoal-600">
+              Retirement is an outdated concept. Today&apos;s leaders are curating a portfolio of high-impact engagements.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {legacyPaths.map((path, index) => {
-              const Icon = path.icon
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {legacyPaths.map((option, index) => {
+              const Icon = option.icon
               return (
                 <Card
                   key={index}
-                  variant="dark"
-                  hover="lift"
+                  className="group relative border-0 bg-white shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
                 >
-                  <CardHeader>
-                    <div className="w-14 h-14 rounded-full bg-gold-400 flex items-center justify-center mb-4">
-                      <Icon className="h-7 w-7 text-charcoal-900" />
+                  <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-sun-400 to-amber-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <CardHeader className="text-center pt-10 pb-2">
+                    <div className="w-16 h-16 mx-auto rounded-full bg-charcoal-50 group-hover:bg-sun-50 flex items-center justify-center mb-6 transition-colors duration-300">
+                      <Icon className="h-8 w-8 text-charcoal-600 group-hover:text-sun-600 transition-colors" />
                     </div>
-                    <CardTitle className="heading-card text-cream-100">
-                      {path.name}
+                    <CardTitle className="text-2xl font-display font-bold text-charcoal-900 mb-3">
+                      {option.name}
                     </CardTitle>
-                    <CardDescription className="font-body text-cream-300">
-                      {path.description}
-                    </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-micro font-display text-cream-400 uppercase tracking-wider mb-2">
-                      Opportunities
+                  <CardContent className="text-center pb-10 px-8">
+                    <p className="text-charcoal-600 leading-relaxed mb-6">
+                      {option.description}
                     </p>
-                    <ul className="space-y-1">
-                      {path.opportunities.map((opp, oppIndex) => (
-                        <li
-                          key={oppIndex}
-                          className="flex items-center gap-2 text-sm font-body text-cream-200"
-                        >
-                          <Check className="h-3 w-3 text-gold-400 flex-shrink-0" />
-                          <span>{opp}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </CardContent>
                 </Card>
               )
@@ -484,48 +486,43 @@ export default function SeniorPage() {
       </section>
 
       {/* Assessment Tools Section */}
-      <section className="section-sage section-padding">
+      <section className="bg-white section-padding">
         <div className="container-uplift">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="font-display mb-4 bg-gold-100 text-gold-800">
-              <Gem className="h-3 w-3 mr-1" />
-              LEGACY TOOLS
-            </Badge>
-            <h2 className="heading-section text-charcoal-900 mb-4">
-              Frameworks Designed for Senior Leaders
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sun-100 text-sun-700 text-xs font-bold uppercase tracking-widest mb-6">
+              <Sparkles className="h-3 w-3" />
+              Executive Tools
+            </div>
+            <h2 className="text-display sm:text-5xl text-charcoal-900 mb-6">
+              Legacy Frameworks
             </h2>
-            <p className="font-body text-charcoal-600">
-              Our assessment tools are specifically crafted to help experienced
-              professionals leverage their unique advantages for impactful second
-              innings.
+            <p className="text-body-lg text-charcoal-600">
+              Sophisticated tools to map your vast experience, values, and network into a cohesive strategy for your next phase.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {assessmentTools.map((tool, index) => {
               const Icon = tool.icon
               return (
                 <Card
                   key={index}
-                  variant="light"
-                  hover="lift"
+                  className="group border-0 shadow-none bg-transparent"
                 >
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div className="p-2 rounded-lg bg-gold-100 group-hover:bg-gold-200 transition-colors">
-                        <Icon className="h-5 w-5 text-gold-700" />
-                      </div>
-                      <Badge variant="outline" className="font-display text-xs">
-                        Phase {tool.phase}
-                      </Badge>
+                  <div className="h-full p-8 rounded-3xl bg-cream-50 hover:bg-white border border-transparent hover:border-sun-200 hover:shadow-xl hover:shadow-sun-500/5 transition-all duration-300">
+                    <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="h-6 w-6 text-charcoal-800" />
                     </div>
-                    <CardTitle className="heading-card mt-3">{tool.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm font-body text-charcoal-600">
+                    <div className="mb-4">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-charcoal-500 bg-charcoal-100 px-2 py-1 rounded-lg">
+                        Phase {tool.phase}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-display font-bold text-charcoal-900 mb-3">{tool.name}</h3>
+                    <p className="text-charcoal-600 leading-relaxed text-sm">
                       {tool.description}
                     </p>
-                  </CardContent>
+                  </div>
                 </Card>
               )
             })}
@@ -534,208 +531,147 @@ export default function SeniorPage() {
       </section>
 
       {/* 6-Phase Journey Section */}
-      <section className="bg-white section-padding">
-        <div className="container-uplift">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="font-display mb-4 bg-charcoal-100 text-charcoal-700">
-              THE JOURNEY
-            </Badge>
-            <h2 className="heading-section text-charcoal-900 mb-4">
-              Your 6-Phase Legacy Design
+      <section className="section-charcoal section-padding relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-[0.03]"></div>
+
+        <div className="container-uplift relative z-10">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-display text-white mb-6">
+              The Path To <span className="text-transparent bg-clip-text bg-gradient-to-r from-sun-400 to-amber-300">Significance</span>
             </h2>
-            <p className="font-body text-charcoal-600">
-              A thoughtful process to design a second innings that honors your
-              experience and creates lasting impact.
+            <p className="text-body-lg text-charcoal-300">
+              A dignified, comprehensive process to architect your legacy and define your contribution.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-4">
+          <div className="max-w-5xl mx-auto space-y-6">
             {phases.map((phase, index) => (
               <div
                 key={phase.number}
-                className={`flex gap-4 p-6 rounded-lg border-2 ${
-                  phase.tier === "guidance"
-                    ? "bg-gold-50 border-gold-200"
-                    : phase.tier === "planning"
-                      ? "bg-charcoal-50 border-charcoal-200"
-                      : "bg-purple-50 border-purple-200"
-                }`}
+                className="group relative flex flex-col md:flex-row gap-6 p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
               >
+                {/* Connector Line */}
+                {index < phases.length - 1 && (
+                  <div className="absolute left-10 top-20 bottom-0 w-px bg-white/10 hidden md:block group-hover:bg-sun-500/50 transition-colors"></div>
+                )}
+
                 <div className="flex-shrink-0">
-                  <div
-                    className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg ${
-                      phase.tier === "guidance"
-                        ? "bg-gold-400 text-charcoal-900"
-                        : phase.tier === "planning"
-                          ? "bg-charcoal-700 text-cream-100"
-                          : "bg-purple-600 text-white"
-                    }`}
-                  >
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center font-display font-bold text-lg shadow-lg transition-transform group-hover:scale-110 ${phase.tier === 'guidance' ? 'bg-charcoal-700 text-white border border-white/20' :
+                    phase.tier === 'planning' ? 'bg-purple-900 text-white border border-purple-700' :
+                      'bg-sun-500 text-charcoal-900 border border-sun-300'
+                    }`}>
                     {phase.number}
                   </div>
                 </div>
                 <div className="flex-1">
-                  <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <h3 className="heading-card text-charcoal-900">
+                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                    <h3 className="text-xl font-display font-bold text-white">
                       {phase.title}
                     </h3>
-                    <Badge
-                      className={`font-display ${
-                        phase.tier === "guidance"
-                          ? "bg-gold-400 text-charcoal-900"
-                          : phase.tier === "planning"
-                            ? "bg-charcoal-700 text-cream-100"
-                            : "bg-purple-600 text-white"
-                      }`}
-                    >
-                      {phase.tier === "guidance"
-                        ? "GUIDANCE+"
-                        : phase.tier === "planning"
-                          ? "PLANNING+"
-                          : "MENTORSHIP"}
-                    </Badge>
-                    <span className="text-micro text-charcoal-500">
+                    <div className={`text-xs font-bold px-2 py-1 rounded uppercase tracking-wider ${phase.tier === 'guidance' ? 'bg-white/10 text-charcoal-200' :
+                      phase.tier === 'planning' ? 'bg-purple-500/10 text-purple-200 border border-purple-500/20' :
+                        'bg-sun-500/20 text-sun-300 border border-sun-500/30'
+                      }`}>
+                      {phase.tier === "guidance" ? "Guidance+" : phase.tier === "planning" ? "Planning+" : "Mentorship"}
+                    </div>
+                    <span className="text-xs text-charcoal-400 font-medium uppercase tracking-wider border-l border-white/10 pl-3">
                       {phase.duration}
                     </span>
                   </div>
-                  <p className="font-body text-charcoal-600 text-sm mb-3">
+                  <p className="text-charcoal-300 text-base mb-4 max-w-2xl">
                     {phase.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {phase.tools.map((tool, toolIndex) => (
                       <span
                         key={toolIndex}
-                        className="text-micro font-body bg-white px-2 py-1 rounded border"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-medium bg-black/20 border border-white/10 text-charcoal-300"
                       >
+                        <div className="w-1 h-1 rounded-full bg-sun-500/50"></div>
                         {tool}
                       </span>
                     ))}
                   </div>
                 </div>
-                {index < phases.length - 1 && (
-                  <ChevronRight className="hidden md:block h-6 w-6 text-charcoal-500 self-center" />
-                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Packages Section */}
-      <section id="packages" className="section-sage section-padding">
-        <div className="container-uplift">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="font-display mb-4 bg-gold-100 text-gold-800">
-              CHOOSE YOUR PATH
-            </Badge>
-            <h2 className="heading-section text-charcoal-900 mb-4">
-              Investment in Your Legacy
+      {/* Packages Section - Premium Cards */}
+      <section id="packages" className="relative py-24 bg-cream-50 overflow-hidden">
+        <div className="container-uplift relative z-10">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-display sm:text-5xl text-charcoal-900 mb-6">
+              Invest In Your Legacy
             </h2>
-            <p className="font-body text-charcoal-600">
-              Select the partnership level that matches your ambitions. All
-              packages include access to our exclusive senior professional
-              network.
+            <p className="text-body-lg text-charcoal-600">
+              Select the level of strategic partnership you require.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {packages.map((pkg) => (
               <Card
                 key={pkg.tier}
-                variant="light"
-                hover="lift"
-                className={`relative ${
-                  pkg.popular
-                    ? "border-2 border-gold-500 shadow-lg"
-                    : "border-2"
-                }`}
+                className={`relative border-0 overflow-hidden flex flex-col h-full bg-white shadow-xl hover:shadow-2xl transition-all duration-300 ${pkg.popular
+                  ? "ring-4 ring-sun-500/30 scale-105 z-10"
+                  : ""
+                  }`}
               >
                 {pkg.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="font-display bg-gold-500 text-white">
-                      MOST POPULAR
-                    </Badge>
-                  </div>
+                  <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-sun-400 to-amber-500" />
                 )}
-                <CardHeader className="text-center pb-4">
-                  <Badge
-                    variant="outline"
-                    className={`font-display w-fit mx-auto mb-2 ${
-                      pkg.popular ? "border-gold-300 text-gold-700" : ""
-                    }`}
-                  >
-                    {pkg.tagline}
-                  </Badge>
-                  <CardTitle className="heading-card">{pkg.name}</CardTitle>
-                  <div className="mt-2">
-                    <span className="text-micro text-charcoal-500 line-through">
-                      {formatPrice(pkg.originalPrice)}
+
+                <CardHeader className="text-center pb-8 pt-10">
+                  {pkg.popular && (
+                    <span className="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-widest bg-sun-100 text-sun-700 px-2 py-1 rounded">
+                      Recommended
                     </span>
-                    <span
-                      className={`text-4xl font-bold block ${
-                        pkg.popular ? "text-gold-600" : "text-charcoal-900"
-                      }`}
-                    >
+                  )}
+                  <div className={`text-sm font-bold uppercase tracking-widest mb-2 text-charcoal-500`}>
+                    {pkg.tagline}
+                  </div>
+                  <CardTitle className="text-3xl font-display font-bold text-charcoal-900">
+                    {pkg.name}
+                  </CardTitle>
+                  <div className="mt-6 flex items-baseline justify-center gap-2">
+                    <span className="text-4xl font-bold text-charcoal-900">
                       {formatPrice(pkg.price)}
                     </span>
+                    <span className="text-sm line-through text-charcoal-400">
+                      {formatPrice(pkg.originalPrice)}
+                    </span>
                   </div>
-                  <CardDescription className="font-body mt-2">
-                    {pkg.sessions} sessions • {pkg.duration}
-                    <br />
-                    Phases {pkg.phases} • {pkg.mentorLevel}
-                  </CardDescription>
+                  <div className="mt-4 text-sm font-medium text-charcoal-600">
+                    {pkg.duration} • {pkg.sessions} Sessions
+                  </div>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <p className="text-micro font-display text-charcoal-500 uppercase tracking-wider mb-2">
-                      What&apos;s Included
-                    </p>
-                    <ul className="space-y-2">
-                      {pkg.features.map((feature, index) => (
-                        <li
-                          key={index}
-                          className="flex items-start gap-2 text-sm font-body"
-                        >
-                          <Check className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  {pkg.notIncluded.length > 0 && (
-                    <div className="pt-4 border-t">
-                      <p className="text-micro font-body text-charcoal-600 mb-2">
-                        Not included:
-                      </p>
-                      <ul className="space-y-1">
-                        {pkg.notIncluded.map((item, index) => (
-                          <li
-                            key={index}
-                            className="text-micro font-body text-charcoal-600 line-through"
-                          >
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                <CardContent className="space-y-6 flex-1 px-8">
+                  <div className="w-full h-px bg-charcoal-100" />
+                  <ul className="space-y-4">
+                    {pkg.features.map((feature, index) => (
+                      <li
+                        key={index}
+                        className="flex items-start gap-3 text-sm"
+                      >
+                        <Check className="h-5 w-5 flex-shrink-0 text-sun-600" />
+                        <span className="text-charcoal-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </CardContent>
-                <CardFooter>
+                <CardFooter className="pt-8 pb-10 px-8">
                   <Button
-                    size="lg"
-                    className="w-full"
-                    variant={
-                      pkg.popular
-                        ? "uplift"
-                        : pkg.tier === "mentorship"
-                          ? "dark"
-                          : "upliftOutline"
-                    }
+                    className={`w-full h-12 text-base font-bold rounded-xl transition-all ${pkg.popular
+                      ? "bg-sun-500 text-charcoal-900 hover:bg-sun-400 shadow-lg shadow-sun-500/30"
+                      : "bg-charcoal-900 text-white hover:bg-charcoal-800"
+                      }`}
                     asChild
                   >
                     <Link href={`/auth/register?program=senior&tier=${pkg.tier}`}>
-                      Get Started
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      Get Started <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </CardFooter>
@@ -743,7 +679,7 @@ export default function SeniorPage() {
             ))}
           </div>
 
-          <p className="text-center text-micro font-body text-charcoal-600 mt-8">
+          <p className="text-center text-charcoal-400 text-sm mt-12 opacity-80">
             All prices are inclusive of GST. EMI options available.
             <br />
             100% satisfaction guarantee or full refund after first 2 sessions.
@@ -751,55 +687,53 @@ export default function SeniorPage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="section-padding bg-gold-500 text-charcoal-900">
-        <div className="container-uplift">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="heading-section mb-4">
-              Success Stories from Senior Leaders
+      {/* Testimonials Section - Glass Cards */}
+      <section className="relative py-24 bg-charcoal-950 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-20 mix-blend-overlay"></div>
+        <div className="container-uplift relative z-10">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-widest mb-6">
+              <Star className="h-3 w-3 text-sun-400 fill-sun-400" />
+              Peer Reviews
+            </div>
+            <h2 className="text-display text-white mb-6">
+              Voices of Experience
             </h2>
-            <p className="font-body text-charcoal-700">
-              Join the community of leaders who&apos;ve designed impactful
-              second innings
+            <p className="text-body-lg text-charcoal-300">
+              Hear from other senior leaders who have successfully navigated their transition.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <Card
                 key={index}
-                variant="light"
-                hover="lift"
-                className="bg-white/90 backdrop-blur-sm border-gold-200"
+                className="bg-white/5 backdrop-blur-md border border-white/10 text-white shadow-xl hover:bg-white/10 transition-all duration-300"
               >
                 <CardHeader>
-                  <div className="flex items-center gap-1 mb-2">
+                  <div className="flex items-center gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star
                         key={i}
-                        className="h-4 w-4 fill-gold-500 text-gold-500"
+                        className="h-4 w-4 fill-sun-400 text-sun-400"
                       />
                     ))}
                   </div>
-                  <Badge className="font-display w-fit bg-charcoal-100 text-charcoal-700 text-micro">
-                    {testimonial.previousRole}
-                  </Badge>
+                  <div className="inline-block px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold uppercase tracking-wide text-charcoal-300">
+                    Next: {testimonial.role.replace('Now: ', '')}
+                  </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm font-body text-charcoal-800 italic mb-4">
+                  <p className="text-lg leading-relaxed text-charcoal-100 italic mb-8 min-h-[120px]">
                     &ldquo;{testimonial.quote}&rdquo;
                   </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gold-400 flex items-center justify-center">
-                      <span className="text-sm font-bold text-charcoal-900">
-                        {testimonial.name.charAt(0)}
-                      </span>
+                  <div className="flex items-center gap-4 pt-6 border-t border-white/10">
+                    <div className="w-12 h-12 rounded-full bg-sun-600 flex items-center justify-center font-bold text-charcoal-900 text-xl">
+                      {testimonial.name.charAt(0)}
                     </div>
                     <div>
-                      <p className="font-semibold text-sm text-charcoal-900">
-                        {testimonial.name}
-                      </p>
-                      <p className="text-micro text-charcoal-600">
+                      <p className="font-display font-bold text-white">{testimonial.name}</p>
+                      <p className="text-xs font-bold uppercase tracking-wider text-charcoal-400">
                         {testimonial.role}
                       </p>
                     </div>
@@ -811,63 +745,61 @@ export default function SeniorPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* FAQ & CTA Section */}
       <section className="bg-white section-padding">
         <div className="container-uplift">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto mb-20">
             <div className="text-center mb-12">
-              <Badge className="font-display mb-4 bg-cream-200 text-charcoal-800">FAQ</Badge>
-              <h2 className="heading-section text-charcoal-900 mb-4">
+              <h2 className="text-display text-charcoal-900 mb-6">
                 Common Questions
               </h2>
             </div>
-
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" collapsible className="w-full space-y-4">
               {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="font-body text-left text-charcoal-900 hover:text-gold-600">
+                <AccordionItem key={index} value={`item-${index}`} className="border rounded-xl px-6 data-[state=open]:bg-cream-50 data-[state=open]:border-sun-200 transition-colors">
+                  <AccordionTrigger className="text-left font-display font-medium text-lg text-charcoal-900 hover:text-sun-600 py-6">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="font-body text-charcoal-600">
+                  <AccordionContent className="font-body text-charcoal-600 text-base pb-6 leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
           </div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="section-purple section-padding text-cream-100">
-        <div className="container-uplift">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="heading-section text-cream-100 mb-4">
-              Ready to Design Your Legacy?
-            </h2>
-            <p className="font-body text-cream-200 text-lg mb-8">
-              Your experience is your greatest asset. Let&apos;s turn it into
-              lasting impact.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                variant="uplift"
-                asChild
-              >
-                <Link href="/auth/register?program=senior">
-                  Start Your Journey
-                  <Crown className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-cream-200 text-cream-100 hover:bg-cream-100/10"
-                asChild
-              >
-                <Link href="/contact">Talk to an Advisor</Link>
-              </Button>
+          {/* Final CTA */}
+          <div className="rounded-[2.5rem] bg-charcoal-950 p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-sun-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-900/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+            <div className="relative z-10 max-w-2xl mx-auto space-y-8">
+              <h2 className="text-display text-white">
+                Ready To Define <br /> Your Legacy?
+              </h2>
+              <p className="text-xl text-charcoal-300">
+                Your wisdom is needed. Structure your next inning for maximum impact and fulfillment.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <Button
+                  size="xl"
+                  className="bg-sun-500 text-charcoal-950 hover:bg-sun-400 font-bold"
+                  asChild
+                >
+                  <Link href="/auth/register?program=senior">
+                    Start Your Legacy Journey
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button
+                  size="xl"
+                  variant="outline"
+                  className="border-white/20 text-white hover:bg-white/10"
+                  asChild
+                >
+                  <Link href="/contact">Talk to an Advisor</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

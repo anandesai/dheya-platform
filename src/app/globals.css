@@ -2,243 +2,151 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-/* Uplift-inspired theme for Dheya Career Mentors */
 @layer base {
-  :root {
-    /* Cream/beige background (Uplift-inspired) */
-    --background: 35 33% 96%;
-    --foreground: 147 37% 12%;
+    :root {
+        --background: 37 50% 97%;
+        --foreground: 0 0% 7%;
+        --card: 37 50% 97%;
+        --card-foreground: 0 0% 7%;
+        --popover: 37 50% 97%;
+        --popover-foreground: 0 0% 7%;
+        --primary: 239 84% 65%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 73 34% 73%;
+        --secondary-foreground: 0 0% 7%;
+        --muted: 37 20% 90%;
+        --muted-foreground: 0 0% 40%;
+        --accent: 239 84% 65%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 7%;
+        --input: 0 0% 7%;
+        --ring: 239 84% 65%;
+        --radius: 0.5rem;
+        --chart-1: 239 84% 65%;
+        --chart-2: 73 34% 73%;
+        --chart-3: 37 20% 90%;
+        --chart-4: 0 0% 7%;
+        --chart-5: 239 84% 65%;
+        --cream: 37 50% 97%;
+        --sage: 73 34% 73%;
+    }
 
-    /* Card styles */
-    --card: 35 33% 98%;
-    --card-foreground: 147 37% 12%;
-
-    /* Popover */
-    --popover: 0 0% 100%;
-    --popover-foreground: 147 37% 12%;
-
-    /* Primary - Forest Green (Dheya brand) */
-    --primary: 147 47% 19%;
-    --primary-foreground: 35 33% 98%;
-
-    /* Secondary - Cream */
-    --secondary: 35 33% 91%;
-    --secondary-foreground: 147 37% 12%;
-
-    /* Muted */
-    --muted: 35 20% 90%;
-    --muted-foreground: 147 15% 40%;
-
-    /* Accent - Purple (Uplift-inspired) */
-    --accent: 262 83% 58%;
-    --accent-foreground: 0 0% 100%;
-
-    /* Destructive */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    /* Borders and inputs */
-    --border: 35 20% 82%;
-    --input: 35 20% 85%;
-    --ring: 262 83% 58%;
-
-    /* Chart colors */
-    --chart-1: 262 83% 58%;
-    --chart-2: 147 47% 35%;
-    --chart-3: 43 96% 56%;
-    --chart-4: 35 33% 65%;
-    --chart-5: 147 37% 50%;
-
-    --radius: 0.625rem;
-  }
-
-  .dark {
-    /* Dark mode - Forest green inspired */
-    --background: 147 37% 8%;
-    --foreground: 35 33% 96%;
-
-    --card: 147 30% 12%;
-    --card-foreground: 35 33% 96%;
-
-    --popover: 147 30% 10%;
-    --popover-foreground: 35 33% 96%;
-
-    --primary: 35 33% 92%;
-    --primary-foreground: 147 37% 12%;
-
-    --secondary: 147 20% 18%;
-    --secondary-foreground: 35 33% 92%;
-
-    --muted: 147 20% 18%;
-    --muted-foreground: 35 20% 60%;
-
-    --accent: 262 70% 65%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 147 20% 20%;
-    --input: 147 20% 20%;
-    --ring: 262 70% 65%;
-
-    --chart-1: 262 70% 65%;
-    --chart-2: 147 47% 45%;
-    --chart-3: 43 80% 65%;
-    --chart-4: 35 40% 55%;
-    --chart-5: 147 40% 60%;
-  }
+    .dark {
+        --background: 147 37% 8%;
+        --foreground: 35 33% 96%;
+        --card: 147 30% 12%;
+        --card-foreground: 35 33% 96%;
+        --popover: 147 30% 10%;
+        --popover-foreground: 35 33% 96%;
+        --primary: 35 33% 92%;
+        --primary-foreground: 147 37% 12%;
+        --secondary: 147 20% 18%;
+        --secondary-foreground: 35 33% 92%;
+        --muted: 147 20% 18%;
+        --muted-foreground: 35 20% 60%;
+        --accent: 262 70% 65%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 62% 30%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 147 20% 20%;
+        --input: 147 20% 20%;
+        --ring: 262 70% 65%;
+        --chart-1: 262 70% 65%;
+        --chart-2: 147 47% 45%;
+        --chart-3: 43 80% 65%;
+        --chart-4: 35 40% 55%;
+        --chart-5: 147 40% 60%;
+    }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground antialiased;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
-  }
-}
+    * {
+        @apply border-border;
+    }
 
-/* ========================================
-   Uplift Design System Typography
-   ======================================== */
+    body {
+        @apply bg-background text-foreground antialiased;
+    }
+}
 
 @layer components {
-  /* Display Typography - ALL-CAPS Bold Headlines */
-  .text-display {
-    @apply font-display text-4xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-tight leading-none;
-  }
+    .text-display {
+        @apply font-headline text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tighter leading-tight;
+    }
 
-  .text-display-sm {
-    @apply font-display text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight leading-tight;
-  }
+    .text-display-sm {
+        @apply font-headline text-3xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight leading-tight;
+    }
 
-  /* Section Headings */
-  .heading-section {
-    @apply font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight;
-  }
+    .heading-section {
+        @apply font-headline text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight mb-6;
+    }
 
-  .heading-card {
-    @apply font-display text-xl md:text-2xl font-semibold tracking-tight;
-  }
+    .heading-card {
+        @apply font-headline text-xl md:text-2xl font-bold tracking-tight uppercase;
+    }
 
-  /* Body Typography - Serif for editorial feel */
-  .text-body {
-    @apply font-body text-base md:text-lg leading-relaxed;
-  }
+    .text-body {
+        @apply font-editorial text-base md:text-lg leading-relaxed text-charcoal-700;
+    }
 
-  .text-body-lg {
-    @apply font-body text-lg md:text-xl leading-relaxed;
-  }
+    .text-body-lg {
+        @apply font-editorial text-lg md:text-xl lg:text-2xl leading-relaxed text-charcoal-800;
+    }
 
-  /* Microcopy - Small caps labels */
-  .text-micro {
-    @apply font-display text-xs md:text-sm font-medium uppercase tracking-widest;
-  }
+    .text-micro {
+        @apply font-headline text-xs font-bold uppercase tracking-widest;
+    }
 
-  /* ========================================
-     Uplift Section Backgrounds
-     ======================================== */
+    .section-cream {
+        @apply bg-cream text-charcoal-900;
+    }
 
-  .section-cream {
-    @apply bg-cream-50;
-  }
+    .section-sage {
+        @apply bg-sage text-charcoal-900;
+    }
 
-  .section-sage {
-    @apply bg-sage-100;
-  }
+    .section-purple {
+        @apply bg-purple text-white;
+    }
 
-  .section-charcoal {
-    @apply bg-charcoal-800 text-cream-50;
-  }
+    .section-charcoal {
+        @apply bg-charcoal text-cream;
+    }
 
-  .section-purple {
-    @apply bg-purple-500 text-white;
-  }
+    .section-padding {
+        @apply py-20 md:py-32;
+    }
 
-  /* Section spacing */
-  .section-padding {
-    @apply py-16 md:py-24 lg:py-32;
-  }
+    .btn-pill {
+        @apply bg-purple text-white hover:bg-purple-600 px-8 py-4 rounded-full font-display font-bold uppercase tracking-wide text-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-xl;
+    }
 
-  .section-padding-sm {
-    @apply py-12 md:py-16 lg:py-20;
-  }
+    .btn-pill-light {
+        @apply bg-white text-charcoal-900 hover:bg-cream-100 px-8 py-4 rounded-full font-display font-bold uppercase tracking-wide text-sm transition-all duration-300 hover:scale-105 active:scale-95 border border-charcoal-100;
+    }
 
-  /* ========================================
-     Uplift Button Variants
-     ======================================== */
+    .btn-outline {
+        @apply bg-transparent border-2 border-charcoal-900 text-charcoal-900 hover:bg-charcoal hover:text-white px-8 py-4 rounded-full font-display font-bold uppercase tracking-wide text-sm transition-all duration-300;
+    }
 
-  /* Primary CTA - Purple pill */
-  .btn-uplift {
-    @apply bg-purple-500 text-white hover:bg-purple-600 px-8 py-3 rounded-full font-display font-semibold shadow-lg transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5;
-  }
+    .card-outlined {
+        @apply bg-transparent border border-charcoal-900 rounded-xl p-8 transition-all duration-300 hover:border-charcoal-900;
+    }
 
-  .btn-uplift-lg {
-    @apply bg-purple-500 text-white hover:bg-purple-600 px-10 py-4 rounded-full font-display font-semibold text-lg shadow-lg transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5;
-  }
+    .card-flat {
+        @apply bg-white rounded-xl p-8 shadow-sm;
+    }
 
-  /* Outline variant */
-  .btn-uplift-outline {
-    @apply border-2 border-purple-500 text-purple-600 hover:bg-purple-50 px-8 py-3 rounded-full font-display font-semibold transition-colors;
-  }
+    .container-uplift {
+        @apply max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12;
+    }
+}
 
-  /* Dark variant */
-  .btn-dark {
-    @apply bg-charcoal-800 text-cream-50 hover:bg-charcoal-900 px-6 py-3 rounded-lg font-display font-semibold transition-colors;
-  }
-
-  /* Legacy support */
-  .btn-primary {
-    @apply bg-forest-800 text-cream-100 hover:bg-forest-900 px-6 py-3 rounded-lg font-medium transition-colors;
-  }
-
-  .btn-accent {
-    @apply bg-purple-600 text-white hover:bg-purple-700 px-6 py-3 rounded-lg font-medium transition-colors;
-  }
-
-  .btn-outline {
-    @apply border-2 border-forest-800 text-forest-800 hover:bg-forest-800 hover:text-cream-100 px-6 py-3 rounded-lg font-medium transition-colors;
-  }
-
-  /* ========================================
-     Uplift Card Variants
-     ======================================== */
-
-  .card-light {
-    @apply bg-white border border-cream-200 shadow-sm rounded-xl;
-  }
-
-  .card-dark {
-    @apply bg-charcoal-800 text-cream-50 rounded-xl;
-  }
-
-  .card-sage {
-    @apply bg-sage-100 border border-sage-200 rounded-xl;
-  }
-
-  .card-hover {
-    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-1;
-  }
-
-  /* ========================================
-     Uplift Container & Grid
-     ======================================== */
-
-  .container-uplift {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-
-  .container-narrow {
-    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
 }

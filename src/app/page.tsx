@@ -1,541 +1,314 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import {
-  ArrowRight,
-  CheckCircle,
-  Users,
-  Target,
-  Award,
-  Star,
-  TrendingUp,
-  Heart,
-  Quote,
-} from "lucide-react"
+import { Play } from "lucide-react"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { MarketingHeader } from "@/components/marketing/header"
+import { MarketingFooter } from "@/components/marketing/footer"
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-cream-50">
-      {/* Navigation - Uplift Style */}
-      <header className="sticky top-0 z-50 w-full bg-cream-50/95 backdrop-blur supports-[backdrop-filter]:bg-cream-50/80">
-        <div className="container-uplift flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="font-display text-2xl font-bold tracking-tight text-charcoal-900">Dheya</span>
-          </Link>
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/programs" className="text-micro text-charcoal-700 hover:text-purple-600 transition-colors">
-              Programs
-            </Link>
-            <Link href="/mentors" className="text-micro text-charcoal-700 hover:text-purple-600 transition-colors">
-              Mentors
-            </Link>
-            <Link href="/about" className="text-micro text-charcoal-700 hover:text-purple-600 transition-colors">
-              About Us
-            </Link>
-            <Link href="/auth/login" className="text-micro text-charcoal-700 hover:text-purple-600 transition-colors">
-              Login
-            </Link>
-            <Button asChild variant="uplift" size="lg">
-              <Link href="/auth/register">Tell Us About You</Link>
-            </Button>
-          </nav>
-        </div>
-      </header>
+    <div className="flex flex-col min-h-screen bg-[#FDF8F0]">
+      <MarketingHeader />
 
       <main className="flex-1">
-        {/* Hero Section - Uplift Style */}
-        <section className="section-cream section-padding">
+        {/* Hero Section */}
+        <section className="pt-20 pb-32 overflow-hidden border-b border-charcoal-900/10">
+          <div className="container-uplift relative">
+            <div className="max-w-[90%]">
+              <h1 className="text-display text-charcoal-900 mb-8 leading-[0.85]">
+                WE UPLIFT <br />
+                FOUNDERS
+              </h1>
+              <p className="font-body text-xl md:text-2xl text-charcoal-700 max-w-2xl italic leading-relaxed mb-12">
+                Helping founders to GROW through uncertainty & MAXIMIZE their impact.
+              </p>
+              <Button asChild className="btn-pill text-lg px-10 py-8 h-auto">
+                <Link href="/auth/register">Tell Us About You</Link>
+              </Button>
+            </div>
+
+            {/* Floating Image 1 */}
+            <div className="absolute top-0 right-0 w-[500px] h-[400px] hidden lg:block">
+              <div className="relative w-full h-full grayscale hover:grayscale-0 transition-all duration-500">
+                <Image src="/images/hero-team.jpg" alt="Team" fill className="object-cover rounded-sm" priority />
+              </div>
+            </div>
+
+            {/* Floating Image 2 */}
+            <div className="absolute bottom-10 right-20 w-[300px] h-[300px] hidden lg:block z-10">
+              <div className="relative w-full h-full grayscale hover:grayscale-0 transition-all duration-500 border-8 border-[#FDF8F0]">
+                <Image src="/images/hero-meeting.jpg" alt="Meeting" fill className="object-cover rounded-sm" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trusted By Section - Card Style */}
+        <section className="py-20 bg-transparent">
           <div className="container-uplift">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="bg-[#EFEAE4] border border-charcoal-900 rounded-xl p-12 relative">
+              <div className="absolute -left-3 top-10 h-16 w-1 bg-charcoal-900"></div>
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="flex items-start gap-6">
+                  <div className="w-20 h-20 rounded-full overflow-hidden relative border-2 border-charcoal-900 flex-shrink-0">
+                    <Image src="/images/founder-avatar.jpg" alt="Founder" fill className="object-cover" />
+                  </div>
+                  <div>
+                    <p className="font-body italic text-lg text-charcoal-800 mb-4">
+                      &ldquo;The best decision I made for my company was finding a mentor who had walked the path before. Dheya connected me to that wisdom.&rdquo;
+                    </p>
+                    <p className="font-display font-bold uppercase tracking-wider text-xs">
+                      — Priya Sharma, Founder of TechFlow
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h2 className="text-4xl font-display font-bold uppercase leading-none text-right text-charcoal-900">
+                    TRUSTED BY <br /> FOUNDERS OF <br /> HIGH-GROWTH <br /> STARTUPS
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Value Proposition - Video/Image Split */}
+        <section className="py-20 bg-[#D8DDBF] border-y border-charcoal-900">
+          <div className="container-uplift">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
-                <div className="space-y-4">
-                  <h1 className="text-display text-charcoal-900">
-                    WE MENTOR<br />
-                    <span className="text-purple-500">CAREERS</span>
-                  </h1>
-                  <p className="text-body-lg text-charcoal-700 max-w-xl">
-                    Transform your career journey with India&apos;s premier career mentoring platform.
-                    We&apos;ve been where you are — and we&apos;ll guide you where you want to go.
-                  </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button asChild variant="uplift" size="xl">
-                    <Link href="/auth/register">
-                      Tell Us About You <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                  </Button>
-                  <Button asChild variant="upliftOutline" size="lg">
-                    <Link href="#testimonials">What Professionals Say</Link>
-                  </Button>
-                </div>
-              </div>
-              <div className="relative block mt-8 lg:mt-0">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl relative">
-                  <Image
-                    src="/images/hero.png"
-                    alt="Professionals in a coaching session"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Trust Signals - Horizontal Stats */}
-        <section className="py-8 bg-white border-y border-cream-200">
-          <div className="container-uplift">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div className="space-y-1">
-                <p className="font-display text-4xl md:text-5xl font-extrabold text-charcoal-900">18+</p>
-                <p className="text-micro text-charcoal-600">Years of Excellence</p>
-              </div>
-              <div className="space-y-1">
-                <p className="font-display text-4xl md:text-5xl font-extrabold text-charcoal-900">100K+</p>
-                <p className="text-micro text-charcoal-600">Professionals Mentored</p>
-              </div>
-              <div className="space-y-1">
-                <p className="font-display text-4xl md:text-5xl font-extrabold text-charcoal-900">91%</p>
-                <p className="text-micro text-charcoal-600">Career Clarity Rate</p>
-              </div>
-              <div className="space-y-1">
-                <p className="font-display text-4xl md:text-5xl font-extrabold text-charcoal-900">95%</p>
-                <p className="text-micro text-charcoal-600">Client Satisfaction</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonial Carousel */}
-        <section id="testimonials" className="section-cream section-padding-sm">
-          <div className="container-uplift">
-            <p className="text-micro text-charcoal-600 mb-8">Trusted by founders of high-growth careers</p>
-            <Card variant="light" className="max-w-3xl p-8 md:p-12">
-              <div className="flex items-start gap-6">
-                <div className="hidden md:flex w-20 h-20 rounded-full bg-sage-200 items-center justify-center flex-shrink-0">
-                  <Quote className="h-8 w-8 text-sage-600" />
-                </div>
-                <div className="space-y-4">
-                  <p className="text-body-lg text-charcoal-800 italic">
-                    &ldquo;Dheya helped me transition from engineering to product management.
-                    The BBD assessment revealed blind spots I never knew I had.
-                    Within 6 months, I landed my dream role.&rdquo;
-                  </p>
-                  <div>
-                    <p className="font-display font-semibold text-charcoal-900">Priya Sharma</p>
-                    <p className="font-body text-sm text-charcoal-600">Product Manager, Tech Startup</p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </section>
-
-        {/* Empathy Block - Sage Background */}
-        <section className="section-sage section-padding">
-          <div className="container-uplift">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <p className="text-body-lg text-charcoal-700">
-                  Feeling stuck in your career? Wondering if there&apos;s more to your professional life
-                  than the daily grind? Unsure which path will lead to fulfillment?
+                <p className="font-body text-charcoal-800 text-2xl leading-relaxed">
+                  Building a successful company can feel like a rollercoaster ride. Compassion alone won&apos;t get you there.
                 </p>
-                <p className="text-body-lg text-charcoal-700">
-                  You&apos;re not alone. Thousands of professionals face these same crossroads.
-                  They need someone who understands. Someone who&apos;s been there.
-                </p>
-                <p className="text-display-sm text-charcoal-900 pt-4">
+                <h2 className="text-6xl font-display font-bold uppercase text-charcoal-900">
                   WE WILL.
-                </p>
-              </div>
-              <div className="relative mt-8 lg:mt-0">
-                <div className="aspect-video rounded-2xl overflow-hidden shadow-lg relative">
-                  <Image
-                    src="/images/compass.png"
-                    alt="Compass and map representing career direction"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Program Card - Dark Section */}
-        <section className="section-cream section-padding">
-          <div className="container-uplift">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <p className="text-micro text-purple-600">Our Signature Approach</p>
-                <h2 className="heading-section text-charcoal-900">
-                  We empower you to become the professional your career needs —
-                  and the person you want to be.
                 </h2>
-                <p className="text-body text-charcoal-700">
-                  Through our proven 6-phase methodology, personalized assessments,
-                  and expert mentorship, we help you discover clarity and take decisive action.
-                </p>
               </div>
-              <Card variant="dark" className="p-8 md:p-10">
-                <div className="space-y-6">
-                  <p className="text-micro text-purple-400">The Dheya Method</p>
-                  <h3 className="heading-card text-cream-50">Career Transformation Program</h3>
-                  <ul className="space-y-3 text-cream-200 font-body">
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-purple-400 flex-shrink-0" />
-                      <span>Decision Making & Clarity</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-purple-400 flex-shrink-0" />
-                      <span>Leadership & Communication</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-purple-400 flex-shrink-0" />
-                      <span>Work-Life Integration</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-purple-400 flex-shrink-0" />
-                      <span>Strategic Career Planning</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-purple-400 flex-shrink-0" />
-                      <span>Personalized Action Roadmap</span>
-                    </li>
-                  </ul>
-                  <Button asChild variant="uplift" className="w-full mt-4">
-                    <Link href="/programs">Explore Programs</Link>
-                  </Button>
+              <div className="relative aspect-video bg-charcoal-900 rounded-sm overflow-hidden group cursor-pointer border-4 border-charcoal-900/10">
+                <Image src="/images/video-thumbnail.jpg" alt="Video" fill className="object-cover opacity-80 group-hover:opacity-60 transition-opacity" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur flex items-center justify-center border border-white/50 group-hover:scale-110 transition-transform">
+                    <Play className="fill-white text-white ml-2 h-8 w-8" />
+                  </div>
                 </div>
-              </Card>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Core Beliefs - Sage Section */}
-        <section className="section-sage section-padding">
+        {/* Feature Toggle Section */}
+        <section className="py-32 bg-[#FDF8F0]">
           <div className="container-uplift">
-            <div className="grid lg:grid-cols-3 gap-12">
-              <div className="space-y-4">
-                <p className="text-micro text-charcoal-600">Core Belief</p>
-                <h2 className="heading-section text-charcoal-900">
-                  Career transformation starts from within
+            <div className="grid lg:grid-cols-12 gap-12">
+              <div className="lg:col-span-5">
+                <h2 className="text-display-sm text-charcoal-900 mb-8 leading-[0.9]">
+                  WE EMPOWER YOU TO BECOME THE FOUNDER YOUR COMPANY NEEDS TO SCALE FASTER
                 </h2>
-                <p className="text-body text-charcoal-700">
-                  True career change requires working on both the inner game
-                  (mindset, values, clarity) and the outer game (skills, strategy, execution).
+              </div>
+              <div className="lg:col-span-7">
+                <div className="bg-charcoal-900 text-[#FDF8F0] rounded-xl p-10 min-h-[500px] flex flex-col shadow-2xl shadow-charcoal-900/20">
+                  <div className="flex justify-between items-center mb-12 border-b border-white/20 pb-6">
+                    <span className="font-display font-bold text-2xl">Shaky Founders</span>
+                    <div className="w-12 h-6 bg-white/20 rounded-full relative cursor-pointer">
+                      <div className="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-8 flex-1">
+                    <div className="grid grid-cols-12 gap-4 items-start border-b border-white/10 pb-8">
+                      <span className="col-span-4 font-display font-bold uppercase text-sm tracking-widest text-white/60">Lack of Clarity</span>
+                      <p className="col-span-8 font-body text-lg text-white/90">
+                        Unclear vision causes confusion within the team and wasted resources.
+                      </p>
+                    </div>
+                    <div className="grid grid-cols-12 gap-4 items-start border-b border-white/10 pb-8">
+                      <span className="col-span-4 font-display font-bold uppercase text-sm tracking-widest text-white/60">Poor Leadership</span>
+                      <p className="col-span-8 font-body text-lg text-white/90">
+                        Inability to delegate and empower leads to burnout and bottlenecking.
+                      </p>
+                    </div>
+                    <div className="grid grid-cols-12 gap-4 items-start">
+                      <span className="col-span-4 font-display font-bold uppercase text-sm tracking-widest text-white/60">Isolation</span>
+                      <p className="col-span-8 font-body text-lg text-white/90">
+                        Struggling alone without a support system or guidance network.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Core Beliefs - Sage Split */}
+        <section className="py-32 bg-[#C8D1A3] border-y border-charcoal-900">
+          <div className="container-uplift">
+            <div className="grid lg:grid-cols-2 gap-20">
+              <div className="space-y-8">
+                <h2 className="text-display-sm text-charcoal-900">CORE <br /> BELIEF</h2>
+              </div>
+              <div className="space-y-8">
+                <p className="font-body text-xl italic text-charcoal-800 max-w-xl">
+                  Deep self-awareness (<span className="font-bold not-italic">Inner Game</span>) coupled with a bold vision and clear strategy (<span className="font-bold not-italic">Outer Game</span>) are the foundation for lasting growth.
                 </p>
               </div>
-              <Card variant="light" className="p-8">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center">
-                    <Heart className="h-6 w-6 text-purple-600" />
-                  </div>
-                  <h3 className="heading-card text-charcoal-900">Inner Game</h3>
-                  <ul className="space-y-2 text-body text-charcoal-700">
-                    <li>• Self-awareness & values clarity</li>
-                    <li>• Confidence & resilience building</li>
-                    <li>• Purpose & meaning discovery</li>
-                    <li>• Limiting beliefs transformation</li>
-                  </ul>
-                </div>
-              </Card>
-              <Card variant="light" className="p-8">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center">
-                    <Target className="h-6 w-6 text-purple-600" />
-                  </div>
-                  <h3 className="heading-card text-charcoal-900">Outer Game</h3>
-                  <ul className="space-y-2 text-body text-charcoal-700">
-                    <li>• Career strategy & planning</li>
-                    <li>• Skills development & positioning</li>
-                    <li>• Network & opportunity creation</li>
-                    <li>• Action execution & accountability</li>
-                  </ul>
-                </div>
-              </Card>
             </div>
-          </div>
-        </section>
 
-        {/* Segment Cards */}
-        <section className="section-cream section-padding">
-          <div className="container-uplift">
-            <div className="text-center mb-12">
-              <p className="text-micro text-purple-600 mb-4">Programs by Career Stage</p>
-              <h2 className="heading-section text-charcoal-900 mb-4">
-                Choose Your Path
-              </h2>
-              <p className="text-body text-charcoal-600 max-w-2xl mx-auto">
-                Tailored programs designed for where you are in your career journey
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card variant="light" hover="lift" className="p-6 cursor-pointer group">
-                <Link href="/programs/early-career" className="block space-y-4">
-                  <div className="w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center group-hover:bg-purple-200 transition-colors">
-                    <TrendingUp className="h-7 w-7 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="heading-card text-charcoal-900">Early Career</h3>
-                    <p className="text-micro text-charcoal-500 mt-1">Ages 22-30</p>
-                  </div>
-                  <p className="text-body text-charcoal-600">
-                    Build a strong foundation with Develop Advantage
-                  </p>
-                  <span className="text-purple-600 font-display font-semibold text-sm group-hover:underline inline-flex items-center">
-                    Learn more <ArrowRight className="ml-1 h-4 w-4" />
-                  </span>
-                </Link>
-              </Card>
-
-              <Card variant="light" hover="lift" className="p-6 cursor-pointer group border-purple-200 bg-purple-50/30">
-                <Link href="/programs/mid-career" className="block space-y-4">
-                  <div className="w-14 h-14 rounded-full bg-purple-200 flex items-center justify-center group-hover:bg-purple-300 transition-colors">
-                    <Target className="h-7 w-7 text-purple-700" />
-                  </div>
-                  <div>
-                    <h3 className="heading-card text-charcoal-900">Mid-Career</h3>
-                    <p className="text-micro text-charcoal-500 mt-1">Ages 30-45</p>
-                  </div>
-                  <p className="text-body text-charcoal-600">
-                    Navigate complexity with Destination Mastery
-                  </p>
-                  <span className="text-purple-600 font-display font-semibold text-sm inline-flex items-center gap-2">
-                    Most Popular <Star className="h-4 w-4 fill-gold-400 text-gold-400" />
-                  </span>
-                </Link>
-              </Card>
-
-              <Card variant="light" hover="lift" className="p-6 cursor-pointer group">
-                <Link href="/programs/senior" className="block space-y-4">
-                  <div className="w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center group-hover:bg-purple-200 transition-colors">
-                    <Award className="h-7 w-7 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="heading-card text-charcoal-900">Senior</h3>
-                    <p className="text-micro text-charcoal-500 mt-1">Ages 45+</p>
-                  </div>
-                  <p className="text-body text-charcoal-600">
-                    Design your legacy with Design Legacy
-                  </p>
-                  <span className="text-purple-600 font-display font-semibold text-sm group-hover:underline inline-flex items-center">
-                    Learn more <ArrowRight className="ml-1 h-4 w-4" />
-                  </span>
-                </Link>
-              </Card>
-
-              <Card variant="light" hover="lift" className="p-6 cursor-pointer group">
-                <Link href="/programs/returning-women" className="block space-y-4">
-                  <div className="w-14 h-14 rounded-full bg-pink-100 flex items-center justify-center group-hover:bg-pink-200 transition-colors">
-                    <Heart className="h-7 w-7 text-pink-600" />
-                  </div>
-                  <div>
-                    <h3 className="heading-card text-charcoal-900">Returning Women</h3>
-                    <p className="text-micro text-charcoal-500 mt-1">Career Restart</p>
-                  </div>
-                  <p className="text-body text-charcoal-600">
-                    Restart with confidence through Rise Again
-                  </p>
-                  <span className="text-purple-600 font-display font-semibold text-sm group-hover:underline inline-flex items-center">
-                    Learn more <ArrowRight className="ml-1 h-4 w-4" />
-                  </span>
-                </Link>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Founders Section */}
-        <section className="section-cream section-padding border-t border-cream-200">
-          <div className="container-uplift">
-            <div className="text-center mb-12">
-              <h2 className="heading-section text-charcoal-900 mb-4">
-                We&apos;ve Been Through It All
-              </h2>
-              <p className="text-body text-charcoal-600 max-w-2xl mx-auto">
-                Our mentors aren&apos;t just coaches — they&apos;ve walked the path you&apos;re on
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <Card variant="light" className="p-8">
-                <div className="flex gap-6 items-center">
-                  <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                    <Image
-                      src="/images/mentor-pria.png"
-                      alt="Dr. Anjali Gupta"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="heading-card text-charcoal-900">Dr. Anjali Gupta</h3>
-                    <p className="text-micro text-purple-600">Founder & Lead Mentor</p>
-                    <p className="text-body text-charcoal-600">
-                      18+ years guiding professionals through career transformations.
-                    </p>
-                  </div>
+            <div className="grid md:grid-cols-2 gap-12 mt-20 relative">
+              {/* Center Divider/Graphic */}
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex flex-col items-center justify-center z-10 w-32">
+                <div className="w-16 h-16 rounded-full border border-charcoal-900 flex items-center justify-center bg-[#C8D1A3]">
+                  <div className="w-2 h-2 rounded-full bg-charcoal-900"></div>
                 </div>
-              </Card>
-              <Card variant="light" className="p-8">
-                <div className="flex gap-6 items-center">
-                  <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                    <Image
-                      src="/images/mentor-rahul.png"
-                      alt="Rahul Verma"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="heading-card text-charcoal-900">Rahul Verma</h3>
-                    <p className="text-micro text-purple-600">Senior Career Mentor</p>
-                    <p className="text-body text-charcoal-600">
-                      Specialist in mid-career transitions and leadership development.
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Value Pillars */}
-        <section className="section-cream section-padding-sm border-t border-cream-200">
-          <div className="container-uplift">
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card variant="light" hover="lift" className="p-8 text-center">
-                <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
-                  <Heart className="h-8 w-8 text-purple-600" />
-                </div>
-                <h3 className="heading-card text-charcoal-900 mb-2">Empathy</h3>
-                <p className="text-body text-charcoal-600">
-                  We understand your struggles because we&apos;ve faced them ourselves.
-                </p>
-              </Card>
-              <Card variant="light" hover="lift" className="p-8 text-center">
-                <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
-                  <Award className="h-8 w-8 text-purple-600" />
-                </div>
-                <h3 className="heading-card text-charcoal-900 mb-2">Experience</h3>
-                <p className="text-body text-charcoal-600">
-                  18+ years and 100,000+ careers transformed — we know what works.
-                </p>
-              </Card>
-              <Card variant="light" hover="lift" className="p-8 text-center">
-                <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-purple-600" />
-                </div>
-                <h3 className="heading-card text-charcoal-900 mb-2">Availability</h3>
-                <p className="text-body text-charcoal-600">
-                  Your mentor is there when you need them, not just during sessions.
-                </p>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="section-cream section-padding border-t border-cream-200">
-          <div className="container-uplift">
-            <div className="grid lg:grid-cols-3 gap-12">
-              <div>
-                <h2 className="heading-section text-charcoal-900">FAQs</h2>
+                <div className="h-full w-px bg-charcoal-900/20 absolute -z-10"></div>
               </div>
-              <div className="lg:col-span-2">
-                <Accordion type="single" collapsible className="space-y-4">
-                  <AccordionItem value="item-1" className="border-b border-cream-300 pb-4">
-                    <AccordionTrigger className="font-display font-semibold text-charcoal-900 text-left hover:no-underline">
-                      How is Dheya different from other career coaching?
-                    </AccordionTrigger>
-                    <AccordionContent className="text-body text-charcoal-600 pt-4">
-                      Dheya combines 18+ years of career mentoring expertise with scientifically-validated
-                      assessments like CLIQI and BBD Syndrome detection. Our structured 6-phase approach
-                      ensures measurable outcomes, not just advice.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-2" className="border-b border-cream-300 pb-4">
-                    <AccordionTrigger className="font-display font-semibold text-charcoal-900 text-left hover:no-underline">
-                      What is the BBD Syndrome Assessment?
-                    </AccordionTrigger>
-                    <AccordionContent className="text-body text-charcoal-600 pt-4">
-                      BBD (Bored, Burned-out, Dissatisfied) Syndrome is a framework we developed to identify
-                      the root causes of career dissatisfaction. The assessment helps pinpoint exactly where
-                      intervention is needed.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-3" className="border-b border-cream-300 pb-4">
-                    <AccordionTrigger className="font-display font-semibold text-charcoal-900 text-left hover:no-underline">
-                      How long does the program take?
-                    </AccordionTrigger>
-                    <AccordionContent className="text-body text-charcoal-600 pt-4">
-                      Program duration varies by package tier. Guidance tier is self-paced, Planning tier
-                      typically takes 8-12 weeks, and Mentorship tier runs 16-24 weeks with ongoing support.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-4" className="border-b border-cream-300 pb-4">
-                    <AccordionTrigger className="font-display font-semibold text-charcoal-900 text-left hover:no-underline">
-                      Can I switch career segments after starting?
-                    </AccordionTrigger>
-                    <AccordionContent className="text-body text-charcoal-600 pt-4">
-                      Yes! If your assessment reveals a different career stage fit, our mentors will help
-                      you transition to the most appropriate program seamlessly.
-                    </AccordionContent>
-                  </AccordionItem>
+
+              <div className="border border-charcoal-900/30 p-10 rounded-sm hover:bg-[#C8D1A3]/50 transition-colors">
+                <div className="mb-8">
+                  <span className="font-display font-bold uppercase text-xs tracking-widest border border-charcoal-900 px-2 py-1 rounded-full">The Inner Game</span>
+                </div>
+                <h3 className="font-body text-3xl mb-6">How can we unlock your full potential?</h3>
+                <ul className="space-y-3 font-body text-sm text-charcoal-700">
+                  <li>• Overcome Imposter Syndrome</li>
+                  <li>• Clarify Personal Values & Vision</li>
+                  <li>• Build Emotional Resilience</li>
+                </ul>
+              </div>
+
+              <div className="border border-charcoal-900/30 p-10 rounded-sm hover:bg-[#C8D1A3]/50 transition-colors">
+                <div className="mb-8">
+                  <span className="font-display font-bold uppercase text-xs tracking-widest border border-charcoal-900 px-2 py-1 rounded-full">The Outer Game</span>
+                </div>
+                <h3 className="font-body text-3xl mb-6">How can we grow the business?</h3>
+                <ul className="space-y-3 font-body text-sm text-charcoal-700">
+                  <li>• Strategic Planning & Execution</li>
+                  <li>• Team Building & Culture</li>
+                  <li>• Fundraising & Financial Modeling</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="flex justify-center mt-16">
+              <Button className="rounded-full bg-purple-500 hover:bg-purple-600 text-white px-10 py-8 font-display font-bold text-sm tracking-widest uppercase">
+                Tell us about you
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Team / Mentors Section */}
+        <section className="py-32 bg-[#FDF8F0]">
+          <div className="container-uplift">
+            <div className="grid lg:grid-cols-12 gap-16">
+              <div className="lg:col-span-4">
+                <h2 className="text-6xl font-display font-bold uppercase leading-[0.85] text-charcoal-900">
+                  WE&apos;VE <br /> BEEN <br /> THROUGH <br /> IT <br /> ALL
+                </h2>
+              </div>
+              <div className="lg:col-span-8">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-4 text-center group cursor-pointer">
+                    <div className="aspect-[3/4] bg-gray-200 relative grayscale group-hover:grayscale-0 transition-all duration-500 overflow-hidden">
+                      <Image src="/images/mentor-1.jpg" alt="Mentor" fill className="object-cover" />
+                    </div>
+                    <div>
+                      <h4 className="font-display font-bold uppercase tracking-wider text-sm">Rahul Verma</h4>
+                      <p className="font-display text-xs text-charcoal-500 uppercase tracking-widest">CEO, TechFlow</p>
+                    </div>
+                  </div>
+                  <div className="space-y-4 text-center mt-16 md:mt-0 group cursor-pointer">
+                    <div className="aspect-[3/4] bg-gray-200 relative grayscale group-hover:grayscale-0 transition-all duration-500 overflow-hidden">
+                      <Image src="/images/mentor-2.jpg" alt="Mentor" fill className="object-cover" />
+                    </div>
+                    <div>
+                      <h4 className="font-display font-bold uppercase tracking-wider text-sm">Priya Sharma</h4>
+                      <p className="font-display text-xs text-charcoal-500 uppercase tracking-widest">Founder, GreenEarth</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-4 mt-16 border-t border-charcoal-900/10 pt-16">
+                  <div className="text-center space-y-4 p-6 bg-[#F7EFE5]">
+                    <div className="text-2xl">♡</div>
+                    <h4 className="font-body font-bold text-lg">Empathy</h4>
+                    <p className="text-xs text-charcoal-600 leading-relaxed font-body">Weve been in your shoes and understand the pressure.</p>
+                  </div>
+                  <div className="text-center space-y-4 p-6 bg-[#F7EFE5]">
+                    <div className="text-2xl">⚡</div>
+                    <h4 className="font-body font-bold text-lg">Experience</h4>
+                    <p className="text-xs text-charcoal-600 leading-relaxed font-body">Decades of building and scaling successful companies.</p>
+                  </div>
+                  <div className="text-center space-y-4 p-6 bg-[#F7EFE5]">
+                    <div className="text-2xl">☺</div>
+                    <h4 className="font-body font-bold text-lg">Availability</h4>
+                    <p className="text-xs text-charcoal-600 leading-relaxed font-body">Always just a message away when you need us.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section - Clean Accordion */}
+        <section className="py-20 bg-[#F7EFE5]">
+          <div className="container-uplift">
+            <div className="grid lg:grid-cols-12 gap-12">
+              <div className="lg:col-span-3">
+                <h2 className="text-5xl font-display font-bold uppercase text-charcoal-900">FAQS</h2>
+              </div>
+              <div className="lg:col-span-9">
+                <Accordion type="single" collapsible className="space-y-0 border-t border-charcoal-900">
+                  {[
+                    "What is your mentorship model?",
+                    "Who do you usually work with?",
+                    "Why should I need professional coaching as a founder?",
+                    "How long does it take?",
+                    "Do you have scheduling flexibility?",
+                    "Is everything confidential?"
+                  ].map((q, i) => (
+                    <AccordionItem key={i} value={`item-${i}`} className="border-b border-charcoal-900 px-4">
+                      <AccordionTrigger className="font-display font-semibold text-sm uppercase tracking-wider py-6 hover:no-underline hover:text-purple-600">
+                        {q}
+                      </AccordionTrigger>
+                      <AccordionContent className="font-body text-lg pb-6 text-charcoal-700">
+                        We believe in a holistic approach. It varies based on individual needs, but typically involves a mix of strategic planning and personal development sessions.
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
                 </Accordion>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Final CTA Banner - Purple */}
-        <section className="section-purple section-padding">
+        {/* Final CTA - Purple Block */}
+        <section className="py-32 bg-[#5D5FEF] text-white">
           <div className="container-uplift text-center">
-            <h2 className="text-display-sm text-white mb-4">
-              READY FOR A CAREER TRANSFORMATION?
+            <h2 className="text-6xl md:text-8xl font-display font-bold uppercase leading-[0.85] mb-8">
+              READY <br /> FOR AN UPLIFT?
             </h2>
-            <p className="text-body-lg text-purple-100 mb-8 max-w-2xl mx-auto">
-              Join 100,000+ professionals who have achieved career clarity and fulfillment with Dheya.
+            <p className="font-body text-xl text-white/80 max-w-2xl mx-auto mb-12">
+              We&apos;re on a mission to make scaling a company smoother by empowering founders to become extraordinary leaders.
             </p>
-            <Button asChild size="xl" className="bg-white text-purple-600 hover:bg-cream-100 rounded-full font-display font-semibold shadow-lg">
-              <Link href="/auth/register">
-                Tell Us About You <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+            <Button asChild className="rounded-full bg-charcoal-900 text-white px-10 py-8 font-display font-bold text-sm tracking-widest uppercase hover:bg-charcoal-800 transition-colors">
+              <Link href="/auth/register">Tell Us About You</Link>
             </Button>
+
+            <div className="mt-20 relative h-[300px] w-full max-w-4xl mx-auto overflow-hidden rounded-xl">
+              <Image src="/images/cta-team.jpg" alt="Team" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+              <div className="absolute inset-0 bg-[#5D5FEF]/20 mix-blend-multiply"></div>
+            </div>
           </div>
         </section>
       </main>
 
-      {/* Footer - Compact Cream Style */}
-      <footer className="bg-cream-50 border-t border-cream-200 py-12">
-        <div className="container-uplift">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-            <div>
-              <span className="font-display text-2xl font-bold text-charcoal-900">Dheya</span>
-            </div>
-            <nav className="flex flex-wrap gap-6 text-micro text-charcoal-600">
-              <Link href="/programs" className="hover:text-purple-600 transition-colors">Programs</Link>
-              <Link href="/mentors" className="hover:text-purple-600 transition-colors">Mentors</Link>
-              <Link href="/about" className="hover:text-purple-600 transition-colors">About Us</Link>
-              <Link href="/contact" className="hover:text-purple-600 transition-colors">Contact</Link>
-            </nav>
-          </div>
-          <div className="mt-8 pt-8 border-t border-cream-200 text-center">
-            <p className="text-sm text-charcoal-500">
-              &copy; {new Date().getFullYear()} Dheya Career Mentors. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <MarketingFooter />
     </div>
   )
 }

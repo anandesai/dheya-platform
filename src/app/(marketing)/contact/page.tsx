@@ -8,13 +8,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import {
   Form,
   FormControl,
   FormField,
@@ -125,343 +118,190 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-[#FDF8F0]">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-charcoal-800 to-charcoal-900 text-cream-50 py-16 md:py-24">
-        <div className="container max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6">
-            GET IN TOUCH
+      <section className="bg-charcoal-900 border-b border-charcoal-800 pt-24 pb-32">
+        <div className="container-uplift text-center max-w-4xl mx-auto">
+          <span className="font-display font-bold text-xs uppercase tracking-widest text-[#5D5FEF] mb-6 block">We&apos;re Here For You</span>
+          <h1 className="text-display text-white mb-8 leading-[0.85]">
+            LET&apos;S START YOUR <br /> TRANSFORMATION
           </h1>
-          <p className="text-lg md:text-xl font-body text-cream-100 max-w-2xl mx-auto">
-            Have questions about your career journey? We&apos;re here to help you
-            navigate your path to success.
+          <p className="font-body text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
+            Whether you have questions about our programs or just need clarity on your next step, our team is ready to listen.
           </p>
         </div>
       </section>
 
-      {/* Contact Form and Info Section */}
-      <section className="py-12 md:py-20">
-        <div className="container max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Contact Form */}
-            <div className="md:col-span-2">
-              <Card variant="light" className="shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-2xl md:text-3xl font-display text-charcoal-800">
-                    Send Us a Message
-                  </CardTitle>
-                  <CardDescription className="font-body text-charcoal-600">
-                    Fill out the form below and we&apos;ll get back to you as soon as
-                    possible.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                      <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="font-display text-sm text-charcoal-700">
-                              Full Name *
-                            </FormLabel>
-                            <FormControl>
-                              <Input
-                                placeholder="John Doe"
-                                {...field}
-                                disabled={isSubmitting}
-                                className="bg-white"
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+      {/* Main Content Area */}
+      <section className="relative px-4 pb-20 -mt-20">
+        <div className="container-uplift bg-white p-8 md:p-12 border border-charcoal-900/10 shadow-xl max-w-6xl mx-auto grid lg:grid-cols-3 gap-12">
 
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <FormField
-                          control={form.control}
-                          name="email"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className="font-display text-sm text-charcoal-700">
-                                Email Address *
-                              </FormLabel>
-                              <FormControl>
-                                <Input
-                                  type="email"
-                                  placeholder="john@example.com"
-                                  {...field}
-                                  disabled={isSubmitting}
-                                  className="bg-white"
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-
-                        <FormField
-                          control={form.control}
-                          name="phone"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className="font-display text-sm text-charcoal-700">
-                                Phone Number *
-                              </FormLabel>
-                              <FormControl>
-                                <Input
-                                  type="tel"
-                                  placeholder="+1 (555) 123-4567"
-                                  {...field}
-                                  disabled={isSubmitting}
-                                  className="bg-white"
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                      </div>
-
-                      <FormField
-                        control={form.control}
-                        name="segment"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="font-display text-sm text-charcoal-700">
-                              I am a *
-                            </FormLabel>
-                            <Select
-                              onValueChange={field.onChange}
-                              defaultValue={field.value}
-                              disabled={isSubmitting}
-                            >
-                              <FormControl>
-                                <SelectTrigger className="bg-white">
-                                  <SelectValue placeholder="Select your segment" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                {segments.map((segment) => (
-                                  <SelectItem
-                                    key={segment.value}
-                                    value={segment.value}
-                                  >
-                                    {segment.label}
-                                  </SelectItem>
-                                ))}
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="font-display text-sm text-charcoal-700">
-                              Message *
-                            </FormLabel>
-                            <FormControl>
-                              <Textarea
-                                placeholder="Tell us about your career goals and how we can help..."
-                                className="min-h-[150px] bg-white resize-none"
-                                {...field}
-                                disabled={isSubmitting}
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <Button
-                        type="submit"
-                        variant="uplift"
-                        className="w-full md:w-auto px-8"
-                        disabled={isSubmitting}
-                      >
-                        {isSubmitting ? (
-                          <span className="flex items-center gap-2">
-                            <svg
-                              className="animate-spin h-4 w-4"
-                              viewBox="0 0 24 24"
-                            >
-                              <circle
-                                className="opacity-25"
-                                cx="12"
-                                cy="12"
-                                r="10"
-                                stroke="currentColor"
-                                strokeWidth="4"
-                                fill="none"
-                              />
-                              <path
-                                className="opacity-75"
-                                fill="currentColor"
-                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                              />
-                            </svg>
-                            Sending...
-                          </span>
-                        ) : (
-                          "Send Message"
-                        )}
-                      </Button>
-                    </form>
-                  </Form>
-                </CardContent>
-              </Card>
+          {/* Form Column */}
+          <div className="lg:col-span-2">
+            <div className="mb-10">
+              <h2 className="text-display-sm text-charcoal-900 mb-2">SEND US A MESSAGE</h2>
+              <p className="font-body text-charcoal-600">Fill out the form below and we&apos;ll get back to you within 24 hours.</p>
             </div>
 
-            {/* Contact Information Sidebar */}
-            <div className="space-y-6">
-              {/* Contact Details */}
-              <Card variant="light" className="shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-xl font-display text-charcoal-800">
-                    Contact Information
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="p-2 bg-purple-100 rounded-lg">
-                      <Mail className="h-5 w-5 text-purple-600" />
-                    </div>
-                    <div>
-                      <p className="font-display text-sm text-charcoal-600 mb-1">
-                        Email
-                      </p>
-                      <a
-                        href="mailto:info@dheyamentors.com"
-                        className="font-body text-charcoal-800 hover:text-purple-600 transition-colors"
-                      >
-                        info@dheyamentors.com
-                      </a>
-                    </div>
-                  </div>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="font-display text-xs uppercase tracking-widest font-bold text-charcoal-900">Full Name</FormLabel>
+                        <FormControl>
+                          <Input placeholder="John Doe" {...field} disabled={isSubmitting} className="rounded-none border-charcoal-300 focus:border-purple-600 focus:ring-purple-600 bg-[#FDF8F0] h-12" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="font-display text-xs uppercase tracking-widest font-bold text-charcoal-900">Email Address</FormLabel>
+                        <FormControl>
+                          <Input type="email" placeholder="john@example.com" {...field} disabled={isSubmitting} className="rounded-none border-charcoal-300 focus:border-purple-600 focus:ring-purple-600 bg-[#FDF8F0] h-12" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
 
-                  <div className="flex items-start gap-3">
-                    <div className="p-2 bg-purple-100 rounded-lg">
-                      <Phone className="h-5 w-5 text-purple-600" />
-                    </div>
-                    <div>
-                      <p className="font-display text-sm text-charcoal-600 mb-1">
-                        Phone
-                      </p>
-                      <a
-                        href="tel:+15551234567"
-                        className="font-body text-charcoal-800 hover:text-purple-600 transition-colors"
-                      >
-                        +1 (555) 123-4567
-                      </a>
-                    </div>
-                  </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="font-display text-xs uppercase tracking-widest font-bold text-charcoal-900">Phone</FormLabel>
+                        <FormControl>
+                          <Input type="tel" placeholder="+1 (555) 000-0000" {...field} disabled={isSubmitting} className="rounded-none border-charcoal-300 focus:border-purple-600 focus:ring-purple-600 bg-[#FDF8F0] h-12" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="segment"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="font-display text-xs uppercase tracking-widest font-bold text-charcoal-900">I am a...</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value} disabled={isSubmitting}>
+                          <FormControl>
+                            <SelectTrigger className="rounded-none border-charcoal-300 focus:border-purple-600 bg-[#FDF8F0] h-12">
+                              <SelectValue placeholder="Select Segment" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            {segments.map((s) => <SelectItem key={s.value} value={s.value}>{s.label}</SelectItem>)}
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
 
-                  <div className="flex items-start gap-3">
-                    <div className="p-2 bg-purple-100 rounded-lg">
-                      <MapPin className="h-5 w-5 text-purple-600" />
-                    </div>
-                    <div>
-                      <p className="font-display text-sm text-charcoal-600 mb-1">
-                        Address
-                      </p>
-                      <p className="font-body text-charcoal-800">
-                        123 Career Way, Suite 100
-                        <br />
-                        San Francisco, CA 94102
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="font-display text-xs uppercase tracking-widest font-bold text-charcoal-900">Message</FormLabel>
+                      <FormControl>
+                        <Textarea placeholder="Tell us how we can help..." {...field} disabled={isSubmitting} className="rounded-none border-charcoal-300 focus:border-purple-600 bg-[#FDF8F0] min-h-[150px] resize-none" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-              {/* Office Hours */}
-              <Card variant="light" className="shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-xl font-display text-charcoal-800 flex items-center gap-2">
-                    <Clock className="h-5 w-5 text-purple-600" />
-                    Office Hours
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3 font-body text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-charcoal-600">Monday - Friday</span>
-                    <span className="text-charcoal-800 font-medium">
-                      9:00 AM - 6:00 PM
-                    </span>
+                <Button type="submit" disabled={isSubmitting} className="rounded-full bg-[#5D5FEF] text-white hover:bg-purple-700 px-10 py-6 font-display font-bold text-sm tracking-widest uppercase w-full md:w-auto">
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </Button>
+              </form>
+            </Form>
+          </div>
+
+          {/* Sidebar Column */}
+          <div className="space-y-10 lg:pl-10 lg:border-l lg:border-charcoal-100">
+            <div>
+              <h3 className="font-display font-bold text-xl uppercase mb-6">Contact Info</h3>
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 bg-[#C8D1A3] flex items-center justify-center shrink-0">
+                    <Mail className="w-5 h-5 text-charcoal-900" />
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-charcoal-600">Saturday</span>
-                    <span className="text-charcoal-800 font-medium">
-                      10:00 AM - 4:00 PM
-                    </span>
+                  <div>
+                    <p className="font-display text-xs font-bold uppercase text-charcoal-500 mb-1">Email</p>
+                    <a href="mailto:info@dheya.com" className="font-body text-lg text-charcoal-900 hover:text-purple-600">info@dheya.com</a>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-charcoal-600">Sunday</span>
-                    <span className="text-charcoal-800 font-medium">Closed</span>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 bg-[#C8D1A3] flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-charcoal-900" />
                   </div>
-                  <div className="pt-3 border-t border-cream-200">
-                    <p className="text-charcoal-600 text-xs">
-                      * Times are in Pacific Standard Time (PST)
-                    </p>
+                  <div>
+                    <p className="font-display text-xs font-bold uppercase text-charcoal-500 mb-1">Phone</p>
+                    <a href="tel:+919923400555" className="font-body text-lg text-charcoal-900 hover:text-purple-600">+91 99234 00555</a>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 bg-[#C8D1A3] flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-charcoal-900" />
+                  </div>
+                  <div>
+                    <p className="font-display text-xs font-bold uppercase text-charcoal-500 mb-1">HQ</p>
+                    <p className="font-body text-lg text-charcoal-900">Pune, Maharashtra, India</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-10 border-t border-charcoal-100">
+              <h3 className="font-display font-bold text-xl uppercase mb-6 flex items-center gap-2">
+                <Clock className="w-5 h-5" /> Office Hours
+              </h3>
+              <div className="space-y-3 font-body text-charcoal-700">
+                <div className="flex justify-between">
+                  <span>Mon - Fri</span>
+                  <span className="font-bold">10:00 AM - 6:00 PM IST</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Saturday</span>
+                  <span className="font-bold">10:00 AM - 2:00 PM IST</span>
+                </div>
+                <div className="flex justify-between text-charcoal-400">
+                  <span>Sunday</span>
+                  <span>Closed</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="container max-w-4xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-charcoal-800 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-lg font-body text-charcoal-600">
-              Find quick answers to common questions about our services
-            </p>
-          </div>
+      {/* FAQ */}
+      <section className="py-24 bg-[#F7EFE5]">
+        <div className="container-uplift max-w-4xl mx-auto">
+          <h2 className="text-display-sm text-charcoal-900 text-center mb-12">COMMON QUESTIONS</h2>
 
-          <Card variant="light" className="shadow-lg">
-            <CardContent className="pt-6">
-              <Accordion type="single" collapsible className="w-full">
-                {faqs.map((faq, index) => (
-                  <AccordionItem
-                    key={index}
-                    value={`item-${index}`}
-                    className="border-b border-cream-200 last:border-0"
-                  >
-                    <AccordionTrigger className="font-display text-charcoal-800 hover:text-purple-600 hover:no-underline">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="font-body text-charcoal-600">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <div className="text-center mt-8">
-            <p className="font-body text-charcoal-600">
-              Still have questions?{" "}
-              <a
-                href="mailto:info@dheyamentors.com"
-                className="font-medium text-purple-600 hover:text-purple-700 hover:underline"
-              >
-                Contact us directly
-              </a>
-            </p>
-          </div>
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`item-${i}`} className="bg-white border text-charcoal-900 px-6">
+                <AccordionTrigger className="font-display font-bold uppercase text-left hover:text-purple-600">{faq.question}</AccordionTrigger>
+                <AccordionContent className="font-body text-charcoal-700 pb-6">{faq.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
     </div>

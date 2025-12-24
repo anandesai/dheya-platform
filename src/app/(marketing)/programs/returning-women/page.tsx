@@ -20,9 +20,7 @@ import {
   Users,
   Calendar,
   Clock,
-  Award,
   Star,
-  ChevronRight,
   Target,
   Briefcase,
   Laptop,
@@ -187,10 +185,10 @@ const packages = [
     tier: "guidance",
     name: "Guidance",
     tagline: "Reconnect & clarify",
-    price: 25000,
-    originalPrice: 32000,
-    sessions: 6,
-    duration: "8 weeks",
+    price: 13999,
+    originalPrice: 17999,
+    sessions: 2,
+    duration: "2-3 weeks",
     mentorLevel: "Women Career Mentor (L1)",
     phases: "1-2",
     features: [
@@ -213,10 +211,10 @@ const packages = [
     tier: "planning",
     name: "Planning",
     tagline: "Complete re-entry program",
-    price: 45000,
-    originalPrice: 55000,
-    sessions: 10,
-    duration: "12 weeks",
+    price: 26999,
+    originalPrice: 34999,
+    sessions: "4-5",
+    duration: "6 weeks",
     mentorLevel: "Senior Women Mentor (L2)",
     phases: "1-5",
     popular: true,
@@ -239,10 +237,10 @@ const packages = [
     tier: "mentorship",
     name: "Mentorship",
     tagline: "Sustained success partner",
-    price: 75000,
-    originalPrice: 90000,
-    sessions: 18,
-    duration: "6 months",
+    price: 64999,
+    originalPrice: 84999,
+    sessions: "12-18",
+    duration: "12 months",
     mentorLevel: "Executive Women Mentor (L3)",
     phases: "1-6",
     features: [
@@ -365,70 +363,98 @@ function formatPrice(price: number): string {
 export default function ReturningWomenPage() {
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="section-cream section-padding overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(244,63,94,0.08),transparent_50%)]" />
-        <div className="container-uplift relative">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-1 space-y-6">
-              <div className="flex items-center gap-2">
-                <Badge className="font-display bg-rose-100 text-rose-700 hover:bg-rose-100">
-                  <Heart className="h-3 w-3 mr-1" />
-                  Returning Women Professionals
-                </Badge>
+      {/* Hero Section - Restart & Rise (Rose/Charcoal) */}
+      <section className="relative overflow-hidden bg-white pt-20 pb-32">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(244,63,94,0.1),transparent_50%)]"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-rose-200/30 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div className="container-uplift relative z-10">
+          <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+            <div className="flex-1 space-y-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 border border-rose-200 text-rose-700 text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
+                <Heart className="h-3 w-3 fill-rose-700" />
+                Returning Professionals
               </div>
-              <h1 className="text-display text-charcoal-900">
-                RESTART &{" "}
-                <span className="text-rose-600">RISE</span>
+              <h1 className="text-display text-5xl lg:text-7xl font-bold text-charcoal-900 tracking-tight leading-[1.1]">
+                Restart & <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-purple-600">Rise Stronger</span>
               </h1>
-              <p className="text-lg md:text-xl font-body text-charcoal-600 max-w-xl">
-                Your career break was a chapter, not the end of your story.
-                Confidently re-enter the workforce, rebuild your skills, and find
-                opportunities that fit your life.
+              <p className="text-xl text-charcoal-600 max-w-xl leading-relaxed">
+                Your career break is a chapter, not the end. Re-enter the workforce with confidence, updated skills, and a community that believes in you.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <Button
-                  size="lg"
-                  variant="uplift"
+                  size="xl"
+                  className="bg-rose-600 text-white hover:bg-rose-700 font-bold shadow-xl shadow-rose-600/20"
                   asChild
                 >
                   <Link href="#packages">
-                    View Packages
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    View Programs
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="upliftOutline" asChild>
-                  <Link href="/contact">Book Free Consultation</Link>
+                <Button size="xl" variant="outline" asChild className="border-charcoal-200 text-charcoal-900 hover:bg-charcoal-50 bg-white">
+                  <Link href="/contact">Free Consultation</Link>
                 </Button>
               </div>
-              <div className="flex flex-wrap gap-6 pt-4 text-micro text-charcoal-500">
-                <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-rose-600" />
-                  <span>8 weeks to 6 months</span>
+
+              <div className="flex flex-wrap gap-8 pt-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-rose-600" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-charcoal-900">8 Weeks</div>
+                    <div className="text-xs text-charcoal-500">To Re-launch</div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Users className="h-4 w-4 text-rose-600" />
-                  <span>Women-only Network</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Award className="h-4 w-4 text-rose-600" />
-                  <span>88% Successful Re-entry</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center">
+                    <Users className="w-5 h-5 text-rose-600" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-charcoal-900">Women-Only</div>
+                    <div className="text-xs text-charcoal-500">Community Access</div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="flex-1 relative">
-              <div className="relative w-full aspect-square max-w-md mx-auto">
-                <div className="absolute inset-0 bg-rose-200 rounded-full opacity-20 animate-pulse" />
-                <div className="absolute inset-4 bg-rose-300 rounded-full opacity-20" />
-                <div className="absolute inset-8 bg-white rounded-full shadow-xl flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <Flower2 className="h-16 w-16 text-rose-600 mx-auto mb-4" />
-                    <p className="text-2xl font-bold text-charcoal-900">
-                      10,000+
-                    </p>
-                    <p className="text-micro text-charcoal-500">
-                      Women restarted careers
-                    </p>
+
+            <div className="flex-1 relative w-full max-w-lg">
+              <div className="relative aspect-square">
+                <div className="absolute inset-0 bg-gradient-to-tr from-rose-200 to-purple-200 rounded-[2.5rem] transform -rotate-6 scale-95 opacity-80 border border-white/50"></div>
+                <div className="absolute inset-0 bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-rose-100">
+                  <div className="absolute inset-0 bg-[url('/images/pattern-grid.svg')] opacity-[0.02]"></div>
+                  <div className="h-full w-full flex flex-col items-center justify-center p-8 text-center bg-gradient-to-b from-rose-50/50 to-white">
+                    <Flower2 className="h-24 w-24 text-rose-500 mb-6 drop-shadow-[0_10px_20px_rgba(244,63,94,0.3)]" />
+                    <h3 className="text-2xl font-display font-bold text-charcoal-900 mb-2">10,000+</h3>
+                    <p className="text-charcoal-500 font-medium">Careers Restarted Successfully</p>
+                  </div>
+                </div>
+
+                {/* Floating Cards */}
+                <div className="absolute -left-6 top-1/4 bg-white/90 backdrop-blur-md border border-white/50 p-4 rounded-xl shadow-xl animate-float-slow max-w-[200px]">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-rose-500/10 flex-shrink-0 flex items-center justify-center mt-1">
+                      <TrendingUp className="w-4 h-4 text-rose-600" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-charcoal-900">88% Rate</div>
+                      <div className="text-xs text-charcoal-500 mt-1">Successful Placement</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="absolute -right-4 bottom-1/4 bg-white/90 backdrop-blur-md border border-white/50 p-4 rounded-xl shadow-xl animate-float-delayed max-w-[200px]">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-purple-500/10 flex-shrink-0 flex items-center justify-center mt-1">
+                      <Briefcase className="w-4 h-4 text-purple-600" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-charcoal-900">Returnships</div>
+                      <div className="text-xs text-charcoal-500 mt-1">Partner Network</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -437,55 +463,50 @@ export default function ReturningWomenPage() {
         </div>
       </section>
 
-      {/* Common Concerns Section */}
-      <section className="bg-white section-padding">
+      {/* Common Concerns Section - Empathy First */}
+      <section className="bg-cream-50 section-padding">
         <div className="container-uplift">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="font-display mb-4 bg-rose-100 text-rose-700">
-              <HandHeart className="h-3 w-3 mr-1" />
-              We Understand
-            </Badge>
-            <h2 className="heading-section text-charcoal-900 mb-4">
-              Your Concerns Are Valid. We Have Solutions.
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-xs font-bold uppercase tracking-widest mb-6">
+              <HandHeart className="h-3 w-3" />
+              We Understand The Journey
+            </div>
+            <h2 className="text-display sm:text-5xl text-charcoal-900 mb-6">
+              Your Doubts Are <span className="text-rose-600">Valid</span>.<br /> But So Is Your Talent.
             </h2>
-            <p className="font-body text-charcoal-600">
-              After years away from work, it&apos;s natural to have doubts. Our
-              program addresses each concern systematically.
+            <p className="text-body-lg text-charcoal-600">
+              Returning to work is emotional and challenging. We tackle the psychological and practical barriers head-on.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {commonConcerns.map((concern, index) => {
               const Icon = concern.icon
               return (
                 <Card
                   key={index}
-                  variant="light"
-                  hover="lift"
-                  className="group border-2 hover:border-rose-200"
+                  className="group relative border-0 bg-white shadow-lg p-2 rounded-[2rem] hover:shadow-xl transition-all duration-300"
                 >
-                  <CardHeader>
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 rounded-full bg-rose-100 group-hover:bg-rose-200 transition-colors">
-                        <Icon className="h-6 w-6 text-rose-600" />
+                  <div className="p-8 pb-4">
+                    <div className="w-14 h-14 rounded-2xl bg-rose-50 group-hover:bg-rose-100 flex items-center justify-center mb-6 transition-colors duration-300">
+                      <Icon className="h-7 w-7 text-rose-600" />
+                    </div>
+                    <h3 className="text-2xl font-display font-bold text-charcoal-900 mb-2">
+                      {concern.name}
+                    </h3>
+                    <p className="text-charcoal-500 mb-6 text-sm">{concern.description}</p>
+                  </div>
+                  <div className="bg-rose-50/50 rounded-3xl p-6 mx-2 mb-2">
+                    <div className="flex items-start gap-3">
+                      <div className="p-1 rounded-full bg-green-100 mt-1">
+                        <Check className="h-3 w-3 text-green-700 stroke-[3px]" />
                       </div>
                       <div>
-                        <CardTitle className="heading-card">{concern.name}</CardTitle>
-                        <CardDescription className="mt-1">
-                          {concern.description}
-                        </CardDescription>
+                        <span className="text-xs font-bold text-rose-700 uppercase tracking-wide block mb-1">Our Solution</span>
+                        <p className="text-charcoal-800 font-medium text-sm leading-relaxed">{concern.solution}</p>
                       </div>
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-start gap-2 bg-rose-50 p-3 rounded-lg">
-                      <Check className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <p className="text-sm font-body text-charcoal-700">
-                        <span className="font-medium">Our solution: </span>
-                        {concern.solution}
-                      </p>
-                    </div>
-                  </CardContent>
+                  </div>
                 </Card>
               )
             })}
@@ -493,47 +514,47 @@ export default function ReturningWomenPage() {
         </div>
       </section>
 
-      {/* Success Pathways Section */}
-      <section className="section-charcoal section-padding text-white">
-        <div className="container-uplift">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="font-display mb-4 bg-white text-rose-600 hover:bg-white">
-              <TrendingUp className="h-3 w-3 mr-1" />
-              Multiple Pathways
-            </Badge>
-            <h2 className="heading-section mb-4">
-              Choose Your Re-entry Path
+      {/* Success Pathways Section - Dark Premium */}
+      <section className="section-charcoal section-padding relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-[0.03]"></div>
+        <div className="container-uplift relative z-10">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-widest mb-6">
+              <TrendingUp className="h-3 w-3" />
+              Modern Options
+            </div>
+            <h2 className="text-display sm:text-5xl text-white mb-6">
+              Multiple Paths To Re-entry
             </h2>
-            <p className="font-body text-charcoal-100">
-              There&apos;s no single way back. We help you explore options and
-              find what fits your life best.
+            <p className="text-body-lg text-charcoal-300">
+              The workplace has evolved. Discover flexible ways to restart your career that fit your new lifestyle.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {successPathways.map((pathway, index) => (
               <Card
                 key={index}
-                variant="dark"
-                className="bg-white/10 backdrop-blur-sm border-white/20 text-white"
+                className="bg-white/5 backdrop-blur-md border border-white/10 text-white hover:bg-white/10 transition-all duration-300"
               >
                 <CardHeader>
-                  <CardTitle className="heading-card text-white">
+                  <CardTitle className="text-xl font-display font-bold text-white mb-2">
                     {pathway.name}
                   </CardTitle>
-                  <CardDescription className="text-charcoal-100">
+                  <CardDescription className="text-charcoal-300 text-sm leading-relaxed">
                     {pathway.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-micro text-charcoal-200 uppercase tracking-wider mb-2">
-                    Examples
+                  <div className="h-px w-full bg-white/10 mb-4"></div>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-charcoal-400 mb-3">
+                    Who Hires Like This
                   </p>
-                  <div className="flex flex-wrap gap-1">
+                  <div className="flex flex-wrap gap-2">
                     {pathway.companies.slice(0, 4).map((company, compIndex) => (
                       <span
                         key={compIndex}
-                        className="text-xs bg-white/20 px-2 py-1 rounded"
+                        className="text-[10px] font-medium bg-rose-500/20 text-rose-200 border border-rose-500/30 px-2 py-1.5 rounded"
                       >
                         {company}
                       </span>
@@ -547,47 +568,43 @@ export default function ReturningWomenPage() {
       </section>
 
       {/* Assessment Tools Section */}
-      <section className="section-cream section-padding">
+      <section className="bg-white section-padding">
         <div className="container-uplift">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="font-display mb-4 bg-rose-100 text-rose-700">
-              <Sparkles className="h-3 w-3 mr-1" />
-              Designed for You
-            </Badge>
-            <h2 className="heading-section text-charcoal-900 mb-4">
-              Tools Created Specifically for Returning Women
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-xs font-bold uppercase tracking-widest mb-6">
+              <Sparkles className="h-3 w-3" />
+              Specialized Toolkit
+            </div>
+            <h2 className="text-display sm:text-5xl text-charcoal-900 mb-6">
+              Tools For Your Comeback
             </h2>
-            <p className="font-body text-charcoal-600">
-              Our assessment tools address the unique challenges of re-entering
-              the workforce after a career break.
+            <p className="text-body-lg text-charcoal-600">
+              Our proprietary frameworks are designed specifically to bridge the gap between your past experience and future potential.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {assessmentTools.map((tool, index) => {
               const Icon = tool.icon
               return (
                 <Card
                   key={index}
-                  variant="light"
-                  hover="lift"
+                  className="group border-0 shadow-none bg-transparent"
                 >
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div className="p-2 rounded-lg bg-rose-100 group-hover:bg-rose-200 transition-colors">
-                        <Icon className="h-5 w-5 text-rose-600" />
-                      </div>
-                      <Badge variant="outline" className="font-display text-xs">
-                        Phase {tool.phase}
-                      </Badge>
+                  <div className="h-full p-8 rounded-3xl bg-cream-50 hover:bg-white border border-transparent hover:border-rose-200 hover:shadow-xl hover:shadow-rose-500/5 transition-all duration-300">
+                    <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="h-6 w-6 text-charcoal-800" />
                     </div>
-                    <CardTitle className="heading-card mt-3">{tool.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm font-body text-charcoal-600">
+                    <div className="mb-4">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-charcoal-500 bg-charcoal-100 px-2 py-1 rounded-lg">
+                        Phase {tool.phase}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-display font-bold text-charcoal-900 mb-3">{tool.name}</h3>
+                    <p className="text-charcoal-600 leading-relaxed text-sm">
                       {tool.description}
                     </p>
-                  </CardContent>
+                  </div>
                 </Card>
               )
             })}
@@ -596,77 +613,67 @@ export default function ReturningWomenPage() {
       </section>
 
       {/* 6-Phase Journey Section */}
-      <section className="section-charcoal section-padding text-white">
-        <div className="container-uplift">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="font-display mb-4 bg-rose-500 text-white hover:bg-rose-500">
-              Your Journey
-            </Badge>
-            <h2 className="heading-section mb-4">
-              Your 6-Phase Comeback Story
+      <section className="bg-charcoal-950 section-padding relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-[0.03]"></div>
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-rose-900/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div className="container-uplift relative z-10">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-display sm:text-5xl text-white mb-6">
+              Your 6-Step Return Roadmap
             </h2>
-            <p className="font-body text-charcoal-100">
-              A supportive, step-by-step process designed to rebuild your
-              confidence and launch your return.
+            <p className="text-body-lg text-charcoal-300">
+              Structured to eliminate overwhelm. We take it one phase at a time, celebrating every win.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-4">
+          <div className="max-w-5xl mx-auto space-y-6">
             {phases.map((phase, index) => (
               <div
                 key={phase.number}
-                className={`flex gap-4 p-6 rounded-lg ${
-                  phase.tier === "guidance"
-                    ? "bg-charcoal-700/50"
-                    : phase.tier === "planning"
-                      ? "bg-rose-600/20 border border-rose-500/30"
-                      : "bg-purple-600/20 border border-purple-500/30"
-                }`}
+                className="group relative flex flex-col md:flex-row gap-6 p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
               >
+                {/* Connector Line */}
+                {index < phases.length - 1 && (
+                  <div className="absolute left-10 top-20 bottom-0 w-px bg-white/10 hidden md:block group-hover:bg-rose-500/50 transition-colors"></div>
+                )}
+
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-rose-500 flex items-center justify-center font-bold text-lg">
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center font-display font-bold text-lg shadow-lg transition-transform group-hover:scale-110 ${phase.tier === 'guidance' ? 'bg-charcoal-700 text-white border border-white/20' :
+                    phase.tier === 'planning' ? 'bg-rose-600 text-white border border-rose-500' :
+                      'bg-purple-600 text-white border border-purple-500'
+                    }`}>
                     {phase.number}
                   </div>
                 </div>
                 <div className="flex-1">
-                  <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <h3 className="heading-card">{phase.title}</h3>
-                    <Badge
-                      className={`font-display ${
-                        phase.tier === "guidance"
-                          ? "bg-white text-charcoal-800"
-                          : phase.tier === "planning"
-                            ? "bg-rose-500 text-white"
-                            : "bg-purple-500 text-white"
-                      }`}
-                    >
-                      {phase.tier === "guidance"
-                        ? "Guidance+"
-                        : phase.tier === "planning"
-                          ? "Planning+"
-                          : "Mentorship"}
-                    </Badge>
-                    <span className="text-micro text-charcoal-300">
+                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                    <h3 className="text-xl font-display font-bold text-white">{phase.title}</h3>
+                    <div className={`text-xs font-bold px-2 py-1 rounded uppercase tracking-wider ${phase.tier === 'guidance' ? 'bg-white/10 text-charcoal-200' :
+                      phase.tier === 'planning' ? 'bg-rose-500/20 text-rose-200 border border-rose-500/30' :
+                        'bg-purple-500/20 text-purple-200 border border-purple-500/30'
+                      }`}>
+                      {phase.tier === "guidance" ? "Guidance+" : phase.tier === "planning" ? "Planning+" : "Mentorship"}
+                    </div>
+                    <span className="text-xs text-charcoal-400 font-medium uppercase tracking-wider border-l border-white/10 pl-3">
                       {phase.duration}
                     </span>
                   </div>
-                  <p className="font-body text-charcoal-200 text-sm mb-3">
+                  <p className="text-charcoal-300 text-base mb-4 max-w-2xl">
                     {phase.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {phase.tools.map((tool, toolIndex) => (
                       <span
                         key={toolIndex}
-                        className="text-xs bg-charcoal-900/50 px-2 py-1 rounded"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-medium bg-black/20 border border-white/10 text-charcoal-300"
                       >
+                        <div className="w-1 h-1 rounded-full bg-rose-500/50"></div>
                         {tool}
                       </span>
                     ))}
                   </div>
                 </div>
-                {index < phases.length - 1 && (
-                  <ChevronRight className="hidden md:block h-6 w-6 text-charcoal-400 self-center" />
-                )}
               </div>
             ))}
           </div>
@@ -674,118 +681,78 @@ export default function ReturningWomenPage() {
       </section>
 
       {/* Packages Section */}
-      <section id="packages" className="section-cream section-padding">
-        <div className="container-uplift">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="font-display mb-4 bg-rose-100 text-rose-700">
-              Choose Your Path
-            </Badge>
-            <h2 className="heading-section text-charcoal-900 mb-4">
-              Investment in Your Comeback
+      <section id="packages" className="relative py-24 bg-cream-50 overflow-hidden">
+        <div className="container-uplift relative z-10">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-display sm:text-5xl text-charcoal-900 mb-6">
+              Invest In Your Comeback
             </h2>
-            <p className="font-body text-charcoal-600">
-              Select the level of support that matches your needs. All packages
-              include access to our supportive women&apos;s community.
+            <p className="text-body-lg text-charcoal-600">
+              Select the level of support that matches your ambition.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {packages.map((pkg) => (
               <Card
                 key={pkg.tier}
-                variant="light"
-                hover="lift"
-                className={`relative ${
-                  pkg.popular
-                    ? "border-2 border-rose-500 shadow-lg"
-                    : "border-2"
-                }`}
+                className={`relative border-0 overflow-hidden flex flex-col h-full bg-white shadow-xl hover:shadow-2xl transition-all duration-300 ${pkg.popular
+                  ? "ring-4 ring-rose-500/30 scale-105 z-10"
+                  : ""
+                  }`}
               >
                 {pkg.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="font-display bg-rose-600 text-white">
-                      Most Popular
-                    </Badge>
-                  </div>
+                  <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-rose-400 to-purple-500" />
                 )}
-                <CardHeader className="text-center pb-4">
-                  <Badge
-                    variant="outline"
-                    className={`font-display w-fit mx-auto mb-2 ${
-                      pkg.popular ? "border-rose-300 text-rose-700" : ""
-                    }`}
-                  >
-                    {pkg.tagline}
-                  </Badge>
-                  <CardTitle className="heading-card">{pkg.name}</CardTitle>
-                  <div className="mt-2">
-                    <span className="text-micro text-charcoal-600 line-through">
-                      {formatPrice(pkg.originalPrice)}
+
+                <CardHeader className="text-center pb-8 pt-10">
+                  {pkg.popular && (
+                    <span className="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-widest bg-rose-100 text-rose-700 px-2 py-1 rounded">
+                      Recommended
                     </span>
-                    <span
-                      className={`text-4xl font-bold block ${
-                        pkg.popular ? "text-rose-600" : "text-charcoal-900"
-                      }`}
-                    >
+                  )}
+                  <div className={`text-sm font-bold uppercase tracking-widest mb-2 text-charcoal-500`}>
+                    {pkg.tagline}
+                  </div>
+                  <CardTitle className="text-3xl font-display font-bold text-charcoal-900">
+                    {pkg.name}
+                  </CardTitle>
+                  <div className="mt-6 flex items-baseline justify-center gap-2">
+                    <span className="text-4xl font-bold text-charcoal-900">
                       {formatPrice(pkg.price)}
                     </span>
+                    <span className="text-sm line-through text-charcoal-400">
+                      {formatPrice(pkg.originalPrice)}
+                    </span>
                   </div>
-                  <CardDescription className="mt-2">
-                    {pkg.sessions} sessions • {pkg.duration}
-                    <br />
-                    Phases {pkg.phases} • {pkg.mentorLevel}
-                  </CardDescription>
+                  <div className="mt-4 text-sm font-medium text-charcoal-600">
+                    {pkg.duration} • {pkg.sessions} Sessions
+                  </div>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <p className="text-micro text-charcoal-500 uppercase tracking-wider mb-2">
-                      What&apos;s Included
-                    </p>
-                    <ul className="space-y-2">
-                      {pkg.features.map((feature, index) => (
-                        <li
-                          key={index}
-                          className="flex items-start gap-2 text-sm font-body"
-                        >
-                          <Check className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  {pkg.notIncluded.length > 0 && (
-                    <div className="pt-4 border-t">
-                      <p className="text-micro text-charcoal-500 mb-2">
-                        Not included:
-                      </p>
-                      <ul className="space-y-1">
-                        {pkg.notIncluded.map((item, index) => (
-                          <li
-                            key={index}
-                            className="text-micro text-charcoal-500 line-through"
-                          >
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                <CardContent className="space-y-6 flex-1 px-8">
+                  <div className="w-full h-px bg-charcoal-100" />
+                  <ul className="space-y-4">
+                    {pkg.features.map((feature, index) => (
+                      <li
+                        key={index}
+                        className="flex items-start gap-3 text-sm"
+                      >
+                        <Check className="h-5 w-5 flex-shrink-0 text-rose-600" />
+                        <span className="text-charcoal-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </CardContent>
-                <CardFooter>
+                <CardFooter className="pt-8 pb-10 px-8">
                   <Button
-                    className="w-full"
-                    variant={
-                      pkg.popular
-                        ? "uplift"
-                        : pkg.tier === "mentorship"
-                          ? "dark"
-                          : "upliftOutline"
-                    }
+                    className={`w-full h-12 text-base font-bold rounded-xl transition-all ${pkg.popular
+                      ? "bg-rose-600 text-white hover:bg-rose-700 shadow-lg shadow-rose-600/30"
+                      : "bg-charcoal-900 text-white hover:bg-charcoal-800"
+                      }`}
                     asChild
                   >
                     <Link href={`/auth/register?program=returning-women&tier=${pkg.tier}`}>
-                      Get Started
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      Get Started <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </CardFooter>
@@ -793,7 +760,7 @@ export default function ReturningWomenPage() {
             ))}
           </div>
 
-          <p className="text-center text-micro text-charcoal-500 mt-8">
+          <p className="text-center text-charcoal-400 text-sm mt-12 opacity-80">
             All prices are inclusive of GST. EMI options available.
             <br />
             100% satisfaction guarantee or full refund after first 2 sessions.
