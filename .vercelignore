@@ -1,0 +1,30 @@
+# Build outputs
+.next
+out
+build
+
+# Dependencies
+node_modules
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Docker files
+Dockerfile
+.dockerignore
+docker-entrypoint.js
+
+# Fly.io
+fly.toml
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
