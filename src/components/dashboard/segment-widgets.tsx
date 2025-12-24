@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import {
   TrendingUp,
@@ -309,6 +310,46 @@ export function ConfidenceScoreWidget() {
           <div className="text-center p-3 bg-cream-50 rounded-lg">
             <div className="text-lg font-bold text-charcoal-800">85%</div>
             <div className="text-xs text-charcoal-600 font-body">Re-entry Ready</div>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  )
+}
+
+// Life Stage Tracker Widget (Mid-Career & Senior)
+export function LifeStageWidget() {
+  const currentStage = "Establishment"
+  const nextStage = "Advancement"
+  const satisfaction = 65
+
+  return (
+    <Card variant="light">
+      <CardHeader className="pb-2">
+        <div className="flex items-center justify-between">
+          <CardTitle className="text-lg font-display">Life Stage Tracker</CardTitle>
+          <Badge variant="outline" className="border-purple-200 text-purple-700 bg-purple-50">
+            {currentStage}
+          </Badge>
+        </div>
+        <CardDescription>Current stage satisfaction & progress</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <div>
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm text-charcoal-600 font-body">Satisfaction</span>
+            <span className="text-sm font-bold text-charcoal-800">{satisfaction}%</span>
+          </div>
+          <Progress value={satisfaction} indicatorClassName="bg-purple-500" />
+        </div>
+
+        <div className="flex items-center gap-3 p-3 bg-cream-50 rounded-lg border border-cream-200">
+          <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
+            <Compass className="w-4 h-4 text-purple-600" />
+          </div>
+          <div>
+            <p className="text-xs text-charcoal-500 font-display uppercase tracking-wide">Next Milestone</p>
+            <p className="text-sm font-bold text-charcoal-800">Transition to {nextStage}</p>
           </div>
         </div>
       </CardContent>

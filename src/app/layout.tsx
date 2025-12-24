@@ -1,13 +1,13 @@
 import type { Metadata } from "next"
-import { Inter, Lora } from "next/font/google"
+import { Oswald, Lora } from "next/font/google"
 import { SessionProvider } from "@/components/providers/session-provider"
 import { Toaster } from "@/components/ui/sonner"
 import "./globals.css"
 
 // Display font - Bold condensed for ALL-CAPS headlines (Uplift style)
-const inter = Inter({
+const oswald = Oswald({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-display",
   display: "swap",
 })
@@ -84,7 +84,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${lora.variable} font-sans antialiased`}
+        className={`${oswald.variable} ${lora.variable} font-sans antialiased`}
       >
         <SessionProvider>
           {children}

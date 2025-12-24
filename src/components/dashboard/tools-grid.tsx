@@ -21,6 +21,7 @@ import {
   Lock,
   ArrowRight,
   CheckCircle,
+  TrendingUp,
 } from "lucide-react"
 
 type AccessLevel = "full" | "view_only" | "teaser" | "locked"
@@ -89,6 +90,22 @@ const tools: Tool[] = [
     category: "Assessment",
     accessLevel: "locked",
   },
+  {
+    id: "ks-inventory",
+    name: "Knowledge & Skills Inventory",
+    description: "Map and evaluate your skills across 4 dimensions",
+    icon: ClipboardList, // Using ClipboardList as placeholder, will update imports
+    category: "Inventory",
+    accessLevel: "full",
+  },
+  {
+    id: "cgi-tracker",
+    name: "Career Growth Index",
+    description: "Track income trajectory vs market benchmarks",
+    icon: TrendingUp, // Using TrendingUp as placeholder
+    category: "Tracker",
+    accessLevel: "full",
+  },
 ]
 
 function getAccessBadge(accessLevel: AccessLevel) {
@@ -146,29 +163,26 @@ export function ToolsGrid() {
             return (
               <div
                 key={tool.id}
-                className={`relative p-4 rounded-lg border transition-all ${
-                  isAccessible
-                    ? "border-cream-200 hover:border-purple-300 hover:shadow-sm cursor-pointer"
-                    : "border-cream-200 bg-cream-50 opacity-75"
-                }`}
+                className={`relative p-4 rounded-lg border transition-all ${isAccessible
+                  ? "border-cream-200 hover:border-purple-300 hover:shadow-sm cursor-pointer"
+                  : "border-cream-200 bg-cream-50 opacity-75"
+                  }`}
               >
                 <div className="flex items-start justify-between mb-3">
                   <div
-                    className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                      tool.completed
-                        ? "bg-green-100"
-                        : isAccessible
+                    className={`w-10 h-10 rounded-lg flex items-center justify-center ${tool.completed
+                      ? "bg-green-100"
+                      : isAccessible
                         ? "bg-purple-100"
                         : "bg-cream-200"
-                    }`}
+                      }`}
                   >
                     {tool.completed ? (
                       <CheckCircle className="w-5 h-5 text-green-600" />
                     ) : (
                       <Icon
-                        className={`w-5 h-5 ${
-                          isAccessible ? "text-purple-500" : "text-cream-400"
-                        }`}
+                        className={`w-5 h-5 ${isAccessible ? "text-purple-500" : "text-cream-400"
+                          }`}
                       />
                     )}
                   </div>
@@ -176,9 +190,8 @@ export function ToolsGrid() {
                 </div>
 
                 <h4
-                  className={`font-medium font-display mb-1 ${
-                    isAccessible ? "text-charcoal-800" : "text-charcoal-600"
-                  }`}
+                  className={`font-medium font-display mb-1 ${isAccessible ? "text-charcoal-800" : "text-charcoal-600"
+                    }`}
                 >
                   {tool.name}
                 </h4>

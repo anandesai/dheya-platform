@@ -142,6 +142,9 @@ model User {
   toolResults         ToolResult[]
   bookings            Booking[]
   mentor              Mentor?
+  payments            Payment[]
+  invoices            Invoice[]
+  subscriptions       Subscription[]
 
   @@index([segment])
   @@index([email])
@@ -271,6 +274,9 @@ model Package {
   packageToolAccess   PackageToolAccess[]
   userPackages        UserPackage[]
   bookings            Booking[]
+  payments            Payment[]
+  invoices            Invoice[]
+  subscriptions       Subscription[]
 
   @@unique([segment, tier])
   @@index([segment])
@@ -320,6 +326,7 @@ model UserPackage {
   createdAt           DateTime      @default(now())
   updatedAt           DateTime      @updatedAt
 
+  @@unique([userId, packageId])
   @@index([userId])
   @@index([status])
 }
@@ -479,4 +486,108 @@ model ContactSubmission {
 
   @@index([status])
   @@index([createdAt])
+}
+
+// ==========================================
+// PAYMENT & BILLING MODELS
+// ==========================================
+
+enum PaymentStatus {
+  PENDING           // Order created, awaiting payment
+  CREATED           // Razorpay order created
+  AUTHORIZED        // Payment authorized but not captured
+  CAPTURED          // Payment successfully captured
+  FAILED            // Payment failed
+  REFUNDED          // Fully refunded
+  PARTIALLY_REFUNDED // Partially refunded
+  CANCELLED         // Payment cancelled
+}
+
+model Payment {
+  id                  String        @id @default(cuid())
+  userId              String
+  user                User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  packageId           String
+  package             Package       @relation(fields: [packageId], references: [id])
+  orderId             String        @unique  // Razorpay order ID
+  paymentId           String?       // Razorpay payment ID
+  amount              Int           // Amount in paise
+  currency            String        @default("INR")
+  status              PaymentStatus @default(PENDING)
+  receipt             String?       // Receipt number
+  invoiceId           String?       // Generated invoice ID
+  notes               Json?         // Razorpay notes and metadata
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  invoice             Invoice?
+
+  @@index([userId])
+  @@index([packageId])
+  @@index([status])
+  @@index([paymentId])
+  @@index([createdAt])
+}
+
+model Invoice {
+  id                  String        @id @default(cuid())
+  invoiceNumber       String        @unique  // INV-YYYY-NNNNN format
+  userId              String
+  user                User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  paymentId           String        @unique
+  payment             Payment       @relation(fields: [paymentId], references: [id])
+  packageId           String
+  package             Package       @relation(fields: [packageId], references: [id])
+
+  // Billing details
+  customerName        String
+  customerEmail       String
+  customerPhone       String?
+  customerAddress     String?       @db.Text
+
+  // Amount breakdown
+  subtotal            Int           // Amount before tax in paise
+  taxRate             Float         @default(18)  // GST percentage
+  taxAmount           Int           // Tax amount in paise
+  discountAmount      Int           @default(0)   // Discount in paise
+  totalAmount         Int           // Final amount in paise
+
+  // Invoice status
+  status              String        @default("PAID")  // DRAFT, SENT, PAID, OVERDUE, CANCELLED
+  issuedAt            DateTime      @default(now())
+  dueDate             DateTime?
+  paidAt              DateTime?
+
+  // PDF storage
+  pdfUrl              String?
+
+  notes               String?       @db.Text
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@index([userId])
+  @@index([invoiceNumber])
+  @@index([issuedAt])
+}
+
+// Subscription tracking for recurring payments (future use)
+model Subscription {
+  id                  String        @id @default(cuid())
+  userId              String
+  user                User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  packageId           String
+  package             Package       @relation(fields: [packageId], references: [id])
+  subscriptionId      String?       @unique  // Razorpay subscription ID
+  planId              String?       // Razorpay plan ID
+  status              String        @default("active")  // active, paused, cancelled, expired
+  currentPeriodStart  DateTime
+  currentPeriodEnd    DateTime
+  cancelledAt         DateTime?
+  cancelReason        String?
+  metadata            Json?
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@index([userId])
+  @@index([status])
 }

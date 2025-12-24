@@ -166,7 +166,7 @@ export default function ProgressPage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-blue-600">
+            <div className="text-2xl font-bold text-purple-600">
               {data.progress.totalSessions}
             </div>
             <p className="text-sm text-charcoal-600 font-body">completed</p>
@@ -198,13 +198,12 @@ export default function ProgressPage() {
                 return (
                   <div key={phase} className="relative flex items-start gap-4 pl-4">
                     <div
-                      className={`absolute left-0 w-8 h-8 rounded-full flex items-center justify-center z-10 ${
-                        isCompleted
+                      className={`absolute left-0 w-8 h-8 rounded-full flex items-center justify-center z-10 ${isCompleted
                           ? "bg-green-500 text-white"
                           : isCurrent
-                          ? "bg-purple-500 text-white ring-4 ring-purple-100"
-                          : "bg-gray-200 text-gray-500"
-                      }`}
+                            ? "bg-purple-500 text-white ring-4 ring-purple-100"
+                            : "bg-gray-200 text-gray-500"
+                        }`}
                     >
                       {isCompleted ? (
                         <CheckCircle className="h-4 w-4" />
@@ -215,9 +214,8 @@ export default function ProgressPage() {
                     <div className="ml-8 flex-1">
                       <div className="flex items-center gap-2">
                         <h3
-                          className={`font-medium font-display ${
-                            isLocked ? "text-gray-400" : "text-charcoal-800"
-                          }`}
+                          className={`font-medium font-display ${isLocked ? "text-gray-400" : "text-charcoal-800"
+                            }`}
                         >
                           Phase {phaseNum}: {phase}
                         </h3>
@@ -233,9 +231,8 @@ export default function ProgressPage() {
                         )}
                       </div>
                       <p
-                        className={`text-sm mt-1 ${
-                          isLocked ? "text-gray-400" : "text-charcoal-600 font-body"
-                        }`}
+                        className={`text-sm mt-1 ${isLocked ? "text-gray-400" : "text-charcoal-600 font-body"
+                          }`}
                       >
                         {getPhaseDescription(phaseNum)}
                       </p>
@@ -351,7 +348,7 @@ export default function ProgressPage() {
         <Card variant="light">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 font-display">
-              <TrendingUp className="h-5 w-5 text-blue-600" />
+              <TrendingUp className="h-5 w-5 text-purple-600" />
               CLIQI Score Progress
             </CardTitle>
             <CardDescription>
@@ -403,8 +400,8 @@ export default function ProgressPage() {
         <Link href="/dashboard">
           <Card variant="light" className="hover:shadow-md transition-shadow cursor-pointer">
             <CardContent className="flex items-center gap-4 p-6">
-              <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-                <Target className="h-6 w-6 text-blue-600" />
+              <div className="w-12 h-12 rounded-full bg-sage-100 flex items-center justify-center">
+                <Target className="h-6 w-6 text-sage-600" />
               </div>
               <div>
                 <p className="font-medium">View Dashboard</p>

@@ -222,6 +222,34 @@ const mockTools: Tool[] = [
     createdAt: "2024-03-10",
     updatedAt: "2024-03-12",
   },
+  {
+    id: "9",
+    code: "KSI-001",
+    name: "Knowledge & Skills Inventory",
+    category: "assessment",
+    segments: ["mid_career", "senior", "returning_women"],
+    phase: 1,
+    questionsCount: 20, // Based on spec (20 + 13 questions)
+    estimatedTime: 45,
+    status: "active",
+    completionRate: 0,
+    createdAt: "2025-12-24",
+    updatedAt: "2025-12-24",
+  },
+  {
+    id: "10",
+    code: "CGI-001",
+    name: "Career Growth Index",
+    category: "report",
+    segments: ["mid_career", "senior"],
+    phase: 3,
+    questionsCount: 0,
+    estimatedTime: 10,
+    status: "active",
+    completionRate: 0,
+    createdAt: "2025-12-24",
+    updatedAt: "2025-12-24",
+  },
 ]
 
 export default function ToolsLibraryPage() {

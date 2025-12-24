@@ -78,7 +78,7 @@ const SEGMENTS = [
 ]
 
 const TIERS = [
-  { value: "GUIDANCE", label: "Guidance", color: "bg-blue-100 text-blue-800" },
+  { value: "GUIDANCE", label: "Guidance", color: "bg-sage-100 text-sage-800" },
   { value: "PLANNING", label: "Planning", color: "bg-purple-100 text-purple-800" },
   { value: "MENTORSHIP", label: "Mentorship", color: "bg-amber-100 text-amber-800" },
 ]
@@ -122,7 +122,7 @@ export default function PackagesPage() {
 
   useEffect(() => {
     fetchPackages()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [segmentFilter, tierFilter, statusFilter])
 
   const handlePublish = async (pkg: PackageData) => {

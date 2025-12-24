@@ -44,7 +44,7 @@ interface Assessment {
 
 const assessments: Assessment[] = [
   {
-    id: "bbd-assessment",
+    id: "bbd",
     name: "BBD Syndrome Assessment",
     description:
       "Identify if you're Bored, Burned out, or Dissatisfied with your career",
@@ -115,7 +115,7 @@ const categoryLabels = {
 
 const categoryColors = {
   assessment: "bg-purple-100 text-purple-700",
-  workbook: "bg-blue-100 text-blue-700",
+  workbook: "bg-sage-100 text-sage-700",
   framework: "bg-green-100 text-green-700",
 }
 
@@ -226,32 +226,29 @@ export default function AssessmentsPage() {
                 <Card
                   key={assessment.id}
                   variant="light"
-                  className={`relative transition-all ${
-                    isAccessible
-                      ? "hover:shadow-md hover:border-purple-300"
-                      : "opacity-75"
-                  }`}
+                  className={`relative transition-all ${isAccessible
+                    ? "hover:shadow-md hover:border-purple-300"
+                    : "opacity-75"
+                    }`}
                 >
                   <CardHeader className="pb-2">
                     <div className="flex items-start justify-between">
                       <div
-                        className={`w-12 h-12 rounded-lg flex items-center justify-center ${
-                          assessment.completed
-                            ? "bg-green-100"
-                            : isAccessible
+                        className={`w-12 h-12 rounded-lg flex items-center justify-center ${assessment.completed
+                          ? "bg-green-100"
+                          : isAccessible
                             ? "bg-purple-100"
                             : "bg-cream-200"
-                        }`}
+                          }`}
                       >
                         {assessment.completed ? (
                           <CheckCircle className="w-6 h-6 text-green-600" />
                         ) : (
                           <Icon
-                            className={`w-6 h-6 ${
-                              isAccessible
-                                ? "text-purple-600"
-                                : "text-cream-400"
-                            }`}
+                            className={`w-6 h-6 ${isAccessible
+                              ? "text-purple-600"
+                              : "text-cream-400"
+                              }`}
                           />
                         )}
                       </div>

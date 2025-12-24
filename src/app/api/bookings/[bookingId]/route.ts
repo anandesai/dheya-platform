@@ -48,8 +48,10 @@ export async function GET(
         id: booking.id,
         scheduledAt: booking.scheduledAt,
         duration: booking.duration,
+        sessionNumber: booking.sessionNumber,
         status: booking.status,
         notes: booking.notes,
+        meetingUrl: booking.meetingUrl,
         feedback: feedbackData?.comment || null,
         rating: feedbackData?.rating || null,
         user: {

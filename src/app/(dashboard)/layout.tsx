@@ -16,6 +16,7 @@ import {
   Bell,
   User,
   ChevronDown,
+  BookOpen,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -30,6 +31,7 @@ import { signOut } from "next-auth/react"
 const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { name: "Assessments", href: "/assessments", icon: ClipboardList },
+  { name: "Workbook", href: "/workbook", icon: BookOpen },
   { name: "Sessions", href: "/sessions", icon: Calendar },
   { name: "Progress", href: "/progress", icon: TrendingUp },
   { name: "Settings", href: "/settings", icon: Settings },
@@ -76,9 +78,8 @@ export default function DashboardLayout({
 
       {/* Sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 w-64 bg-charcoal-800 transform transition-transform duration-300 ease-in-out lg:translate-x-0 ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed inset-y-0 left-0 z-50 w-64 bg-charcoal-800 transform transition-transform duration-300 ease-in-out lg:translate-x-0 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         <div className="flex h-full flex-col">
           {/* Logo */}

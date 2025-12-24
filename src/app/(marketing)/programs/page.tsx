@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -18,8 +19,6 @@ import {
   Heart,
   Check,
   ArrowRight,
-  Users,
-  Clock,
   Award,
 } from "lucide-react"
 import {
@@ -264,33 +263,94 @@ export default function ProgramsPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section - Cream Background */}
-      <section className="section-cream section-padding">
+      {/* Hero Section - Uplift Split Layout */}
+      <section className="section-cream section-padding overflow-hidden">
         <div className="container-uplift">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-micro text-purple-600 mb-4">
-              Personalized Career Programs
-            </p>
-            <h1 className="text-display text-charcoal-900 mb-6">
-              FIND YOUR PERFECT<br />
-              <span className="text-purple-500">CAREER PROGRAM</span>
-            </h1>
-            <p className="text-body-lg text-charcoal-600 max-w-2xl mx-auto mb-10">
-              Choose from our specialized programs designed for different career
-              stages. Each program combines assessments, mentoring, and
-              actionable strategies for your unique journey.
-            </p>
-            <div className="flex flex-wrap justify-center gap-8 text-sm">
-              <div className="flex items-center gap-2">
-                <Users className="h-5 w-5 text-purple-500" />
-                <span className="font-body text-charcoal-700">100,000+ Professionals Mentored</span>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Text Content */}
+            <div className="space-y-8 relative z-10">
+              <div className="space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 border border-purple-200">
+                  <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse" />
+                  <span className="text-micro text-purple-700">Open for Enrollment</span>
+                </div>
+                <h1 className="text-display text-charcoal-900">
+                  Find Your Perfect<br />
+                  <span className="text-purple-500">Career Program</span>
+                </h1>
+                <p className="text-body-lg text-charcoal-600 max-w-xl">
+                  Choose from our specialized programs designed for different career
+                  stages. Each program combines assessments, mentoring, and
+                  actionable strategies for your unique journey.
+                </p>
               </div>
-              <div className="flex items-center gap-2">
-                <Award className="h-5 w-5 text-purple-500" />
-                <span className="font-body text-charcoal-700">91% Achieve Clarity</span>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="xl" variant="uplift" asChild>
+                  <Link href="#programs">
+                    Explore Programs <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
               </div>
-              <div className="flex items-center gap-2">
-                <Clock className="h-5 w-5 text-purple-500" />
-                <span className="font-body text-charcoal-700">18+ Years Experience</span>
+
+              {/* Stats Row */}
+              <div className="pt-8 border-t border-purple-200/50 flex flex-wrap gap-8">
+                <div>
+                  <p className="text-3xl font-display font-bold text-charcoal-900">
+                    100k+
+                  </p>
+                  <p className="text-xs font-body text-charcoal-600 uppercase tracking-wider">
+                    Professionals
+                  </p>
+                </div>
+                <div>
+                  <p className="text-3xl font-display font-bold text-charcoal-900">
+                    91%
+                  </p>
+                  <p className="text-xs font-body text-charcoal-600 uppercase tracking-wider">
+                    Success Rate
+                  </p>
+                </div>
+                <div>
+                  <p className="text-3xl font-display font-bold text-charcoal-900">
+                    18+
+                  </p>
+                  <p className="text-xs font-body text-charcoal-600 uppercase tracking-wider">
+                    Years Exp.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Visual */}
+            <div className="relative lg:h-[600px] hidden lg:block">
+              <div className="absolute inset-0 bg-gradient-to-tr from-purple-200/50 to-sage-200/50 rounded-[2rem] transform rotate-3 scale-95" />
+              <div className="absolute inset-0 rounded-[2rem] overflow-hidden shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-700">
+                <Image
+                  src="/images/hero.png"
+                  alt="Career Mentoring Session"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/40 to-transparent" />
+              </div>
+
+              {/* Floating Badge */}
+              <div className="absolute bottom-12 -left-8 bg-white p-4 rounded-xl shadow-xl max-w-xs animate-bounce-slow">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                    <Award className="w-5 h-5 text-green-600" />
+                  </div>
+                  <div>
+                    <p className="font-display font-bold text-charcoal-900">
+                      Top Rated
+                    </p>
+                    <p className="text-xs text-charcoal-500">
+                      Industry Leader
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -323,26 +383,24 @@ export default function ProgramsPage() {
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div
-                        className={`p-3 rounded-xl ${
-                          segment.color === "purple"
-                            ? "bg-purple-100"
-                            : segment.color === "sage"
-                              ? "bg-sage-100"
-                              : segment.color === "gold"
-                                ? "bg-amber-100"
-                                : "bg-rose-100"
-                        }`}
+                        className={`p-3 rounded-xl ${segment.color === "purple"
+                          ? "bg-purple-100"
+                          : segment.color === "sage"
+                            ? "bg-sage-100"
+                            : segment.color === "gold"
+                              ? "bg-amber-100"
+                              : "bg-rose-100"
+                          }`}
                       >
                         <Icon
-                          className={`h-6 w-6 ${
-                            segment.color === "purple"
-                              ? "text-purple-600"
-                              : segment.color === "sage"
-                                ? "text-sage-600"
-                                : segment.color === "gold"
-                                  ? "text-amber-600"
-                                  : "text-rose-600"
-                          }`}
+                          className={`h-6 w-6 ${segment.color === "purple"
+                            ? "text-purple-600"
+                            : segment.color === "sage"
+                              ? "text-sage-600"
+                              : segment.color === "gold"
+                                ? "text-amber-600"
+                                : "text-rose-600"
+                            }`}
                         />
                       </div>
                       <Badge variant="outline" className="text-micro border-charcoal-300">
@@ -635,11 +693,17 @@ export default function ProgramsPage() {
           </Tabs>
 
           {/* Feature Comparison Table */}
-          <div className="mt-16 max-w-4xl mx-auto">
-            <h3 className="heading-card text-charcoal-900 mb-6 text-center">
-              Detailed Feature Comparison
-            </h3>
-            <div className="overflow-x-auto bg-white rounded-xl shadow-sm">
+          <div className="mt-16 max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <Badge variant="outline" className="mb-4 text-micro border-charcoal-300">
+                Deep Dive
+              </Badge>
+              <h3 className="heading-section text-charcoal-900">
+                Detailed Feature Comparison
+              </h3>
+            </div>
+
+            <div className="overflow-hidden bg-white rounded-2xl shadow-lg border border-cream-300">
               <table className="w-full border-collapse">
                 <thead>
                   <tr className="border-b-2 border-cream-200">

@@ -82,7 +82,7 @@ interface EligibleUser {
 }
 
 const LEVELS = [
-  { value: "L1", label: "L1 - Certified Mentor", color: "bg-blue-100 text-blue-800" },
+  { value: "L1", label: "L1 - Certified Mentor", color: "bg-purple-100 text-purple-800" },
   { value: "L2", label: "L2 - Expert Mentor", color: "bg-purple-100 text-purple-800" },
   { value: "L3", label: "L3 - Master Mentor", color: "bg-amber-100 text-amber-800" },
   { value: "L4", label: "L4 - Accredited Trainer", color: "bg-green-100 text-green-800" },
@@ -154,7 +154,7 @@ export default function MentorsPage() {
 
   useEffect(() => {
     fetchMentors()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [levelFilter, statusFilter])
 
   useEffect(() => {
@@ -169,7 +169,7 @@ export default function MentorsPage() {
       fetchMentors()
     }, 300)
     return () => clearTimeout(timer)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery])
 
   const handleToggleActive = async (mentor: MentorData) => {

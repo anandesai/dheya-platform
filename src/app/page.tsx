@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import {
@@ -6,7 +7,6 @@ import {
   CheckCircle,
   Users,
   Target,
-  Compass,
   Award,
   Star,
   TrendingUp,
@@ -76,11 +76,15 @@ export default function HomePage() {
                   </Button>
                 </div>
               </div>
-              <div className="relative hidden lg:block">
-                <div className="aspect-[4/3] rounded-2xl bg-sage-100 overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center text-sage-400">
-                    <Users className="h-32 w-32" />
-                  </div>
+              <div className="relative block mt-8 lg:mt-0">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl relative">
+                  <Image
+                    src="/images/hero.png"
+                    alt="Professionals in a coaching session"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
               </div>
             </div>
@@ -153,11 +157,14 @@ export default function HomePage() {
                   WE WILL.
                 </p>
               </div>
-              <div className="relative">
-                <div className="aspect-video rounded-2xl bg-sage-200 overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center text-sage-400">
-                    <Compass className="h-24 w-24" />
-                  </div>
+              <div className="relative mt-8 lg:mt-0">
+                <div className="aspect-video rounded-2xl overflow-hidden shadow-lg relative">
+                  <Image
+                    src="/images/compass.png"
+                    alt="Compass and map representing career direction"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -361,12 +368,17 @@ export default function HomePage() {
             </div>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <Card variant="light" className="p-8">
-                <div className="flex gap-6">
-                  <div className="w-24 h-24 rounded-xl bg-sage-200 flex-shrink-0 flex items-center justify-center">
-                    <Users className="h-10 w-10 text-sage-600" />
+                <div className="flex gap-6 items-center">
+                  <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                    <Image
+                      src="/images/mentor-pria.png"
+                      alt="Dr. Anjali Gupta"
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="heading-card text-charcoal-900">Mentor Name</h3>
+                    <h3 className="heading-card text-charcoal-900">Dr. Anjali Gupta</h3>
                     <p className="text-micro text-purple-600">Founder & Lead Mentor</p>
                     <p className="text-body text-charcoal-600">
                       18+ years guiding professionals through career transformations.
@@ -375,12 +387,17 @@ export default function HomePage() {
                 </div>
               </Card>
               <Card variant="light" className="p-8">
-                <div className="flex gap-6">
-                  <div className="w-24 h-24 rounded-xl bg-sage-200 flex-shrink-0 flex items-center justify-center">
-                    <Users className="h-10 w-10 text-sage-600" />
+                <div className="flex gap-6 items-center">
+                  <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                    <Image
+                      src="/images/mentor-rahul.png"
+                      alt="Rahul Verma"
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="heading-card text-charcoal-900">Mentor Name</h3>
+                    <h3 className="heading-card text-charcoal-900">Rahul Verma</h3>
                     <p className="text-micro text-purple-600">Senior Career Mentor</p>
                     <p className="text-body text-charcoal-600">
                       Specialist in mid-career transitions and leadership development.

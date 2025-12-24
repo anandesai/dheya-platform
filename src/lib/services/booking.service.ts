@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma"
 import { BookingStatus } from "@prisma/client"
+import { meetingService } from "./meeting.service"
 
 interface CreateBookingInput {
   userId: string
@@ -82,6 +83,7 @@ export const bookingService = {
 
     const sessionNumber = usedSessions + 1
 
+    // Create booking first
     const booking = await prisma.booking.create({
       data: {
         userId,
@@ -115,10 +117,58 @@ export const bookingService = {
             },
           },
         },
+        package: {
+          select: {
+            productName: true,
+          },
+        },
       },
     })
 
-    return booking
+    // Auto-generate meeting URL
+    try {
+      const meetingUrl = await meetingService.generateMeetingUrl(booking)
+
+      // Update booking with meeting URL
+      const updatedBooking = await prisma.booking.update({
+        where: { id: booking.id },
+        data: { meetingUrl },
+        include: {
+          user: {
+            select: {
+              id: true,
+              email: true,
+              firstName: true,
+              lastName: true,
+            },
+          },
+          mentor: {
+            include: {
+              user: {
+                select: {
+                  id: true,
+                  email: true,
+                  firstName: true,
+                  lastName: true,
+                  image: true,
+                },
+              },
+            },
+          },
+          package: {
+            select: {
+              productName: true,
+            },
+          },
+        },
+      })
+
+      return updatedBooking
+    } catch (error) {
+      console.error("Failed to generate meeting URL:", error)
+      // Return booking without meeting URL if generation fails
+      return booking
+    }
   },
 
   // Get booking by ID
