@@ -121,15 +121,15 @@
     }
 
     .btn-pill {
-        @apply bg-purple text-white hover:bg-purple-600 px-8 py-4 rounded-full font-display font-bold uppercase tracking-wide text-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-xl;
+        @apply bg-purple text-white hover:bg-purple-600 px-8 py-4 rounded-full font-headline font-bold uppercase tracking-wide text-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-xl;
     }
 
     .btn-pill-light {
-        @apply bg-white text-charcoal-900 hover:bg-cream-100 px-8 py-4 rounded-full font-display font-bold uppercase tracking-wide text-sm transition-all duration-300 hover:scale-105 active:scale-95 border border-charcoal-100;
+        @apply bg-white text-charcoal-900 hover:bg-cream-100 px-8 py-4 rounded-full font-headline font-bold uppercase tracking-wide text-sm transition-all duration-300 hover:scale-105 active:scale-95 border border-charcoal-100;
     }
 
     .btn-outline {
-        @apply bg-transparent border-2 border-charcoal-900 text-charcoal-900 hover:bg-charcoal hover:text-white px-8 py-4 rounded-full font-display font-bold uppercase tracking-wide text-sm transition-all duration-300;
+        @apply bg-transparent border-2 border-charcoal-900 text-charcoal-900 hover:bg-charcoal hover:text-white px-8 py-4 rounded-full font-headline font-bold uppercase tracking-wide text-sm transition-all duration-300;
     }
 
     .card-outlined {
