@@ -1,15 +1,182 @@
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Play } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import {
+  ArrowRight,
+  Compass,
+  Target,
+  Heart,
+  Users,
+  Star,
+  CheckCircle,
+  Sparkles,
+  TrendingUp,
+  Award,
+  Brain,
+  Lightbulb,
+} from "lucide-react"
 import { MarketingHeader } from "@/components/marketing/header"
 import { MarketingFooter } from "@/components/marketing/footer"
+
+const segments = [
+  {
+    title: "Early Career",
+    age: "22-30 years",
+    tagline: "The Unfair Advantage",
+    description: "Stop playing career roulette. Build the clarity your peers lack—and watch opportunities find you.",
+    color: "bg-purple-600",
+    href: "/programs/early-career",
+  },
+  {
+    title: "Mid-Career",
+    age: "30-45 years",
+    tagline: "Escape The Trap",
+    description: "Bored. Burned out. Disillusioned. Sound familiar? There's a way out—and it starts with one conversation.",
+    color: "bg-charcoal-800",
+    href: "/programs/mid-career",
+  },
+  {
+    title: "Senior Leaders",
+    age: "45+ years",
+    tagline: "Your Second Act",
+    description: "Retirement is a myth. Your best work? It's still ahead. Design the legacy you'll be proud of.",
+    color: "bg-sage-600",
+    href: "/programs/senior",
+  },
+  {
+    title: "Returning Women",
+    age: "Career Re-entry",
+    tagline: "The Comeback",
+    description: "Your gap isn't a weakness—it's proof of resilience. The corporate world needs exactly what you bring.",
+    color: "bg-purple-500",
+    href: "/programs/returning-women",
+  },
+]
+
+const trustSignals = [
+  { value: "18+", label: "Years Transforming Careers" },
+  { value: "100K+", label: "Lives Changed Forever" },
+  { value: "91%", label: "Achieve Career Clarity" },
+  { value: "4.9★", label: "From Happy Mentees" },
+]
+
+const coreBeliefs = [
+  {
+    icon: Heart,
+    title: "Career Is Life",
+    description:
+      "8 hours a day. 40+ years of work. This isn't a footnote—it's the story of your life. We help you write one worth reading.",
+  },
+  {
+    icon: Compass,
+    title: "Clarity, Then Courage",
+    description:
+      "Most people jump first and think later. We flip the script. Deep self-discovery first. Bold action second. Zero regrets.",
+  },
+  {
+    icon: Target,
+    title: "Data Over Hunches",
+    description:
+      "Gut feelings are unreliable. Our CLIQI diagnostic reveals what you can't see—the patterns driving your career decisions.",
+  },
+  {
+    icon: Users,
+    title: "Mentors, Not Motivators",
+    description:
+      "We don't do pep talks. Our mentors have walked the path you're on. They guide, challenge, and hold you accountable.",
+  },
+]
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Discovery",
+    description: "Uncover the hidden patterns shaping your career—and the blind spots holding you back",
+  },
+  {
+    number: "02",
+    title: "Diagnosis",
+    description: "Get a data-driven snapshot of where you are vs. where you could be",
+  },
+  {
+    number: "03",
+    title: "Design",
+    description: "Build your personal roadmap—no generic templates, only what works for YOU",
+  },
+  {
+    number: "04",
+    title: "Development",
+    description: "Close the gap between your current skills and your dream role",
+  },
+  {
+    number: "05",
+    title: "Direction",
+    description: "Execute with a mentor who's been there, done that, and won't let you quit",
+  },
+  {
+    number: "06",
+    title: "Destination",
+    description: "Arrive at the career you deserve—and wonder why you waited so long",
+  },
+]
+
+const testimonials = [
+  {
+    quote:
+      "I was making ₹45L but miserable. Within 6 months, I found a role that pays more AND makes me excited to wake up. The BBD assessment was a mirror I needed.",
+    name: "Priya Sharma",
+    role: "VP, Technology",
+    segment: "Mid-Career",
+  },
+  {
+    quote:
+      "10 years away from corporate. Convinced I was unemployable. My mentor helped me land a role at a Fortune 500—at 42. This stuff actually works.",
+    name: "Anita Mehta",
+    role: "Product Manager",
+    segment: "Returning Women",
+  },
+  {
+    quote:
+      "Everyone said 'slow down' at 50. Dheya said 'level up.' Now I run an executive coaching practice and impact more lives than my 25 years in corporate ever did.",
+    name: "Rajesh Kumar",
+    role: "Executive Coach",
+    segment: "Senior",
+  },
+]
+
+const faqs = [
+  {
+    question: "Why should I trust Dheya over other career coaches?",
+    answer:
+      "Simple: we've done this 100,000+ times. We use proprietary assessments (CLIQI, BBD) built on 18 years of research. We don't do motivational fluff—every recommendation is backed by data specific to YOUR situation. And our 91% clarity rate isn't marketing; it's measured.",
+  },
+  {
+    question: "What exactly is BBD Syndrome?",
+    answer:
+      "Bored. Burned out. Disillusioned. It's not just stress—it's a specific pattern that traps mid-career professionals. Our BBD assessment identifies which type you have and prescribes targeted interventions. Most career coaches would give you generic 'take a vacation' advice. We diagnose the root cause.",
+  },
+  {
+    question: "6-12 months sounds like a long time. Why?",
+    answer:
+      "Because quick fixes don't stick. We've seen it: professionals who jump to a 'dream job' only to feel stuck again in 18 months. Our process builds lasting clarity. You'll make decisions you won't regret a decade from now. That's worth a few months of focused work.",
+  },
+  {
+    question: "How do you match me with a mentor?",
+    answer:
+      "After your assessment, we recommend 2-3 mentors who specialize in your segment, challenges, and industry. You'll meet them before committing. No algorithms—just humans who've walked your path and actually get what you're facing.",
+  },
+  {
+    question: "I'm not sure if I'm ready. What should I do?",
+    answer:
+      "That uncertainty? It's exactly why you should book a free discovery call. In 30 minutes, you'll know if this is right for you—no sales pressure, no commitment. But we should warn you: most people who 'wait until ready' are still waiting years later.",
+  },
+]
 
 export default function HomePage() {
   return (
@@ -17,292 +184,318 @@ export default function HomePage() {
       <MarketingHeader />
 
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="pt-20 pb-32 overflow-hidden border-b border-charcoal-900/10">
-          <div className="container-uplift relative">
-            <div className="max-w-[90%]">
-              <h1 className="text-display text-charcoal-900 mb-8 leading-[0.85]">
-                WE UPLIFT <br />
-                FOUNDERS
-              </h1>
-              <p className="font-body text-xl md:text-2xl text-charcoal-700 max-w-2xl italic leading-relaxed mb-12">
-                Helping founders to GROW through uncertainty & MAXIMIZE their impact.
+        {/* Hero Section - Uplift Style */}
+        <section className="relative bg-cream-100 overflow-hidden">
+          <div className="mx-auto max-w-7xl px-4 py-16 sm:py-24 lg:py-32 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8">
+                <div className="inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-1.5 text-sm text-purple-700 font-medium">
+                  <Sparkles className="h-4 w-4" />
+                  <span>Trusted by 100,000+ professionals since 2005</span>
+                </div>
+                <h1 className="heading-display text-charcoal-900">
+                  YOUR CAREER
+                  <br />
+                  <span className="text-purple-600">DESERVES BETTER</span>
+                </h1>
+                <p className="text-body text-charcoal-600 max-w-lg text-lg leading-relaxed">
+                  Stuck. Confused. Going through the motions. <strong>That&apos;s not your career—that&apos;s a holding pattern.</strong> 91% of our mentees break free and find clarity within 6 months. You could be next.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-purple-600 hover:bg-purple-700 text-white px-8 shadow-lg hover:shadow-xl transition-all"
+                  >
+                    <Link href="/auth/register">
+                      Get Unstuck Now
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline" className="border-charcoal-300 hover:bg-charcoal-50">
+                    <Link href="/programs">Find Your Program</Link>
+                  </Button>
+                </div>
+                <p className="text-sm text-charcoal-500 flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-sage-500" />
+                  Free discovery call. No credit card. No pressure.
+                </p>
+              </div>
+              <div className="relative hidden lg:block">
+                <div className="absolute inset-0 bg-gradient-to-tr from-purple-200/50 to-cream-200/50 rounded-3xl" />
+                <div className="relative bg-charcoal-900 text-cream-100 rounded-3xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500 shadow-2xl">
+                  <div className="text-7xl font-bold mb-4 text-purple-400">91%</div>
+                  <div className="text-xl font-medium mb-2">
+                    Find Career Clarity
+                  </div>
+                  <div className="text-cream-300 text-sm leading-relaxed">
+                    Not a vague promise. A measured outcome. Within 6 months, 9 out of 10 mentees know exactly where they&apos;re going—and how to get there.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Signals Bar */}
+        <section className="bg-forest-800 py-8">
+          <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              {trustSignals.map((signal) => (
+                <div key={signal.label}>
+                  <div className="text-3xl md:text-4xl font-bold text-gold-400">
+                    {signal.value}
+                  </div>
+                  <div className="text-sm text-cream-200 mt-1">{signal.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Segment Selector */}
+        <section className="bg-cream-200 py-16 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="heading-section text-charcoal-900 mb-4">
+                Which One Are You?
+              </h2>
+              <p className="text-body text-charcoal-600 max-w-2xl mx-auto text-lg">
+                Your career stage isn&apos;t just an age bracket—it&apos;s a specific set of challenges. Find yours. Fix it. Move forward.
               </p>
-              <Button asChild className="btn-pill text-lg px-10 py-8 h-auto">
-                <Link href="/auth/register">Tell Us About You</Link>
-              </Button>
             </div>
-
-            {/* Floating Image 1 */}
-            <div className="absolute top-0 right-0 w-[500px] h-[400px] hidden lg:block">
-              <div className="relative w-full h-full grayscale hover:grayscale-0 transition-all duration-500">
-                <Image src="/images/hero-team.jpg" alt="Team" fill className="object-cover rounded-sm" priority />
-              </div>
-            </div>
-
-            {/* Floating Image 2 */}
-            <div className="absolute bottom-10 right-20 w-[300px] h-[300px] hidden lg:block z-10">
-              <div className="relative w-full h-full grayscale hover:grayscale-0 transition-all duration-500 border-8 border-[#FDF8F0]">
-                <Image src="/images/hero-meeting.jpg" alt="Meeting" fill className="object-cover rounded-sm" />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Trusted By Section - Card Style */}
-        <section className="py-20 bg-transparent">
-          <div className="container-uplift">
-            <div className="bg-[#EFEAE4] border border-charcoal-900 rounded-xl p-12 relative">
-              <div className="absolute -left-3 top-10 h-16 w-1 bg-charcoal-900"></div>
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="flex items-start gap-6">
-                  <div className="w-20 h-20 rounded-full overflow-hidden relative border-2 border-charcoal-900 flex-shrink-0">
-                    <Image src="/images/founder-avatar.jpg" alt="Founder" fill className="object-cover" />
-                  </div>
-                  <div>
-                    <p className="font-body italic text-lg text-charcoal-800 mb-4">
-                      &ldquo;The best decision I made for my company was finding a mentor who had walked the path before. Dheya connected me to that wisdom.&rdquo;
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {segments.map((segment) => (
+                <Card
+                  key={segment.title}
+                  className="group relative overflow-hidden hover:shadow-xl transition-all duration-300 border-0"
+                >
+                  <div className={`absolute top-0 left-0 right-0 h-2 ${segment.color}`} />
+                  <CardContent className="pt-8 pb-6">
+                    <div className="text-xs font-medium text-muted-foreground mb-2">
+                      {segment.age}
+                    </div>
+                    <h3 className="text-xl font-bold text-forest-800 mb-1">
+                      {segment.title}
+                    </h3>
+                    <div className="text-sm font-medium text-purple-600 mb-3">
+                      {segment.tagline}
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      {segment.description}
                     </p>
-                    <p className="font-display font-bold uppercase tracking-wider text-xs">
-                      — Priya Sharma, Founder of TechFlow
+                    <Button
+                      asChild
+                      variant="ghost"
+                      className="group-hover:bg-cream-200 w-full font-medium"
+                    >
+                      <Link href={segment.href}>
+                        See If This Is You
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Core Beliefs - Dark Section */}
+        <section className="bg-charcoal-900 py-16 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="heading-section text-cream-100 mb-4">
+                The Dheya Difference
+              </h2>
+              <p className="text-body text-cream-300 max-w-2xl mx-auto text-lg">
+                We&apos;re not another career coach. We&apos;re a research-backed methodology. Here&apos;s why that matters.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {coreBeliefs.map((belief) => {
+                const Icon = belief.icon
+                return (
+                  <div key={belief.title} className="text-center">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-600 mb-4">
+                      <Icon className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-cream-100 mb-2">
+                      {belief.title}
+                    </h3>
+                    <p className="text-sm text-cream-200">{belief.description}</p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* 7D Process Overview */}
+        <section className="bg-cream-100 py-16 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="heading-section text-charcoal-900 mb-4">
+                How We Get You There
+              </h2>
+              <p className="text-body text-charcoal-600 max-w-2xl mx-auto text-lg">
+                The 6D Framework. Not theory—a battle-tested system refined over 100,000+ career transformations.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {processSteps.map((step, index) => (
+                <div
+                  key={step.title}
+                  className="relative bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="text-5xl font-bold text-purple-100 absolute top-4 right-4">
+                    {step.number}
+                  </div>
+                  <div className="relative">
+                    <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+                      {index === 0 && <Compass className="h-6 w-6 text-purple-600" />}
+                      {index === 1 && <Brain className="h-6 w-6 text-purple-600" />}
+                      {index === 2 && <Lightbulb className="h-6 w-6 text-purple-600" />}
+                      {index === 3 && <TrendingUp className="h-6 w-6 text-purple-600" />}
+                      {index === 4 && <Target className="h-6 w-6 text-purple-600" />}
+                      {index === 5 && <Award className="h-6 w-6 text-purple-600" />}
+                    </div>
+                    <h3 className="text-lg font-bold text-forest-800 mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      {step.description}
                     </p>
                   </div>
                 </div>
-                <div>
-                  <h2 className="text-4xl font-display font-bold uppercase leading-none text-right text-charcoal-900">
-                    TRUSTED BY <br /> FOUNDERS OF <br /> HIGH-GROWTH <br /> STARTUPS
-                  </h2>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Value Proposition - Video/Image Split */}
-        <section className="py-20 bg-[#D8DDBF] border-y border-charcoal-900">
-          <div className="container-uplift">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="space-y-8">
-                <p className="font-body text-charcoal-800 text-2xl leading-relaxed">
-                  Building a successful company can feel like a rollercoaster ride. Compassion alone won&apos;t get you there.
-                </p>
-                <h2 className="text-6xl font-display font-bold uppercase text-charcoal-900">
-                  WE WILL.
-                </h2>
-              </div>
-              <div className="relative aspect-video bg-charcoal-900 rounded-sm overflow-hidden group cursor-pointer border-4 border-charcoal-900/10">
-                <Image src="/images/video-thumbnail.jpg" alt="Video" fill className="object-cover opacity-80 group-hover:opacity-60 transition-opacity" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur flex items-center justify-center border border-white/50 group-hover:scale-110 transition-transform">
-                    <Play className="fill-white text-white ml-2 h-8 w-8" />
-                  </div>
-                </div>
-              </div>
+        {/* Testimonials */}
+        <section className="bg-purple-600 py-16 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="heading-section text-white mb-4">
+                They Were Where You Are
+              </h2>
+              <p className="text-body text-purple-100 max-w-2xl mx-auto text-lg">
+                Skeptical? They were too. Here&apos;s what happened when they stopped waiting and started acting.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {testimonials.map((testimonial) => (
+                <Card
+                  key={testimonial.name}
+                  className="bg-white/10 backdrop-blur-sm border-white/20"
+                >
+                  <CardContent className="pt-6">
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="h-4 w-4 fill-gold-400 text-gold-400"
+                        />
+                      ))}
+                    </div>
+                    <p className="text-white mb-6 italic">
+                      &ldquo;{testimonial.quote}&rdquo;
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                        <span className="text-white font-medium">
+                          {testimonial.name.charAt(0)}
+                        </span>
+                      </div>
+                      <div>
+                        <div className="font-medium text-white">
+                          {testimonial.name}
+                        </div>
+                        <div className="text-xs text-purple-200">
+                          {testimonial.role} • {testimonial.segment}
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Feature Toggle Section */}
-        <section className="py-32 bg-[#FDF8F0]">
-          <div className="container-uplift">
-            <div className="grid lg:grid-cols-12 gap-12">
-              <div className="lg:col-span-5">
-                <h2 className="text-display-sm text-charcoal-900 mb-8 leading-[0.9]">
-                  WE EMPOWER YOU TO BECOME THE FOUNDER YOUR COMPANY NEEDS TO SCALE FASTER
-                </h2>
-              </div>
-              <div className="lg:col-span-7">
-                <div className="bg-charcoal-900 text-[#FDF8F0] rounded-xl p-10 min-h-[500px] flex flex-col shadow-2xl shadow-charcoal-900/20">
-                  <div className="flex justify-between items-center mb-12 border-b border-white/20 pb-6">
-                    <span className="font-display font-bold text-2xl">Shaky Founders</span>
-                    <div className="w-12 h-6 bg-white/20 rounded-full relative cursor-pointer">
-                      <div className="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-8 flex-1">
-                    <div className="grid grid-cols-12 gap-4 items-start border-b border-white/10 pb-8">
-                      <span className="col-span-4 font-display font-bold uppercase text-sm tracking-widest text-white/60">Lack of Clarity</span>
-                      <p className="col-span-8 font-body text-lg text-white/90">
-                        Unclear vision causes confusion within the team and wasted resources.
-                      </p>
-                    </div>
-                    <div className="grid grid-cols-12 gap-4 items-start border-b border-white/10 pb-8">
-                      <span className="col-span-4 font-display font-bold uppercase text-sm tracking-widest text-white/60">Poor Leadership</span>
-                      <p className="col-span-8 font-body text-lg text-white/90">
-                        Inability to delegate and empower leads to burnout and bottlenecking.
-                      </p>
-                    </div>
-                    <div className="grid grid-cols-12 gap-4 items-start">
-                      <span className="col-span-4 font-display font-bold uppercase text-sm tracking-widest text-white/60">Isolation</span>
-                      <p className="col-span-8 font-body text-lg text-white/90">
-                        Struggling alone without a support system or guidance network.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        {/* FAQ Section */}
+        <section className="bg-cream-200 py-16 lg:py-24">
+          <div className="mx-auto max-w-3xl px-4 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="heading-section text-charcoal-900 mb-4">
+                Still On The Fence?
+              </h2>
+              <p className="text-body text-charcoal-600 text-lg">
+                We get it. Career decisions are big. Here are the questions everyone asks before they start.
+              </p>
             </div>
+            <Accordion type="single" collapsible className="w-full">
+              {faqs.map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="bg-white mb-3 rounded-lg px-6 border-0 shadow-sm"
+                >
+                  <AccordionTrigger className="text-left font-medium text-forest-800 hover:no-underline py-4">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-4">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </section>
 
-        {/* Core Beliefs - Sage Split */}
-        <section className="py-32 bg-[#C8D1A3] border-y border-charcoal-900">
-          <div className="container-uplift">
-            <div className="grid lg:grid-cols-2 gap-20">
-              <div className="space-y-8">
-                <h2 className="text-display-sm text-charcoal-900">CORE <br /> BELIEF</h2>
-              </div>
-              <div className="space-y-8">
-                <p className="font-body text-xl italic text-charcoal-800 max-w-xl">
-                  Deep self-awareness (<span className="font-bold not-italic">Inner Game</span>) coupled with a bold vision and clear strategy (<span className="font-bold not-italic">Outer Game</span>) are the foundation for lasting growth.
-                </p>
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-12 mt-20 relative">
-              {/* Center Divider/Graphic */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex flex-col items-center justify-center z-10 w-32">
-                <div className="w-16 h-16 rounded-full border border-charcoal-900 flex items-center justify-center bg-[#C8D1A3]">
-                  <div className="w-2 h-2 rounded-full bg-charcoal-900"></div>
-                </div>
-                <div className="h-full w-px bg-charcoal-900/20 absolute -z-10"></div>
-              </div>
-
-              <div className="border border-charcoal-900/30 p-10 rounded-sm hover:bg-[#C8D1A3]/50 transition-colors">
-                <div className="mb-8">
-                  <span className="font-display font-bold uppercase text-xs tracking-widest border border-charcoal-900 px-2 py-1 rounded-full">The Inner Game</span>
-                </div>
-                <h3 className="font-body text-3xl mb-6">How can we unlock your full potential?</h3>
-                <ul className="space-y-3 font-body text-sm text-charcoal-700">
-                  <li>• Overcome Imposter Syndrome</li>
-                  <li>• Clarify Personal Values & Vision</li>
-                  <li>• Build Emotional Resilience</li>
-                </ul>
-              </div>
-
-              <div className="border border-charcoal-900/30 p-10 rounded-sm hover:bg-[#C8D1A3]/50 transition-colors">
-                <div className="mb-8">
-                  <span className="font-display font-bold uppercase text-xs tracking-widest border border-charcoal-900 px-2 py-1 rounded-full">The Outer Game</span>
-                </div>
-                <h3 className="font-body text-3xl mb-6">How can we grow the business?</h3>
-                <ul className="space-y-3 font-body text-sm text-charcoal-700">
-                  <li>• Strategic Planning & Execution</li>
-                  <li>• Team Building & Culture</li>
-                  <li>• Fundraising & Financial Modeling</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="flex justify-center mt-16">
-              <Button className="rounded-full bg-purple-500 hover:bg-purple-600 text-white px-10 py-8 font-display font-bold text-sm tracking-widest uppercase">
-                Tell us about you
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* Team / Mentors Section */}
-        <section className="py-32 bg-[#FDF8F0]">
-          <div className="container-uplift">
-            <div className="grid lg:grid-cols-12 gap-16">
-              <div className="lg:col-span-4">
-                <h2 className="text-6xl font-display font-bold uppercase leading-[0.85] text-charcoal-900">
-                  WE&apos;VE <br /> BEEN <br /> THROUGH <br /> IT <br /> ALL
-                </h2>
-              </div>
-              <div className="lg:col-span-8">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-4 text-center group cursor-pointer">
-                    <div className="aspect-[3/4] bg-gray-200 relative grayscale group-hover:grayscale-0 transition-all duration-500 overflow-hidden">
-                      <Image src="/images/mentor-1.jpg" alt="Mentor" fill className="object-cover" />
-                    </div>
-                    <div>
-                      <h4 className="font-display font-bold uppercase tracking-wider text-sm">Rahul Verma</h4>
-                      <p className="font-display text-xs text-charcoal-500 uppercase tracking-widest">CEO, TechFlow</p>
-                    </div>
-                  </div>
-                  <div className="space-y-4 text-center mt-16 md:mt-0 group cursor-pointer">
-                    <div className="aspect-[3/4] bg-gray-200 relative grayscale group-hover:grayscale-0 transition-all duration-500 overflow-hidden">
-                      <Image src="/images/mentor-2.jpg" alt="Mentor" fill className="object-cover" />
-                    </div>
-                    <div>
-                      <h4 className="font-display font-bold uppercase tracking-wider text-sm">Priya Sharma</h4>
-                      <p className="font-display text-xs text-charcoal-500 uppercase tracking-widest">Founder, GreenEarth</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-3 gap-4 mt-16 border-t border-charcoal-900/10 pt-16">
-                  <div className="text-center space-y-4 p-6 bg-[#F7EFE5]">
-                    <div className="text-2xl">♡</div>
-                    <h4 className="font-body font-bold text-lg">Empathy</h4>
-                    <p className="text-xs text-charcoal-600 leading-relaxed font-body">Weve been in your shoes and understand the pressure.</p>
-                  </div>
-                  <div className="text-center space-y-4 p-6 bg-[#F7EFE5]">
-                    <div className="text-2xl">⚡</div>
-                    <h4 className="font-body font-bold text-lg">Experience</h4>
-                    <p className="text-xs text-charcoal-600 leading-relaxed font-body">Decades of building and scaling successful companies.</p>
-                  </div>
-                  <div className="text-center space-y-4 p-6 bg-[#F7EFE5]">
-                    <div className="text-2xl">☺</div>
-                    <h4 className="font-body font-bold text-lg">Availability</h4>
-                    <p className="text-xs text-charcoal-600 leading-relaxed font-body">Always just a message away when you need us.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section - Clean Accordion */}
-        <section className="py-20 bg-[#F7EFE5]">
-          <div className="container-uplift">
-            <div className="grid lg:grid-cols-12 gap-12">
-              <div className="lg:col-span-3">
-                <h2 className="text-5xl font-display font-bold uppercase text-charcoal-900">FAQS</h2>
-              </div>
-              <div className="lg:col-span-9">
-                <Accordion type="single" collapsible className="space-y-0 border-t border-charcoal-900">
-                  {[
-                    "What is your mentorship model?",
-                    "Who do you usually work with?",
-                    "Why should I need professional coaching as a founder?",
-                    "How long does it take?",
-                    "Do you have scheduling flexibility?",
-                    "Is everything confidential?"
-                  ].map((q, i) => (
-                    <AccordionItem key={i} value={`item-${i}`} className="border-b border-charcoal-900 px-4">
-                      <AccordionTrigger className="font-display font-semibold text-sm uppercase tracking-wider py-6 hover:no-underline hover:text-purple-600">
-                        {q}
-                      </AccordionTrigger>
-                      <AccordionContent className="font-body text-lg pb-6 text-charcoal-700">
-                        We believe in a holistic approach. It varies based on individual needs, but typically involves a mix of strategic planning and personal development sessions.
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA - Purple Block */}
-        <section className="py-32 bg-[#5D5FEF] text-white">
-          <div className="container-uplift text-center">
-            <h2 className="text-6xl md:text-8xl font-display font-bold uppercase leading-[0.85] mb-8">
-              READY <br /> FOR AN UPLIFT?
+        {/* CTA Section */}
+        <section className="bg-charcoal-900 py-16 lg:py-24">
+          <div className="mx-auto max-w-4xl px-4 lg:px-8 text-center">
+            <h2 className="heading-section text-cream-100 mb-4">
+              Your Future Self Is Watching
             </h2>
-            <p className="font-body text-xl text-white/80 max-w-2xl mx-auto mb-12">
-              We&apos;re on a mission to make scaling a company smoother by empowering founders to become extraordinary leaders.
+            <p className="text-body text-cream-300 max-w-2xl mx-auto mb-8 text-lg">
+              A year from now, you&apos;ll wish you started today. The discovery call is free. The insight could change everything. What are you waiting for?
             </p>
-            <Button asChild className="rounded-full bg-charcoal-900 text-white px-10 py-8 font-display font-bold text-sm tracking-widest uppercase hover:bg-charcoal-800 transition-colors">
-              <Link href="/auth/register">Tell Us About You</Link>
-            </Button>
-
-            <div className="mt-20 relative h-[300px] w-full max-w-4xl mx-auto overflow-hidden rounded-xl">
-              <Image src="/images/cta-team.jpg" alt="Team" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
-              <div className="absolute inset-0 bg-[#5D5FEF]/20 mix-blend-multiply"></div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                asChild
+                size="lg"
+                className="bg-purple-600 hover:bg-purple-700 text-white px-8 shadow-lg hover:shadow-xl transition-all"
+              >
+                <Link href="/auth/register">
+                  Start Your Transformation
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-cream-100 text-cream-100 hover:bg-cream-100 hover:text-charcoal-900"
+              >
+                <Link href="/contact">Book Free Discovery Call</Link>
+              </Button>
+            </div>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-cream-300 text-sm">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-sage-400" />
+                <span>30-min clarity session</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-sage-400" />
+                <span>Zero commitment</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-sage-400" />
+                <span>Walk away with insight either way</span>
+              </div>
             </div>
           </div>
         </section>
