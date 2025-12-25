@@ -16,32 +16,36 @@ import { cn } from "@/lib/utils"
 const programs = [
   {
     name: "Early Career",
-    description: "For professionals aged 22-30",
+    description: "Build an unfair advantage in your 20s",
     href: "/programs/early-career",
+    badge: "Ages 22-30",
   },
   {
     name: "Mid-Career",
-    description: "For professionals aged 30-45",
+    description: "Break free from the BBD trap",
     href: "/programs/mid-career",
+    badge: "Ages 30-45",
   },
   {
-    name: "Senior",
-    description: "For professionals aged 45+",
+    name: "Senior Leaders",
+    description: "Design your legacy, not just retirement",
     href: "/programs/senior",
+    badge: "Ages 45+",
   },
   {
     name: "Returning Women",
-    description: "Career re-entry support",
+    description: "Your comeback story starts here",
     href: "/programs/returning-women",
+    badge: "Career Re-entry",
   },
 ]
 
 const navigation = [
-  { name: "About", href: "/about" },
-  { name: "Manifesto", href: "/manifesto" },
-  { name: "Success Stories", href: "/success-stories" },
-  { name: "Mentors", href: "/mentors" },
-  { name: "Contact", href: "/contact" },
+  { name: "Our Story", href: "/about" },
+  { name: "Why We Exist", href: "/manifesto" },
+  { name: "Proof It Works", href: "/success-stories" },
+  { name: "Meet Mentors", href: "/mentors" },
+  { name: "Let's Talk", href: "/contact" },
 ]
 
 export function MarketingHeader() {
@@ -78,9 +82,12 @@ export function MarketingHeader() {
                 <DropdownMenuItem key={program.href} asChild className="focus:bg-purple-50 rounded-lg cursor-pointer p-4 group">
                   <Link
                     href={program.href}
-                    className="flex flex-col items-start gap-1"
+                    className="flex flex-col items-start gap-2"
                   >
-                    <span className="font-display font-bold text-lg text-charcoal-900 group-hover:text-purple-600 transition-colors uppercase tracking-tight">
+                    <span className="inline-block text-[10px] font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full uppercase tracking-widest">
+                      {program.badge}
+                    </span>
+                    <span className="font-headline font-bold text-lg text-charcoal-900 group-hover:text-purple-600 transition-colors uppercase tracking-tight">
                       {program.name}
                     </span>
                     <span className="font-body text-sm text-charcoal-600 leading-relaxed">
@@ -110,11 +117,11 @@ export function MarketingHeader() {
 
         {/* Actions */}
         <div className="hidden lg:flex items-center gap-4">
-          <Link href="/auth/login" className="font-display text-xs font-bold uppercase tracking-widest text-charcoal-900 hover:text-purple-600">
-            Login
+          <Link href="/auth/login" className="font-headline text-xs font-bold uppercase tracking-widest text-charcoal-900 hover:text-purple-600">
+            Sign In
           </Link>
-          <Button asChild className="rounded-full bg-purple-500 hover:bg-purple-600 text-white font-display font-bold uppercase tracking-wider text-xs px-6 py-5">
-            <Link href="/auth/register">Get Started</Link>
+          <Button asChild className="rounded-full bg-purple-500 hover:bg-purple-600 text-white font-headline font-bold uppercase tracking-wider text-xs px-6 py-5 shadow-lg hover:shadow-xl transition-all">
+            <Link href="/auth/register">Start Free →</Link>
           </Button>
         </div>
 
@@ -179,11 +186,11 @@ export function MarketingHeader() {
               </div>
 
               <div className="pt-8 space-y-4">
-                <Button asChild className="w-full rounded-full bg-purple-500 hover:bg-purple-600 text-white font-display font-bold uppercase tracking-wider text-sm py-6">
-                  <Link href="/auth/register">Get Started</Link>
+                <Button asChild className="w-full rounded-full bg-purple-500 hover:bg-purple-600 text-white font-headline font-bold uppercase tracking-wider text-sm py-6 shadow-lg">
+                  <Link href="/auth/register">Start Your Transformation →</Link>
                 </Button>
-                <Button asChild variant="ghost" className="w-full font-display font-bold uppercase tracking-wider text-sm text-charcoal-900">
-                  <Link href="/auth/login">Login</Link>
+                <Button asChild variant="ghost" className="w-full font-headline font-bold uppercase tracking-wider text-sm text-charcoal-900">
+                  <Link href="/auth/login">Sign In</Link>
                 </Button>
               </div>
             </div>

@@ -42,39 +42,38 @@ const contactSchema = z.object({
 type ContactFormValues = z.infer<typeof contactSchema>
 
 const segments = [
-  { value: "student", label: "Student" },
-  { value: "professional", label: "Working Professional" },
-  { value: "career-changer", label: "Career Changer" },
-  { value: "entrepreneur", label: "Entrepreneur" },
-  { value: "parent", label: "Parent/Guardian" },
-  { value: "other", label: "Other" },
+  { value: "early-career", label: "Early Career (22-30)" },
+  { value: "mid-career", label: "Mid-Career (30-45)" },
+  { value: "senior", label: "Senior (45+)" },
+  { value: "returning", label: "Returning Professional" },
+  { value: "exploring", label: "Just Exploring" },
 ]
 
 const faqs = [
   {
-    question: "How quickly will I receive a response?",
+    question: "Is this discovery call actually free? No hidden catches?",
     answer:
-      "We aim to respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly.",
+      "Zero cost. No credit card. 30 minutes of genuine career conversation. If we're not the right fit, we'll tell you—and point you toward better options. We'd rather lose a sale than waste your time.",
   },
   {
-    question: "What services does Dheya Career Mentors offer?",
+    question: "I'm not sure I'm ready for mentoring. Should I still reach out?",
     answer:
-      "We provide personalized career mentorship, resume reviews, interview preparation, career transition guidance, and skill development programs tailored to your specific needs and goals.",
+      "That uncertainty is exactly why you should. Most people we help started with 'I'm not sure.' The discovery call exists to help you figure out if now is the right time. No pressure, just clarity.",
   },
   {
-    question: "How do I schedule a mentoring session?",
+    question: "How long before I hear back?",
     answer:
-      "After submitting this contact form, our team will reach out to understand your needs and help you book a session with the most suitable mentor for your career goals.",
+      "Within 24 hours on business days. Usually faster. We know career decisions feel urgent—we treat them that way.",
   },
   {
-    question: "Do you offer group sessions or workshops?",
+    question: "What happens after I submit this form?",
     answer:
-      "Yes, we conduct regular workshops on various career development topics. Please mention your interest in group sessions in the message field, and we'll send you our upcoming schedule.",
+      "You'll get a confirmation email immediately. Within 24 hours, a real human (not a bot) will reach out to schedule your discovery call. On that call, we'll understand your situation and recommend next steps—which might not even involve us.",
   },
   {
-    question: "What is your cancellation policy?",
+    question: "I've tried career coaching before. How is this different?",
     answer:
-      "We require at least 24 hours notice for cancellations. Sessions cancelled with less notice may be subject to a fee. Please refer to our terms of service for complete details.",
+      "Most coaching is generic advice + motivation. We use evidence-based assessments to diagnose your specific situation, then match you with a mentor who's navigated similar challenges. It's closer to therapy for your career than cheerleading.",
   },
 ]
 
@@ -122,12 +121,12 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="bg-charcoal-900 border-b border-charcoal-800 pt-24 pb-32">
         <div className="container-uplift text-center max-w-4xl mx-auto">
-          <span className="font-display font-bold text-xs uppercase tracking-widest text-[#5D5FEF] mb-6 block">We&apos;re Here For You</span>
+          <span className="font-headline font-bold text-xs uppercase tracking-widest text-purple-400 mb-6 block">The First Step Is The Hardest</span>
           <h1 className="text-display text-white mb-8 leading-[0.85]">
-            LET&apos;S START YOUR <br /> TRANSFORMATION
+            ONE CONVERSATION <br /> <span className="text-purple-400">COULD CHANGE EVERYTHING</span>
           </h1>
-          <p className="font-body text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
-            Whether you have questions about our programs or just need clarity on your next step, our team is ready to listen.
+          <p className="font-body text-xl text-cream-300 leading-relaxed max-w-2xl mx-auto">
+            Not a sales pitch. Not a chatbot. A real conversation with someone who gets it. 30 minutes to explore whether Dheya is right for you. Zero pressure. Free discovery call.
           </p>
         </div>
       </section>
@@ -139,8 +138,8 @@ export default function ContactPage() {
           {/* Form Column */}
           <div className="lg:col-span-2">
             <div className="mb-10">
-              <h2 className="text-display-sm text-charcoal-900 mb-2">SEND US A MESSAGE</h2>
-              <p className="font-body text-charcoal-600">Fill out the form below and we&apos;ll get back to you within 24 hours.</p>
+              <h2 className="text-display-sm text-charcoal-900 mb-2">TELL US YOUR STORY</h2>
+              <p className="font-body text-charcoal-600 text-lg">Where are you? Where do you want to be? We&apos;ll respond within 24 hours—usually sooner.</p>
             </div>
 
             <Form {...form}>
@@ -215,17 +214,17 @@ export default function ContactPage() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="font-display text-xs uppercase tracking-widest font-bold text-charcoal-900">Message</FormLabel>
+                      <FormLabel className="font-headline text-xs uppercase tracking-widest font-bold text-charcoal-900">What&apos;s on your mind?</FormLabel>
                       <FormControl>
-                        <Textarea placeholder="Tell us how we can help..." {...field} disabled={isSubmitting} className="rounded-none border-charcoal-300 focus:border-purple-600 bg-[#FDF8F0] min-h-[150px] resize-none" />
+                        <Textarea placeholder="Be honest. What's keeping you up at night about your career? The more you share, the more we can help..." {...field} disabled={isSubmitting} className="rounded-none border-charcoal-300 focus:border-purple-600 bg-[#FDF8F0] min-h-[150px] resize-none" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
 
-                <Button type="submit" disabled={isSubmitting} className="rounded-full bg-[#5D5FEF] text-white hover:bg-purple-700 px-10 py-6 font-display font-bold text-sm tracking-widest uppercase w-full md:w-auto">
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                <Button type="submit" disabled={isSubmitting} className="rounded-full bg-purple-600 text-white hover:bg-purple-700 px-10 py-6 font-headline font-bold text-sm tracking-widest uppercase w-full md:w-auto shadow-lg hover:shadow-xl transition-all">
+                  {isSubmitting ? "Sending..." : "Start The Conversation →"}
                 </Button>
               </form>
             </Form>

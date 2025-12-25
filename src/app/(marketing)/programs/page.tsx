@@ -21,39 +21,43 @@ import {
 const segments = [
   {
     id: "early-career",
-    name: "Develop Advantage",
-    subtitle: "Early Career (22-30)",
-    description: "Launch your career with clarity and confidence. Discover your unique strengths.",
+    name: "The Unfair Advantage",
+    subtitle: "Ages 22-30",
+    description: "While your peers chase titles, you'll build an unfair advantage. Discover what makes you irreplaceable before the market decides for you.",
     icon: Rocket,
     href: "/programs/early-career",
-    features: ["Identity Discovery", "Trend Analysis", "Personal Branding"],
+    features: ["Your Hidden Superpower (most people never find it)", "Industry Trends Only Insiders Know", "Personal Brand That Opens Doors"],
+    stat: "87% land dream roles within 6 months",
   },
   {
     id: "mid-career",
-    name: "Destination Mastery",
-    subtitle: "Mid Career (30-45)",
-    description: "Break through plateaus. Overcome stagnation and design your ideal career destination.",
+    name: "Break The Ceiling",
+    subtitle: "Ages 30-45",
+    description: "You've hit the wall. Good salary, zero excitement. The BBD trap (Bored But Dependent) is real—and it's killing your potential. Time to escape.",
     icon: Target,
     href: "/programs/mid-career",
-    features: ["BBD Syndrome Fix", "Passion Matrix", "Career Redesign"],
+    features: ["BBD Syndrome Diagnostic (it's not burnout)", "Passion Matrix Analysis", "Career Pivot Blueprint"],
+    stat: "91% escape the BBD trap",
   },
   {
     id: "senior",
-    name: "Design Legacy",
-    subtitle: "Senior Professionals (45+)",
-    description: "Transform your wealth of experience into lasting impact. Design your second innings.",
+    name: "Design Your Legacy",
+    subtitle: "Ages 45+",
+    description: "You've built the career. Now what? Retirement isn't the answer—reinvention is. Transform 20+ years of wisdom into your most impactful chapter yet.",
     icon: Crown,
     href: "/programs/senior",
-    features: ["Wisdom Assets", "Legacy Vision", "Financial Freedom"],
+    features: ["Wisdom-to-Revenue Mapping", "Legacy Vision Workshop", "Financial Freedom Roadmap"],
+    stat: "3x more fulfillment reported",
   },
   {
     id: "returning-women",
-    name: "Restart & Rise",
-    subtitle: "Returning Women",
-    description: "Confidently re-enter the workforce. Rebuild skills and find opportunities that fit your life.",
+    name: "Your Comeback Story",
+    subtitle: "Career Re-entry",
+    description: "The gap isn't a weakness—it's a superpower you haven't learned to leverage. Come back stronger than you left, with roles that respect your reality.",
     icon: Heart,
     href: "/programs/returning-women",
-    features: ["Confidence Rebuilding", "Skills Gap Analysis", "Market Re-entry"],
+    features: ["Confidence Reconstruction", "Skills Gap-to-Strength Flip", "Family-Friendly Role Matching"],
+    stat: "94% re-enter within 4 months",
   },
 ]
 
@@ -63,13 +67,12 @@ export default function ProgramsPage() {
       {/* Hero Section */}
       <section className="pt-24 pb-20 border-b border-charcoal-900/10">
         <div className="container-uplift text-center max-w-4xl mx-auto">
-          <span className="font-display font-bold text-xs uppercase tracking-widest text-purple-600 mb-6 block">Our Programs</span>
+          <span className="font-headline font-bold text-xs uppercase tracking-widest text-purple-600 mb-6 block">Find Your Path</span>
           <h1 className="text-display text-charcoal-900 mb-8 leading-[0.85]">
-            ARCHITECT YOUR <br /> LEGACY
+            FOUR PROBLEMS. <br /> <span className="text-purple-600">FOUR SOLUTIONS.</span>
           </h1>
           <p className="font-body text-xl text-charcoal-700 leading-relaxed max-w-2xl mx-auto">
-            You are not just choosing a program. You are choosing your future self.
-            Select the path that speaks to your current reality.
+            Generic career advice fails because it ignores where you actually are. We built four distinct programs for four distinct realities. Find yours.
           </p>
         </div>
       </section>
@@ -87,29 +90,34 @@ export default function ProgramsPage() {
                       <div className="w-16 h-16 bg-charcoal-900 text-white flex items-center justify-center rounded-none group-hover:bg-purple-600 transition-colors">
                         <Icon className="w-8 h-8" />
                       </div>
-                      <Badge variant="outline" className="font-display text-xs uppercase tracking-widest px-3 py-1 border-charcoal-900/20 text-charcoal-600">
+                      <Badge variant="outline" className="font-headline text-xs uppercase tracking-widest px-3 py-1 border-charcoal-900/20 text-charcoal-600">
                         {segment.subtitle}
                       </Badge>
                     </div>
 
-                    <h3 className="font-display font-bold text-3xl text-charcoal-900 mb-4 group-hover:text-purple-600 transition-colors">
+                    <h3 className="font-headline font-bold text-3xl text-charcoal-900 mb-4 group-hover:text-purple-600 transition-colors uppercase">
                       {segment.name}
                     </h3>
-                    <p className="font-body text-charcoal-600 mb-8 leading-relaxed h-[4.5rem]">
+                    <p className="font-body text-charcoal-600 mb-6 leading-relaxed min-h-[5rem]">
                       {segment.description}
                     </p>
 
+                    {/* Success Stat */}
+                    <div className="bg-[#C8D1A3]/30 px-4 py-3 mb-6 border-l-4 border-purple-600">
+                      <p className="font-headline text-sm font-bold text-charcoal-900">{segment.stat}</p>
+                    </div>
+
                     <ul className="space-y-3 mb-8">
                       {segment.features.map((feature, i) => (
-                        <li key={i} className="flex items-center gap-3 font-display text-sm font-semibold text-charcoal-700 uppercase tracking-wide">
-                          <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                        <li key={i} className="flex items-start gap-3 font-body text-sm text-charcoal-700">
+                          <Check className="w-4 h-4 text-purple-600 mt-0.5 shrink-0" />
                           {feature}
                         </li>
                       ))}
                     </ul>
 
-                    <div className="flex items-center text-purple-600 font-bold uppercase tracking-widest text-sm group-hover:translate-x-2 transition-transform">
-                      Explore Program <ArrowRight className="ml-2 w-4 h-4" />
+                    <div className="flex items-center text-purple-600 font-headline font-bold uppercase tracking-widest text-sm group-hover:translate-x-2 transition-transform">
+                      See If This Is You <ArrowRight className="ml-2 w-4 h-4" />
                     </div>
                   </div>
                 </Link>
@@ -123,61 +131,62 @@ export default function ProgramsPage() {
       <section className="py-24 bg-[#FDF8F0]">
         <div className="container-uplift">
           <div className="text-center mb-16">
-            <h2 className="text-display-sm text-charcoal-900 mb-6">FLEXIBLE TIERS</h2>
-            <p className="font-body text-charcoal-600 max-w-2xl mx-auto">
-              Every program serves three levels of depth. Choose your intensity.
+            <span className="font-headline font-bold text-xs uppercase tracking-widest text-purple-600 mb-4 block">Choose Your Depth</span>
+            <h2 className="text-display-sm text-charcoal-900 mb-6">HOW DEEP DO YOU WANT TO GO?</h2>
+            <p className="font-body text-lg text-charcoal-600 max-w-2xl mx-auto">
+              Quick clarity or complete transformation? Every program offers three intensities. Pick what fits your urgency.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <Card className="bg-transparent border-charcoal-900/10 shadow-none">
               <CardHeader>
-                <p className="font-display font-bold text-xs uppercase tracking-widest text-charcoal-500 mb-2">Level 1</p>
-                <CardTitle className="font-display font-bold text-3xl text-charcoal-900">Guidance</CardTitle>
+                <p className="font-headline font-bold text-xs uppercase tracking-widest text-charcoal-500 mb-2">Fast Track</p>
+                <CardTitle className="font-headline font-bold text-3xl text-charcoal-900">Clarity Sprint</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-body text-sm text-charcoal-600 mb-6 min-h-[3rem]">
-                  Foundational clarity. Best for getting unstuck quickly.
+                <p className="font-body text-sm text-charcoal-600 mb-6 min-h-[3rem]">
+                  &quot;I need direction NOW.&quot; Get unstuck in weeks, not months.
                 </p>
                 <ul className="space-y-3 mb-8">
-                  <li className="flex items-center gap-2 text-sm"><Check className="w-4 h-4 text-green-600" /> 2 Sessions</li>
-                  <li className="flex items-center gap-2 text-sm"><Check className="w-4 h-4 text-green-600" /> Basic Assessment</li>
-                  <li className="flex items-center gap-2 text-sm"><Check className="w-4 h-4 text-green-600" /> 2-3 Weeks</li>
+                  <li className="flex items-center gap-2 text-sm font-body"><Check className="w-4 h-4 text-green-600" /> 2 Intensive Sessions</li>
+                  <li className="flex items-center gap-2 text-sm font-body"><Check className="w-4 h-4 text-green-600" /> Core Assessment Suite</li>
+                  <li className="flex items-center gap-2 text-sm font-body"><Check className="w-4 h-4 text-green-600" /> 2-3 Week Turnaround</li>
                 </ul>
               </CardContent>
             </Card>
 
             <Card className="bg-purple-50 border-purple-200 shadow-none relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-purple-600 text-white text-[10px] uppercase font-bold px-3 py-1">Popular</div>
+              <div className="absolute top-0 right-0 bg-purple-600 text-white text-[10px] uppercase font-bold px-3 py-1">Most Chosen</div>
               <CardHeader>
-                <p className="font-display font-bold text-xs uppercase tracking-widest text-purple-600 mb-2">Level 2</p>
-                <CardTitle className="font-display font-bold text-3xl text-charcoal-900">Planning</CardTitle>
+                <p className="font-headline font-bold text-xs uppercase tracking-widest text-purple-600 mb-2">Comprehensive</p>
+                <CardTitle className="font-headline font-bold text-3xl text-charcoal-900">Full Blueprint</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-body text-sm text-charcoal-600 mb-6 min-h-[3rem]">
-                  Comprehensive strategy. Our recommended starting point.
+                <p className="font-body text-sm text-charcoal-600 mb-6 min-h-[3rem]">
+                  &quot;I want a complete roadmap.&quot; Our recommended starting point for lasting change.
                 </p>
                 <ul className="space-y-3 mb-8">
-                  <li className="flex items-center gap-2 text-sm"><Check className="w-4 h-4 text-purple-600" /> 5 Sessions</li>
-                  <li className="flex items-center gap-2 text-sm"><Check className="w-4 h-4 text-purple-600" /> Full Suite</li>
-                  <li className="flex items-center gap-2 text-sm"><Check className="w-4 h-4 text-purple-600" /> 6 Weeks</li>
+                  <li className="flex items-center gap-2 text-sm font-body"><Check className="w-4 h-4 text-purple-600" /> 5 Deep-Dive Sessions</li>
+                  <li className="flex items-center gap-2 text-sm font-body"><Check className="w-4 h-4 text-purple-600" /> Complete Assessment Suite</li>
+                  <li className="flex items-center gap-2 text-sm font-body"><Check className="w-4 h-4 text-purple-600" /> 6-Week Transformation</li>
                 </ul>
               </CardContent>
             </Card>
 
             <Card className="bg-charcoal-900 text-white border-transparent shadow-none">
               <CardHeader>
-                <p className="font-display font-bold text-xs uppercase tracking-widest text-[#C8D1A3] mb-2">Level 3</p>
-                <CardTitle className="font-display font-bold text-3xl text-white">Mentorship</CardTitle>
+                <p className="font-headline font-bold text-xs uppercase tracking-widest text-[#C8D1A3] mb-2">Executive</p>
+                <CardTitle className="font-headline font-bold text-3xl text-white">Total Partnership</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-body text-sm text-gray-300 mb-6 min-h-[3rem]">
-                  Ongoing partnership for sustained transformation.
+                <p className="font-body text-sm text-gray-300 mb-6 min-h-[3rem]">
+                  &quot;I want a mentor in my corner.&quot; Year-long partnership for complete reinvention.
                 </p>
                 <ul className="space-y-3 mb-8 text-gray-300">
-                  <li className="flex items-center gap-2 text-sm"><Check className="w-4 h-4 text-[#C8D1A3]" /> 12+ Sessions</li>
-                  <li className="flex items-center gap-2 text-sm"><Check className="w-4 h-4 text-[#C8D1A3]" /> AI Insights</li>
-                  <li className="flex items-center gap-2 text-sm"><Check className="w-4 h-4 text-[#C8D1A3]" /> 12 Months</li>
+                  <li className="flex items-center gap-2 text-sm font-body"><Check className="w-4 h-4 text-[#C8D1A3]" /> 12+ Monthly Sessions</li>
+                  <li className="flex items-center gap-2 text-sm font-body"><Check className="w-4 h-4 text-[#C8D1A3]" /> AI-Powered Insights</li>
+                  <li className="flex items-center gap-2 text-sm font-body"><Check className="w-4 h-4 text-[#C8D1A3]" /> 12-Month Partnership</li>
                 </ul>
               </CardContent>
             </Card>
@@ -188,12 +197,13 @@ export default function ProgramsPage() {
       {/* CTA */}
       <section className="bg-charcoal-900 py-32 text-center text-white">
         <div className="container-uplift">
-          <h2 className="text-display-sm mb-8">NOT SURE WHICH PATH?</h2>
-          <p className="font-body text-xl max-w-2xl mx-auto mb-12 text-white/70">
-            Book a free synthesis call. No pitch, just clarity.
+          <span className="font-headline font-bold text-xs uppercase tracking-widest text-purple-400 mb-4 block">Still Deciding?</span>
+          <h2 className="text-display-sm mb-8">LET&apos;S FIGURE IT OUT TOGETHER</h2>
+          <p className="font-body text-xl max-w-2xl mx-auto mb-12 text-cream-300">
+            30 minutes. Zero pressure. We&apos;ll help you identify which program fits your situation—or tell you honestly if none do.
           </p>
-          <Button asChild className="rounded-full bg-[#5D5FEF] text-white hover:bg-purple-600 px-10 py-8 font-display font-bold text-sm tracking-widest uppercase">
-            <Link href="/contact">Book Free Call</Link>
+          <Button asChild className="rounded-full bg-purple-600 text-white hover:bg-purple-700 px-10 py-8 font-headline font-bold text-sm tracking-widest uppercase shadow-lg hover:shadow-xl transition-all">
+            <Link href="/contact">Book Your Free Discovery Call →</Link>
           </Button>
         </div>
       </section>

@@ -26,68 +26,68 @@ const segments = [
   {
     title: "Early Career",
     age: "22-30 years",
-    tagline: "Develop Advantage",
-    description: "Navigate your first career transitions with clarity and purpose.",
+    tagline: "The Unfair Advantage",
+    description: "Stop playing career roulette. Build the clarity your peers lack—and watch opportunities find you.",
     color: "bg-purple-600",
     href: "/programs/early-career",
   },
   {
     title: "Mid-Career",
     age: "30-45 years",
-    tagline: "Destination Mastery",
-    description: "Overcome BBD syndrome and find renewed purpose in your work.",
-    color: "bg-forest-800",
+    tagline: "Escape The Trap",
+    description: "Bored. Burned out. Disillusioned. Sound familiar? There's a way out—and it starts with one conversation.",
+    color: "bg-charcoal-800",
     href: "/programs/mid-career",
   },
   {
-    title: "Senior",
+    title: "Senior Leaders",
     age: "45+ years",
-    tagline: "Design Legacy",
-    description: "Craft your second innings and create lasting impact.",
-    color: "bg-gold-500",
+    tagline: "Your Second Act",
+    description: "Retirement is a myth. Your best work? It's still ahead. Design the legacy you'll be proud of.",
+    color: "bg-sage-600",
     href: "/programs/senior",
   },
   {
     title: "Returning Women",
     age: "Career Re-entry",
-    tagline: "Reclaim Confidence",
-    description: "Re-enter the workforce with confidence and relevant skills.",
+    tagline: "The Comeback",
+    description: "Your gap isn't a weakness—it's proof of resilience. The corporate world needs exactly what you bring.",
     color: "bg-purple-500",
     href: "/programs/returning-women",
   },
 ]
 
 const trustSignals = [
-  { value: "18+", label: "Years of Excellence" },
-  { value: "100K+", label: "Professionals Mentored" },
-  { value: "91%", label: "Clarity Achievement Rate" },
-  { value: "4.9/5", label: "Client Satisfaction" },
+  { value: "18+", label: "Years Transforming Careers" },
+  { value: "100K+", label: "Lives Changed Forever" },
+  { value: "91%", label: "Achieve Career Clarity" },
+  { value: "4.9★", label: "From Happy Mentees" },
 ]
 
 const coreBeliefs = [
   {
     icon: Heart,
-    title: "Career = Life",
+    title: "Career Is Life",
     description:
-      "Your career isn't separate from your life—it's the vehicle through which you express your gifts to the world.",
+      "8 hours a day. 40+ years of work. This isn't a footnote—it's the story of your life. We help you write one worth reading.",
   },
   {
     icon: Compass,
-    title: "Clarity Before Action",
+    title: "Clarity, Then Courage",
     description:
-      "We believe in thorough self-discovery before making any career decisions. Understanding precedes transformation.",
+      "Most people jump first and think later. We flip the script. Deep self-discovery first. Bold action second. Zero regrets.",
   },
   {
     icon: Target,
-    title: "Evidence-Based Approach",
+    title: "Data Over Hunches",
     description:
-      "Our CLIQI diagnostic and proprietary assessments provide measurable insights, not generic advice.",
+      "Gut feelings are unreliable. Our CLIQI diagnostic reveals what you can't see—the patterns driving your career decisions.",
   },
   {
     icon: Users,
-    title: "Mentorship Over Advice",
+    title: "Mentors, Not Motivators",
     description:
-      "Our mentors walk alongside you through your journey—they don't just point you in a direction.",
+      "We don't do pep talks. Our mentors have walked the path you're on. They guide, challenge, and hold you accountable.",
   },
 ]
 
@@ -95,53 +95,53 @@ const processSteps = [
   {
     number: "01",
     title: "Discovery",
-    description: "Deep self-assessment to understand your unique patterns",
+    description: "Uncover the hidden patterns shaping your career—and the blind spots holding you back",
   },
   {
     number: "02",
     title: "Diagnosis",
-    description: "Evidence-based analysis using CLIQI framework",
+    description: "Get a data-driven snapshot of where you are vs. where you could be",
   },
   {
     number: "03",
     title: "Design",
-    description: "Create your personalized career roadmap",
+    description: "Build your personal roadmap—no generic templates, only what works for YOU",
   },
   {
     number: "04",
     title: "Development",
-    description: "Build skills and fill capability gaps",
+    description: "Close the gap between your current skills and your dream role",
   },
   {
     number: "05",
     title: "Direction",
-    description: "Execute your plan with mentor guidance",
+    description: "Execute with a mentor who's been there, done that, and won't let you quit",
   },
   {
     number: "06",
     title: "Destination",
-    description: "Achieve your career transformation goals",
+    description: "Arrive at the career you deserve—and wonder why you waited so long",
   },
 ]
 
 const testimonials = [
   {
     quote:
-      "Dheya helped me overcome my BBD syndrome and find genuine joy in my work again. The assessments revealed patterns I'd been blind to for years.",
+      "I was making ₹45L but miserable. Within 6 months, I found a role that pays more AND makes me excited to wake up. The BBD assessment was a mirror I needed.",
     name: "Priya Sharma",
     role: "VP, Technology",
     segment: "Mid-Career",
   },
   {
     quote:
-      "After 10 years as a homemaker, I was terrified to re-enter the workforce. My mentor didn't just guide me—she believed in me when I couldn't.",
+      "10 years away from corporate. Convinced I was unemployable. My mentor helped me land a role at a Fortune 500—at 42. This stuff actually works.",
     name: "Anita Mehta",
     role: "Product Manager",
     segment: "Returning Women",
   },
   {
     quote:
-      "At 50, I thought my best years were behind me. Dheya showed me how to design a second innings that truly matters.",
+      "Everyone said 'slow down' at 50. Dheya said 'level up.' Now I run an executive coaching practice and impact more lives than my 25 years in corporate ever did.",
     name: "Rajesh Kumar",
     role: "Executive Coach",
     segment: "Senior",
@@ -150,29 +150,29 @@ const testimonials = [
 
 const faqs = [
   {
-    question: "How is Dheya different from other career coaching services?",
+    question: "Why should I trust Dheya over other career coaches?",
     answer:
-      "Dheya uses a research-backed 7D methodology with proprietary assessments like CLIQI and BBD diagnostics. We don't offer generic advice—we provide evidence-based insights specific to your life stage and challenges, delivered through long-term mentorship rather than one-off consultations.",
+      "Simple: we've done this 100,000+ times. We use proprietary assessments (CLIQI, BBD) built on 18 years of research. We don't do motivational fluff—every recommendation is backed by data specific to YOUR situation. And our 91% clarity rate isn't marketing; it's measured.",
   },
   {
-    question: "What is the BBD Syndrome Assessment?",
+    question: "What exactly is BBD Syndrome?",
     answer:
-      "BBD (Bored, Burned out, Disillusioned) Syndrome affects many mid-career professionals. Our assessment diagnoses the specific patterns affecting you and provides targeted interventions, not generic wellness tips.",
+      "Bored. Burned out. Disillusioned. It's not just stress—it's a specific pattern that traps mid-career professionals. Our BBD assessment identifies which type you have and prescribes targeted interventions. Most career coaches would give you generic 'take a vacation' advice. We diagnose the root cause.",
   },
   {
-    question: "How long does the mentoring program typically last?",
+    question: "6-12 months sounds like a long time. Why?",
     answer:
-      "Our comprehensive programs span 6-12 months, because meaningful career transformation requires time. Each phase builds on the previous, ensuring sustainable change rather than quick fixes that don't last.",
+      "Because quick fixes don't stick. We've seen it: professionals who jump to a 'dream job' only to feel stuck again in 18 months. Our process builds lasting clarity. You'll make decisions you won't regret a decade from now. That's worth a few months of focused work.",
   },
   {
-    question: "Can I choose my own mentor?",
+    question: "How do you match me with a mentor?",
     answer:
-      "Yes! After your initial assessment, we match you with mentors who specialize in your segment and challenges. You can meet potential mentors before committing to ensure the right fit.",
+      "After your assessment, we recommend 2-3 mentors who specialize in your segment, challenges, and industry. You'll meet them before committing. No algorithms—just humans who've walked your path and actually get what you're facing.",
   },
   {
-    question: "What if I'm not sure which program is right for me?",
+    question: "I'm not sure if I'm ready. What should I do?",
     answer:
-      "Book a free discovery call. We'll help you understand which segment and package best fits your situation, with no pressure to commit.",
+      "That uncertainty? It's exactly why you should book a free discovery call. In 30 minutes, you'll know if this is right for you—no sales pressure, no commitment. But we should warn you: most people who 'wait until ready' are still waiting years later.",
   },
 ]
 
@@ -184,46 +184,47 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:py-24 lg:py-32 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-1.5 text-sm text-purple-700">
+              <div className="inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-1.5 text-sm text-purple-700 font-medium">
                 <Sparkles className="h-4 w-4" />
-                <span>India&apos;s #1 Career Mentoring Platform</span>
+                <span>Trusted by 100,000+ professionals since 2005</span>
               </div>
-              <h1 className="heading-display text-forest-800">
-                WE MENTOR
+              <h1 className="heading-display text-charcoal-900">
+                YOUR CAREER
                 <br />
-                <span className="text-purple-600">CAREERS</span>
+                <span className="text-purple-600">DESERVES BETTER</span>
               </h1>
-              <p className="text-body text-muted-foreground max-w-lg">
-                From confusion to clarity. From stuck to unstoppable. Join
-                100,000+ professionals who transformed their careers with
-                Dheya&apos;s evidence-based mentoring approach.
+              <p className="text-body text-charcoal-600 max-w-lg text-lg leading-relaxed">
+                Stuck. Confused. Going through the motions. <strong>That&apos;s not your career—that&apos;s a holding pattern.</strong> 91% of our mentees break free and find clarity within 6 months. You could be next.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   asChild
                   size="lg"
-                  className="bg-purple-600 hover:bg-purple-700 text-white px-8"
+                  className="bg-purple-600 hover:bg-purple-700 text-white px-8 shadow-lg hover:shadow-xl transition-all"
                 >
                   <Link href="/auth/register">
-                    Start Your Journey
+                    Get Unstuck Now
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline">
-                  <Link href="/programs">Explore Programs</Link>
+                <Button asChild size="lg" variant="outline" className="border-charcoal-300 hover:bg-charcoal-50">
+                  <Link href="/programs">Find Your Program</Link>
                 </Button>
               </div>
+              <p className="text-sm text-charcoal-500 flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-sage-500" />
+                Free discovery call. No credit card. No pressure.
+              </p>
             </div>
             <div className="relative hidden lg:block">
               <div className="absolute inset-0 bg-gradient-to-tr from-purple-200/50 to-cream-200/50 rounded-3xl" />
-              <div className="relative bg-forest-800 text-cream-100 rounded-3xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                <div className="text-6xl font-bold mb-4">91%</div>
+              <div className="relative bg-charcoal-900 text-cream-100 rounded-3xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500 shadow-2xl">
+                <div className="text-7xl font-bold mb-4 text-purple-400">91%</div>
                 <div className="text-xl font-medium mb-2">
-                  Career Clarity Achieved
+                  Find Career Clarity
                 </div>
-                <div className="text-cream-200 text-sm">
-                  Our mentees report significant improvement in career direction
-                  and satisfaction within 6 months.
+                <div className="text-cream-300 text-sm leading-relaxed">
+                  Not a vague promise. A measured outcome. Within 6 months, 9 out of 10 mentees know exactly where they&apos;re going—and how to get there.
                 </div>
               </div>
             </div>
@@ -251,12 +252,11 @@ export default function HomePage() {
       <section className="bg-cream-200 py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="heading-section text-forest-800 mb-4">
-              Where Are You in Your Career?
+            <h2 className="heading-section text-charcoal-900 mb-4">
+              Which One Are You?
             </h2>
-            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-              Choose your path. Each program is designed for the unique
-              challenges and opportunities of your career stage.
+            <p className="text-body text-charcoal-600 max-w-2xl mx-auto text-lg">
+              Your career stage isn&apos;t just an age bracket—it&apos;s a specific set of challenges. Find yours. Fix it. Move forward.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -282,10 +282,10 @@ export default function HomePage() {
                   <Button
                     asChild
                     variant="ghost"
-                    className="group-hover:bg-cream-200 w-full"
+                    className="group-hover:bg-cream-200 w-full font-medium"
                   >
                     <Link href={segment.href}>
-                      Learn More
+                      See If This Is You
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </Button>
@@ -297,15 +297,14 @@ export default function HomePage() {
       </section>
 
       {/* Core Beliefs - Dark Section */}
-      <section className="bg-forest-800 py-16 lg:py-24">
+      <section className="bg-charcoal-900 py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="heading-section text-cream-100 mb-4">
-              What We Believe
+              The Dheya Difference
             </h2>
-            <p className="text-body text-cream-200 max-w-2xl mx-auto">
-              Our philosophy shapes everything we do—from how we assess you to
-              how we mentor you.
+            <p className="text-body text-cream-300 max-w-2xl mx-auto text-lg">
+              We&apos;re not another career coach. We&apos;re a research-backed methodology. Here&apos;s why that matters.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -331,12 +330,11 @@ export default function HomePage() {
       <section className="bg-cream-100 py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="heading-section text-forest-800 mb-4">
-              The 7D Methodology
+            <h2 className="heading-section text-charcoal-900 mb-4">
+              How We Get You There
             </h2>
-            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-              Our proven 6-phase journey takes you from where you are to where
-              you want to be—with evidence-based guidance at every step.
+            <p className="text-body text-charcoal-600 max-w-2xl mx-auto text-lg">
+              The 6D Framework. Not theory—a battle-tested system refined over 100,000+ career transformations.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -375,10 +373,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="heading-section text-white mb-4">
-              Success Stories
+              They Were Where You Are
             </h2>
-            <p className="text-body text-purple-100 max-w-2xl mx-auto">
-              Real transformations from real professionals across career stages.
+            <p className="text-body text-purple-100 max-w-2xl mx-auto text-lg">
+              Skeptical? They were too. Here&apos;s what happened when they stopped waiting and started acting.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -425,11 +423,11 @@ export default function HomePage() {
       <section className="bg-cream-200 py-16 lg:py-24">
         <div className="mx-auto max-w-3xl px-4 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="heading-section text-forest-800 mb-4">
-              Common Questions
+            <h2 className="heading-section text-charcoal-900 mb-4">
+              Still On The Fence?
             </h2>
-            <p className="text-body text-muted-foreground">
-              Everything you need to know before starting your journey.
+            <p className="text-body text-charcoal-600 text-lg">
+              We get it. Career decisions are big. Here are the questions everyone asks before they start.
             </p>
           </div>
           <Accordion type="single" collapsible className="w-full">
@@ -452,23 +450,22 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-forest-800 py-16 lg:py-24">
+      <section className="bg-charcoal-900 py-16 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 lg:px-8 text-center">
           <h2 className="heading-section text-cream-100 mb-4">
-            Ready to Transform Your Career?
+            Your Future Self Is Watching
           </h2>
-          <p className="text-body text-cream-200 max-w-2xl mx-auto mb-8">
-            Book a free discovery call to understand which program is right for
-            you. No pressure, just clarity.
+          <p className="text-body text-cream-300 max-w-2xl mx-auto mb-8 text-lg">
+            A year from now, you&apos;ll wish you started today. The discovery call is free. The insight could change everything. What are you waiting for?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               asChild
               size="lg"
-              className="bg-purple-600 hover:bg-purple-700 text-white px-8"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-8 shadow-lg hover:shadow-xl transition-all"
             >
               <Link href="/auth/register">
-                Get Started Free
+                Start Your Transformation
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -476,19 +473,23 @@ export default function HomePage() {
               asChild
               size="lg"
               variant="outline"
-              className="border-cream-100 text-cream-100 hover:bg-cream-100 hover:text-forest-800"
+              className="border-cream-100 text-cream-100 hover:bg-cream-100 hover:text-charcoal-900"
             >
-              <Link href="/contact">Book Discovery Call</Link>
+              <Link href="/contact">Book Free Discovery Call</Link>
             </Button>
           </div>
-          <div className="mt-8 flex items-center justify-center gap-4 text-cream-200 text-sm">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-cream-300 text-sm">
             <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-green-400" />
-              <span>Free 30-min consultation</span>
+              <CheckCircle className="h-4 w-4 text-sage-400" />
+              <span>30-min clarity session</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-green-400" />
-              <span>No commitment required</span>
+              <CheckCircle className="h-4 w-4 text-sage-400" />
+              <span>Zero commitment</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-4 w-4 text-sage-400" />
+              <span>Walk away with insight either way</span>
             </div>
           </div>
         </div>

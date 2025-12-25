@@ -47,10 +47,10 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Priya Sharma",
     role: "VP of Technology",
     segment: "MID_CAREER",
-    quote: "I was stuck in the BBD syndrome—bored, burned out, and disillusioned with my career. Dheya's diagnostic assessments revealed patterns I'd been blind to for years. My mentor helped me rediscover my purpose, and within 8 months, I transitioned into a role that genuinely excites me every day.",
+    quote: "I was making ₹45L but waking up dreading Monday. The BBD assessment told me what I couldn't see: I wasn't burned out—I was misaligned. 8 months later, I'm VP at a company I actually believe in. Same industry, completely different life.",
     transformation: {
-      before: "Burned out senior engineer, considering leaving tech entirely",
-      after: "VP of Technology at innovative startup, energized and fulfilled"
+      before: "₹45L salary, zero joy, considering quitting tech entirely",
+      after: "VP at mission-driven startup, excited about Mondays again"
     },
     rating: 5,
     year: 2024
@@ -60,10 +60,10 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Anita Mehta",
     role: "Product Manager",
     segment: "RETURNING_WOMEN",
-    quote: "After 10 years as a homemaker, I was terrified to re-enter the workforce. The world had changed so much. My Dheya mentor didn't just teach me new skills—she believed in me when I couldn't believe in myself. Today, I'm leading product initiatives at a major tech company.",
+    quote: "10 years as a homemaker. Every recruiter said my gap was 'too long.' My mentor said it proved I could manage chaos. 6 months later, I'm leading product at a Fortune 500. Turns out, running a household IS project management.",
     transformation: {
-      before: "10-year career gap, zero confidence, outdated skills",
-      after: "Senior Product Manager, leading cross-functional teams"
+      before: "10 years out, convinced I was unemployable",
+      after: "Product Manager at Fortune 500, outperforming 'continuous' careers"
     },
     rating: 5,
     year: 2023
@@ -73,10 +73,10 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Rajesh Kumar",
     role: "Executive Coach & Consultant",
     segment: "SENIOR",
-    quote: "At 50, I thought my best years were behind me. Corporate life felt empty. Dheya's 7D methodology helped me design a second innings that truly matters. Now I'm an executive coach, helping others navigate their careers with the wisdom I've gained.",
+    quote: "At 50, everyone said 'slow down.' Dheya said 'what's your legacy?' Now I coach 50+ executives a year. I make less money than my banking days—and feel richer than I ever did.",
     transformation: {
-      before: "Unfulfilled corporate executive, counting years to retirement",
-      after: "Thriving executive coach, helping 50+ leaders annually"
+      before: "Senior banker counting days to retirement",
+      after: "Executive coach, impacting more lives than 25 years of corporate"
     },
     rating: 5,
     year: 2023
@@ -86,10 +86,10 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Karthik Menon",
     role: "Engineering Manager",
     segment: "EARLY_CAREER",
-    quote: "As a 26-year-old engineer, I was chasing promotions without understanding my long-term direction. The CLIQI diagnostic framework gave me clarity on my strengths and helped me chart a deliberate path. I'm now managing a team at a company whose mission aligns with my values.",
+    quote: "I was job-hopping every 18 months chasing 20% salary bumps. CLIQI showed me I was running FROM something, not TO something. Now I lead a team at a company I'll probably never leave. The money followed when I stopped chasing it.",
     transformation: {
-      before: "Directionless software engineer, job-hopping for money",
-      after: "Engineering Manager at mission-driven company"
+      before: "Serial job-hopper, 4 companies in 5 years, zero direction",
+      after: "Engineering Manager, 2 years in, promoted twice"
     },
     rating: 5,
     year: 2024
@@ -99,10 +99,10 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Sneha Desai",
     role: "Marketing Director",
     segment: "MID_CAREER",
-    quote: "I'd built a successful career, but felt completely disconnected from my work. The assessments revealed I was optimizing for the wrong metrics—external validation instead of internal fulfillment. My mentor helped me pivot into a role where I make real impact.",
+    quote: "On paper, I was crushing it. Awards, promotions, corner office. Inside, I felt like a fraud. My mentor helped me see I was living someone else's definition of success. Now I run marketing for a nonprofit—half the salary, ten times the meaning.",
     transformation: {
-      before: "Successful but unfulfilled marketing manager",
-      after: "Marketing Director at social impact organization"
+      before: "Award-winning marketer, privately miserable",
+      after: "Marketing Director at social impact org, genuinely fulfilled"
     },
     rating: 5,
     year: 2024
@@ -112,10 +112,10 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Deepika Iyer",
     role: "UX Research Lead",
     segment: "RETURNING_WOMEN",
-    quote: "Seven years away from my design career felt like an eternity. The tech industry had evolved dramatically. Dheya's structured re-entry program helped me update my skills systematically while building my confidence. I'm now leading UX research for a major product line.",
+    quote: "7 years out. Figma didn't exist when I left. I was terrified the industry had passed me by. Dheya's program didn't just update my skills—it helped me see that empathy (which motherhood amplified) is my superpower. Now I lead UX research for products millions use.",
     transformation: {
-      before: "7-year career break, overwhelmed by industry changes",
-      after: "UX Research Lead, driving product strategy"
+      before: "7 years out, tech stack completely outdated",
+      after: "UX Research Lead, using 'mom skills' as competitive advantage"
     },
     rating: 5,
     year: 2023
@@ -125,10 +125,10 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Vikram Singh",
     role: "Startup Founder",
     segment: "SENIOR",
-    quote: "After 25 years in corporate banking, I had domain expertise but zero entrepreneurial experience. My mentor helped me channel my financial knowledge into building a fintech startup. At 48, I'm finally doing work that matters to me.",
+    quote: "25 years in banking. Golden handcuffs everyone warned me about. At 48, I walked away from the corner office, raised seed funding for a fintech, and work harder than ever. Difference? Now I'm building something that's mine.",
     transformation: {
-      before: "Banking executive feeling trapped in corporate life",
-      after: "Fintech founder, raised seed funding"
+      before: "Banking VP, great title, felt like a cog",
+      after: "Fintech founder, raised ₹2Cr, building legacy"
     },
     rating: 5,
     year: 2024
@@ -138,10 +138,10 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Arjun Nair",
     role: "Data Scientist",
     segment: "EARLY_CAREER",
-    quote: "I was pursuing data science because it was 'hot,' not because I loved it. The career clarity sessions helped me discover my real passion lies in sustainability. I've since transitioned to climate tech and wake up excited about my work.",
+    quote: "I picked data science because LinkedIn said it was hot. Hated every day. CLIQI revealed I'm wired for impact, not algorithms. Now I do climate modeling. Same skills, completely different purpose. Turns out context is everything.",
     transformation: {
-      before: "Miserable data analyst in finance, following trends",
-      after: "Data Scientist at climate tech startup, mission-aligned"
+      before: "Trendy job title, existential crisis at 25",
+      after: "Data Scientist at climate tech, work that matters"
     },
     rating: 5,
     year: 2024
@@ -151,10 +151,10 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Meera Krishnan",
     role: "Operations Director",
     segment: "MID_CAREER",
-    quote: "I was great at execution but had hit a ceiling. The leadership assessments revealed gaps in strategic thinking. My mentor created a personalized development plan that helped me transition from manager to director level in 18 months.",
+    quote: "Great at execution, terrible at politics. Kept getting passed over for promotion. My mentor didn't teach me to play games—she showed me how to make my work visible without selling out. Director in 18 months, integrity intact.",
     transformation: {
-      before: "Stuck mid-level manager, unclear growth path",
-      after: "Operations Director, leading strategic initiatives"
+      before: "Best performer, worst politician, stuck for 4 years",
+      after: "Operations Director, promoted for substance not showmanship"
     },
     rating: 5,
     year: 2023
@@ -164,10 +164,10 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Lakshmi Ramesh",
     role: "HR Business Partner",
     segment: "RETURNING_WOMEN",
-    quote: "After 12 years focused on family, I'd lost professional identity. Dheya's program didn't just update my skills—it helped me rebuild my professional confidence from the ground up. Now I'm shaping HR strategy at a growing company.",
+    quote: "12 years out. I'd forgotten who I was professionally. My mentor made me list everything I'd done as a mother: conflict resolution, resource allocation, stakeholder management. She helped me see I'd been doing HR all along. Just unpaid.",
     transformation: {
-      before: "12-year career gap, lost professional identity",
-      after: "Senior HR Business Partner, strategic role"
+      before: "12 years 'just' a mom, zero professional confidence",
+      after: "HR Business Partner, using life experience as credential"
     },
     rating: 5,
     year: 2024
@@ -175,10 +175,10 @@ const TESTIMONIALS: Testimonial[] = [
 ]
 
 const STATS = [
-  { value: "2,847", label: "Careers Transformed", icon: TrendingUp },
-  { value: "91%", label: "Career Clarity Achieved", icon: Award },
-  { value: "4.9/5", label: "Average Satisfaction", icon: Star },
-  { value: "100K+", label: "Lives Impacted", icon: Users }
+  { value: "100K+", label: "Transformations & Counting", icon: TrendingUp },
+  { value: "91%", label: "Find Their Path", icon: Award },
+  { value: "4.9★", label: "Average Rating", icon: Star },
+  { value: "18+", label: "Years of Proof", icon: Users }
 ]
 
 export default function SuccessStoriesPage() {
@@ -203,15 +203,13 @@ export default function SuccessStoriesPage() {
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 rounded-full bg-purple-100/80 backdrop-blur-sm border border-purple-200 px-4 py-1.5 text-xs font-bold text-purple-700 uppercase tracking-widest mb-8 shadow-sm">
               <Heart className="h-3 w-3 fill-purple-700" />
-              <span>Real Transformations</span>
+              <span>Proof, Not Promises</span>
             </div>
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-charcoal-900 mb-8 tracking-tight">
-              Stories of <span className="text-gradient-purple">Triumph</span>
+            <h1 className="font-headline text-5xl sm:text-6xl lg:text-7xl font-bold text-charcoal-900 mb-8 tracking-tight">
+              They Were <span className="text-purple-600">Skeptical Too</span>
             </h1>
             <p className="font-body text-xl text-charcoal-600 max-w-2xl mx-auto leading-relaxed">
-              Discover how professionals from every walk of life found their true calling.
-              These aren&apos;t just career changes—they are life transformations powered by
-              clarity and purpose.
+              Before-and-after stories from people who thought career clarity was a myth. Spoiler: it&apos;s not. These are real transformations from real professionals—complete with their doubts, struggles, and breakthroughs.
             </p>
           </div>
         </div>
@@ -413,34 +411,32 @@ export default function SuccessStoriesPage() {
       </section>
 
       {/* CTA Section - Simple & Clean */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-charcoal-900">
         <div className="container-uplift text-center max-w-4xl">
-          <h2 className="text-display text-charcoal-900 mb-6">
-            Your Story Is <span className="text-purple-600">Waiting To Be Written</span>
+          <h2 className="font-headline text-4xl sm:text-5xl font-bold text-cream-100 mb-6">
+            Your Story Could Be <span className="text-purple-400">Next</span>
           </h2>
-          <p className="text-xl text-charcoal-600 mb-10 max-w-2xl mx-auto">
-            Join thousands of professionals who&apos;ve transformed their careers with
-            Dheya&apos;s evidence-based mentoring.
+          <p className="text-xl text-cream-300 mb-10 max-w-2xl mx-auto">
+            Every transformation on this page started with the same doubt you&apos;re feeling right now. The only difference? They took the first step.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               asChild
-              size="xl"
-              variant="uplift"
-              className="px-10"
+              size="lg"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-10 py-6 font-headline font-bold uppercase tracking-wider shadow-lg"
             >
               <Link href="/auth/register">
-                Start Your Journey
+                Write Your Chapter
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button
               asChild
-              size="xl"
-              variant="upliftOutline"
-              className="px-10"
+              size="lg"
+              variant="outline"
+              className="border-cream-100 text-cream-100 hover:bg-cream-100 hover:text-charcoal-900 px-10 py-6 font-headline font-bold uppercase tracking-wider"
             >
-              <Link href="/programs">Explore Programs</Link>
+              <Link href="/contact">Talk To Us First</Link>
             </Button>
           </div>
         </div>
